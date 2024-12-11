@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 from pylab import *
 import matplotlib
-import plplot
+#import plplot
 from scipy import stats
 #from io import StringIO
 print(pd.__version__)
