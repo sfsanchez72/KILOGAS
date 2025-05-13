@@ -1,0 +1,276 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: cubename, datatype: string}
+# - {name: P.A., datatype: float64}
+# - {name: PA_PHOT, datatype: float64}
+# delimiter: ','
+# meta: !!omap
+# - comments: [(1) name, (2) log_Mass_no_corr, (3) lSFR, (4) OH_O3N2, (5) e_OH_O3N2, '(6) a_ion_cen[3]', (7) frac_area_GAS, (8) frac_area_SFR_pure,
+#     (9) Av_w, (10) OH_O3N2_Re, (11) alpha_OH_O3N2_Re, (12) a_vel_Ha_cen_mean, (13) a_vel_ssp_cen_mean, (14) z_gas, (15) z_stars, (16)
+#       FoV, (17) nx, (18) ny, (19) Re_kpc, (20) mag_g, (21) log_Mass_corr, '(22) Av_ssp_stats[2]', (23) OH_O3N2_Re2, (24) e_OH_O3N2_Re2,
+#     (25) error_Mass, (26) e_lSFR, (27) Age_LW_Re, (28) e_Age_LW_Re, (29) ZH_LW_Re, (30) e_ZH_LW_Re, (31) Av_LW_Re, (32) e_Av_LW_Re,
+#     (33) Av_gas_LW_Re, (34) e_Av_gas_LW_Re, (35) OH_Z_Re, (36) e_ZH_LW_Re, (37) log_age_mean_LW, (38) s_log_age_mean_LW, (39) log_ZH_mean_LW,
+#     (40) s_log_ZH_mean_LW, (41) Av_ssp_stats_mean, (42) Av_ssp_stats_stddev, (43) Av_w, (44) e_Av_w, (45) OH_Re_fit_O3N2, (46) e_OH_Re_fit_O3N2,
+#     (47) alpha_OH_Re_fit_O3N2, (48) e_alpha_OH_Re_fit_O3N2, (49) cc_r_OH_O3N2, (50) sig_r_OH_O3N2, (51) OH_Re_fit_N2, (52) e_OH_Re_fit_N2,
+#     (53) alpha_OH_Re_fit_N2, (54) e_alpha_OH_Re_fit_N2, (55) cc_r_OH_N2, (56) sig_r_OH_N2, (57) OH_Re_fit_ONS, (58) e_OH_Re_fit_ONS,
+#     (59) alpha_OH_Re_fit_ONS, (60) e_alpha_OH_Re_fit_ONS, (61) cc_r_OH_ONS, (62) sig_r_OH_ONS, (63) OH_Re_fit_R23, (64) e_OH_Re_fit_R23,
+#     (65) alpha_OH_Re_fit_R23, (66) e_alpha_OH_Re_fit_R23, (67) cc_r_OH_R23, (68) sig_r_OH_R23, (69) stats_OH_Re_mean_mean, (70) stats_OH_Re_mean_stddev,
+#     (71) stats_a_OH_Re_mean_mean, (72) stats_a_OH_Re_mean_stddev, (73) log_Mass, (74) log_SFR_ssp, (75) log_NII_Ha_cen_mean, (76) log_NII_Ha_cen_stddev,
+#     (77) log_OIII_Hb_cen_mean, (78) log_OIII_Hb_cen_stddev, (79) log_SII_Ha_cen_mean, (80) log_SII_Ha_cen_stddev, (81) log_OII_Hb_cen_mean,
+#     (82) log_OII_Hb_cen_stddev, (83) EW_Ha_cen_mean, (84) EW_Ha_cen_stddev, (85) stats_y_200_mean, (86) stats_y_200_stddev, (87) stats_y_30_mean,
+#     (88) stats_y_30_stddev, (89) stats_EW_Ha_mean, (90) stats_EW_Ha_stddev, (91) ZH_LW_Re_fit, (92) e_ZH_LW_Re_fit, (93) alpha_ZH_LW_Re_fit,
+#     (94) e_alpha_ZH_LW_Re_fit, (95) ZH_LW_lRe_fit, (96) e_ZH_LW_lRe_fit, (97) alpha_ZH_LW_lRe_fit, (98) e_alpha_ZH_LW_lRe_fit, (99)
+#       ZH_MW_Re_fit, (100) e_ZH_MW_Re_fit, (101) alpha_ZH_MW_Re_fit, (102) e_alpha_ZH_MW_Re_fit, (103) Age_LW_Re_fit, (104) e_Age_LW_Re_fit,
+#     (105) alpha_Age_LW_Re_fit, (106) e_alpha_Age_LW_Re_fit, (107) Age_LW_lRe_fit, (108) e_Age_LW_lRe_fit, (109) alpha_Age_LW_lRe_fit,
+#     (110) e_alpha_Age_LW_lRe_fit, (111) Age_MW_Re_fit, (112) e_Age_MW_Re_fit, (113) alpha_Age_MW_Re_fit, (114) e_alpha_Age_MW_Re_fit,
+#     (115) ZH_LW_Re_fit_0_0.5_Gyr, (116) e_ZH_LW_Re_fit_0_0.5_Gyr, (117) alpha_ZH_LW_Re_fit_0_0.5_Gyr, (118) e_alpha_ZH_LW_Re_fit_0_0.5_Gyr,
+#     (119) ZH_LW_Re_fit_0.5_2.0_Gyr, (120) e_ZH_LW_Re_fit_0.5_2.0_Gyr, (121) alpha_ZH_LW_Re_fit_0.5_2.0_Gyr, (122) e_alpha_ZH_LW_Re_fit_0.5_2.0_Gyr,
+#     (123) ZH_LW_Re_fit2.0_14.0_Gyr, (124) e_ZH_LW_Re_fit2.0_14.0_Gyr, (125) alpha_ZH_LW_Re_fit2.0_14.0_Gyr, (126) e_alpha_ZH_LW_Re_fit2.0_14.0_Gyr,
+#     (127) Re_arc, (128) Re_kpc, (129) DL, (130) DA, (131) P.A., (132) Ellipticity, (133) Inclination, (134) sigma_cen, (135) e_sigma_cen,
+#     (136) lambda_Re, (137) e_lambda_Re, (138) elip_ab, (139) log_Mass_gas, (140) log_Mass_gas_Re, (141) log_Mass_gas_Av_ssp_ZH, (142)
+#       log_Mass_gas_Av_ssp, (143) log_Mass_gas_Av_gas_rad, (144) log_Mass_stars_sigma, (145) log_F_Ha, (146) log_F_Ha_cor, (147) log_L_Ha_cor,
+#     (148) NH_Re_log, (149) NO_Re_log, (150) sigma_cen_Ha, (151) e_sigma_cen_Ha, (152) rat_vel_sigma, (153) e_rat_vel_sigma, (154) OH_Re_fit_pyqz,
+#     (155) e_OH_Re_fit_pyqz, (156) alpha_OH_Re_fit_pyqz, (157) e_alpha_OH_Re_fit_pyqz, (158) cc_r_OH_pyqz, (159) sig_r_OH_pyqz, (160)
+#       OH_Re_mean_phot, (161) e_OH_Re_mean_phot, (162) alpha_OH_Re_mean_phot, (163) e_alpha_OH_Re_mean_phot, (164) OH_ZH_LW_Re_fit, (165)
+#       OH_ZH_LW_Re_fit_0_0.5Gyr, (166) OH_ZH_LW_Re_fit_0.5_2Gyr, (167) OH_ZH_LW_Re_fit_more_2Gyr, (168) XC, (169) YC, (170) ZH_LW_Re_fit_0_2.0_Gyr,
+#     (171) e_ZH_LW_Re_fit_0_2.0_Gyr, (172) alpha_ZH_LW_Re_fit_0_2.0_Gyr, (173) e_alpha_ZH_LW_Re_fit_0_2.0_Gyr, (174) OH_ZH_LW_Re_fit_0_2Gyr,
+#     (175) OH_ZH_MW_Re_fit, (176) OH_ZH_MW_Re_fit_0_2Gyr, (177) T50, (178) T80, (179) OH_ZH_LW_Re_fit_t50, (180) OH_ZH_LW_Re_fit_M_t50,
+#     (181) OH_ZH_LW_Re_fit_t80, (182) OH_ZH_LW_Re_fit_M_t80, (183) OH_Re_mean, (184) e_OH_Re_mean, (185) alpha_OH_Re_mean, (186) e_alpha_OH_Re_mean,
+#     (187) OH_Re_fit_mean, (188) e_OH_Re_fit_mean, (189) alpha_OH_Re_fit_mean, (190) e_alpha_OH_Re_fit_mean, (191) cc_r_OH_mean, (192)
+#       sig_r_OH_mean, (193) OH_Re_fit_t2, (194) e_OH_Re_fit_t2, (195) alpha_OH_Re_fit_t2, (196) e_alpha_OH_Re_fit_t2, (197) cc_r_OH_t2,
+#     (198) sig_r_OH_t2, (199) OH_ZH_LW_Re_fit_t90, (200) OH_ZH_LW_Re_fit_M_t90, (201) t90, (202) t70, (203) t60, (204) ZH_LW_Re_fit_M_t50,
+#     (205) e_ZH_LW_Re_fit_M_t50, (206) alpha_ZH_LW_Re_fit_M_t50, (207) e_alpha_ZH_LW_Re_fit_M_t50, (208) cc_ZH_LW_Re_M_t50, (209) sig_ZH_LW_Re_M_t50,
+#     (210) ZH_LW_Re_fit_M_t60, (211) e_ZH_LW_Re_fit_M_t60, (212) alpha_ZH_LW_Re_fit_M_t60, (213) e_alpha_ZH_LW_Re_fit_M_t60, (214) cc_ZH_LW_Re_M_t60,
+#     (215) sig_ZH_LW_Re_M_t60, (216) ZH_LW_Re_fit_M_t70, (217) e_ZH_LW_Re_fit_M_t70, (218) alpha_ZH_LW_Re_fit_M_t70, (219) e_alpha_ZH_LW_Re_fit_M_t70,
+#     (220) cc_ZH_LW_Re_M_t70, (221) sig_ZH_LW_Re_M_t70, (222) ZH_LW_Re_fit_M_t80, (223) e_ZH_LW_Re_fit_M_t80, (224) alpha_ZH_LW_Re_fit_M_t80,
+#     (225) e_alpha_ZH_LW_Re_fit_M_t80, (226) cc_ZH_LW_Re_M_t80, (227) sig_ZH_LW_Re_M_t80, (228) ZH_LW_Re_fit_M_t90, (229) e_ZH_LW_Re_fit_M_t90,
+#     (230) alpha_ZH_LW_Re_fit_M_t90, (231) e_alpha_ZH_LW_Re_fit_M_t90, (232) cc_ZH_LW_Re_M_t90, (233) sig_ZH_LW_Re_M_t90, (234) ZH_LW_Re_fit_t50,
+#     (235) e_ZH_LW_Re_fit_t50, (236) alpha_ZH_LW_Re_fit_t50, (237) e_alpha_ZH_LW_Re_fit_t50, (238) cc_ZH_LW_Re_t50, (239) sig_ZH_LW_Re_t50,
+#     (240) ZH_LW_Re_fit_t60, (241) e_ZH_LW_Re_fit_t60, (242) alpha_ZH_LW_Re_fit_t60, (243) e_alpha_ZH_LW_Re_fit_t60, (244) cc_ZH_LW_Re_t60,
+#     (245) sig_ZH_LW_Re_t60, (246) ZH_LW_Re_fit_t70, (247) e_ZH_LW_Re_fit_t70, (248) alpha_ZH_LW_Re_fit_t70, (249) e_alpha_ZH_LW_Re_fit_t70,
+#     (250) cc_ZH_LW_Re_t70, (251) sig_ZH_LW_Re_t70, (252) ZH_LW_Re_fit_t80, (253) e_ZH_LW_Re_fit_t80, (254) alpha_ZH_LW_Re_fit_t80, (255)
+#       e_alpha_ZH_LW_Re_fit_t80, (256) cc_ZH_LW_Re_t80, (257) sig_ZH_LW_Re_t80, (258) ZH_LW_Re_fit_t90, (259) e_ZH_LW_Re_fit_t90, (260)
+#       alpha_ZH_LW_Re_fit_t90, (261) e_alpha_ZH_LW_Re_fit_t90, (262) cc_ZH_LW_Re_t90, (263) sig_ZH_LW_Re_t90, (264) OH_Re_fit_M08, (265)
+#       e_OH_Re_fit_M08, (266) alpha_OH_Re_fit_M08, (267) e_alpha_OH_Re_fit_M08, (268) cc_r_OH_M08, (269) sig_r_OH_M08, (270) OH_Re_fit_T04,
+#     (271) e_OH_Re_fit_T04, (272) alpha_OH_Re_fit_T04, (273) e_alpha_OH_Re_fit_T04, (274) cc_r_OH_T04, (275) sig_r_OH_T04, (276) NH_Re_fit_ONS,
+#     (277) e_NH_Re_fit_ONS, (278) alpha_NH_Re_fit_ONS, (279) e_alpha_NH_Re_fit_ONS, (280) cc_r_NH_ONS, (281) sig_r_NH_ONS, (282) NO_Re_fit_ONS,
+#     (283) e_NO_Re_fit_ONS, (284) alpha_NO_Re_fit_ONS, (285) e_alpha_NO_Re_fit_ONS, (286) cc_r_NO_ONS, (287) sig_r_NO_ONS, (288) OH_Re_fit_dop,
+#     (289) e_OH_Re_fit_dop, (290) alpha_OH_Re_fit_dop, (291) e_alpha_OH_Re_fit_dop, (292) cc_r_OH_dop, (293) sig_r_OH_dop, (294) NO_Re_fit_EPM09,
+#     (295) e_NO_Re_fit_EPM09, (296) alpha_NO_Re_fit_EPM09, (297) e_alpha_NO_Re_fit_EPM09, (298) cc_r_NO_EPM09, (299) sig_r_NO_EPM09,
+#     (300) NO_Re_fit_N2S2, (301) e_NO_Re_fit_N2S2, (302) alpha_NO_Re_fit_N2S2, (303) e_alpha_NO_Re_fit_N2S2, (304) cc_r_NO_N2S2, (305)
+#       sig_r_NO_N2S2, (306) OH_Re_fit_O3N2_EPM09, (307) e_OH_Re_fit_O3N2_EPM09, (308) alpha_OH_Re_fit_O3N2_EPM09, (309) e_alpha_OH_Re_fit_O3N2_EPM09,
+#     (310) cc_r_OH_O3N2_EPM09, (311) sig_r_OH_O3N2_EPM09, (312) sigma_r_arcsec_SF, (313) sigma_r_arcsec_SF_arcsec, (314) Ha_flux_density_1sigma,
+#     (315) log_SFR_SF, (316) log_L_Ha_SF, (317) log_SFR_D_C, (318) log_L_Ha_D_C, (319) log_L_Ha_DF, (320) OH_O3N2_cen, (321) e_OH_O3N2_cen,
+#     (322) OH_N2_cen, (323) e_OH_N2_cen, (324) OH_ONS_cen, (325) e_OH_ONS_cen, (326) OH_R23_cen, (327) e_OH_R23_cen, (328) OH_pyqz_cen,
+#     (329) e_OH_pyqz_cen, (330) OH_t2_cen, (331) e_OH_t2_cen, (332) OH_M08_cen, (333) e_OH_M08_cen, (334) OH_T04_cen, (335) e_OH_T04_cen,
+#     (336) OH_dop_cen, (337) e_OH_dop_cen, (338) OH_O3N2_EPM09_cen, (339) e_OH_O3N2_EPM09_cen, (340) log_OI_Ha_cen, (341) e_log_OI_Ha_cen,
+#     (342) Ha_Hb_cen, (343) e_Ha_Hb_cen, (344) log_NII_Ha_Re, (345) e_log_NII_Ha_Re, (346) log_OIII_Hb_Re, (347) e_log_OIII_Hb_Re, (348)
+#       log_SII_Ha_Re, (349) e_log_SII_Ha_Re, (350) log_OII_Hb_Re, (351) e_log_OII_Hb_Re, (352) log_OI_Ha_Re, (353) e_log_OI_Ha_Re, (354)
+#       EW_Ha_Re, (355) e_EW_Ha_Re, (356) Ha_Hb_Re, (357) e_Ha_Hb_Re, (358) log_NII_Ha_ALL, (359) e_log_NII_Ha_ALL, (360) log_OIII_Hb_ALL,
+#     (361) e_log_OIII_Hb_ALL, (362) log_SII_Ha_ALL, (363) e_log_SII_Ha_ALL, (364) log_OII_Hb_ALL, (365) e_log_OII_Hb_ALL, (366) log_OI_Ha_ALL,
+#     (367) e_log_OI_Ha_ALL, (368) EW_Ha_ALL, (369) e_EW_Ha_ALL, (370) Ha_Hb_ALL, (371) Ha_Hb_ALL, (372) OH_O3N2_Re, (373) e_OH_O3N2_Re,
+#     (374) OH_N2_Re, (375) e_OH_N2_Re, (376) OH_ONS_Re, (377) e_OH_ONS_Re, (378) OH_R23_Re, (379) e_OH_R23_Re, (380) OH_pyqz_Re, (381)
+#       e_OH_pyqz_Re, (382) OH_t2_Re, (383) e_OH_t2_Re, (384) OH_M08_Re, (385) e_OH_M08_Re, (386) OH_T04_Re, (387) e_OH_T04_Re, (388)
+#       OH_dop_Re, (389) e_OH_dop_Re, (390) OH_O3N2_EPM09_Re, (391) e_OH_O3N2_EPM09_Re, (392) OH_O3N2_ALL, (393) e_OH_O3N2_ALL, (394)
+#       OH_N2_ALL, (395) e_OH_N2_ALL, (396) OH_ONS_ALL, (397) e_OH_ONS_ALL, (398) OH_R23_ALL, (399) e_OH_R23_ALL, (400) OH_pyqz_ALL, (401)
+#       e_OH_pyqz_ALL, (402) OH_t2_ALL, (403) e_OH_t2_ALL, (404) OH_M08_ALL, (405) e_OH_M08_ALL, (406) OH_T04_ALL, (407) e_OH_T04_ALL,
+#     (408) OH_dop_ALL, (409) e_OH_dop_ALL, (410) OH_O3N2_EPM09_ALL, (411) e_OH_O3N2_EPM09_ALL, (412) Sigma_Mass_cen, (413) e_Sigma_Mass_cen,
+#     (414) Sigma_Mass_Re, (415) e_Sigma_Mass_Re, (416) Sigma_Mass_ALL, (417) e_Sigma_Mass_ALL, (418) OH_Re_fit_ON, (419) e_OH_Re_fit_ON,
+#     (420) alpha_OH_Re_fit_ON, (421) e_alpha_OH_Re_fit_ON, (422) cc_r_OH_ON, (423) sig_r_OH_ON, (424) OH_ON_Re, (425) e_OH_ON_Re, (426)
+#       OH_ON_cen, (427) e_OH_ON_cen, (428) OH_ON_ALL, (429) e_OH_ON_ALL, (430) T30, (431) ZH_T30, (432) ZH_Re_T30, (433) a_ZH_T30, (434)
+#       T40, (435) ZH_T40, (436) ZH_Re_T40, (437) a_ZH_T40, (438) T50, (439) ZH_T50, (440) ZH_Re_T50, (441) a_ZH_T50, (442) T60, (443)
+#       ZH_T60, (444) ZH_Re_T60, (445) a_ZH_T60, (446) T70, (447) ZH_T70, (448) ZH_Re_T70, (449) a_ZH_T70, (450) T80, (451) ZH_T80, (452)
+#       ZH_Re_T80, (453) a_ZH_T80, (454) T90, (455) ZH_T90, (456) ZH_Re_T90, (457) a_ZH_T90, (458) T95, (459) ZH_T95, (460) ZH_Re_T95,
+#     (461) a_ZH_T95, (462) T99, (463) ZH_T99, (464) ZH_Re_T99, (465) a_ZH_T99, (466) log_Mass_gas_Av_gas_OH, (467) log_Mass_gas_Av_ssp_OH,
+#     (468) lSFR_NO_CEN, (469) vel_ssp_2, (470) e_vel_ssp_2, (471) vel_Ha_2, (472) e_vel_Ha_2, (473) vel_ssp_1, (474) e_vel_ssp_1, (475)
+#       vel_Ha_1, (476) e_vel_Ha_1, (477) log_SFR_ssp_100Myr, (478) log_SFR_ssp_10Myr, (479) vel_disp_Ha_cen, (480) vel_disp_ssp_cen,
+#     (481) vel_disp_Ha_1Re, (482) vel_disp_ssp_1Re, (483) vel_disp_Ha_1Re_mean, (484) vel_disp_ssp_1Re_mean, (485) log_Mass_Re, (486)
+#       e_log_Mass_Re, (487) log_SFR_Re, (488) e_log_SFR_Re, (489) KIN_Ha_1, (490) e_KIN_Ha_1, (491) KIN_ssp_1, (492) e_KIN_ssp_1, (493)
+#       KIN_Ha_05, (494) e_KIN_Ha_05, (495) KIN_ssp_05, (496) e_KIN_ssp_05, (497) log_U_P_Re_fit, (498) e_log_U_P_Re_fit, (499) alpha_log_U_P_Re_fit,
+#     (500) e_alpha_log_U_P_Re_fit, (501) log_U_iter_Re_fit, (502) e_log_U_iter_Re_fit, (503) alpha_log_U_iter_Re_fit, (504) e_alpha_log_U_iter_Re_fit,
+#     (505) log_U_pyqz_Re_fit, (506) e_log_U_pyqz_Re_fit, (507) alpha_log_U_pyqz_Re_fit, (508) e_alpha_log_U_pyqz_Re_fit, (509) OH_Re_fit_N2O2,
+#     (510) e_OH_Re_fit_N2O2, (511) alpha_OH_Re_fit_N2O2, (512) e_alpha_OH_Re_fit_N2O2, (513) cc_r_OH_N2O2, (514) sig_r_OH_N2O2, (515)
+#       log_Mass_in_Re, (516) ML_int, (517) ML_avg, (518) log_Mass_Re_derived, (519) F_Ha_cen, (520) e_F_Ha_cen, (521) Re_kpc_Mass, (522)
+#       R50_kpc_V, (523) e_R50_kpc_V, (524) R50_kpc_Mass, (525) e_R50_kpc_Mass, (526) log_Mass_corr_in_R50_V, (527) e_log_Mass_corr_in_R50_V,
+#     (528) log_Mass_in_Re, (529) rMgMs_zp, (530) rMgMs_e_zp, (531) rMgMs_alpha, (532) rMgMs_e_alpha, (533) rMgMs_cc, (534) rMgMs_sig,
+#     (535) rSFMS_zp, (536) rSFMS_e_zp, (537) rSFMS_alpha, (538) rSFMS_e_alpha, (539) rSFMS_cc, (540) rSFMS_sig, (541) rSK_zp, (542) rSK_e_zp,
+#     (543) rSK_alpha, (544) rSK_e_alpha, (545) rSK_cc, (546) rSK_sig, (547) log_Mass_gas_Av_EW_corr, (548) log_Mass_gas_Av_gas_log_lin,
+#     (549) log_Mass_gas_Av_ssp_log_lin, (550) log_Mass_gas_Av_gas_log_log, (551) OH_Re_fit_R, (552) e_OH_Re_fit_R, (553) alpha_OH_Re_fit_R,
+#     (554) e_alpha_OH_Re_fit_R, (555) cc_r_OH_R, (556) sig_r_OH_R, (557) OH_R_cen_mean, (558) OH_R_cen_error, (559) OH_R_Re_mean, (560)
+#       OH_R_Re_error, (561) OH_R_ALL_mean, (562) OH_R_ALL_error, (563) OH_Re_fit_S, (564) e_OH_Re_fit_S, (565) alpha_OH_Re_fit_S, (566)
+#       e_alpha_OH_Re_fit_S, (567) cc_r_OH_S, (568) sig_r_OH_S, (569) OH_S_cen_mean, (570) OH_S_cen_error, (571) OH_S_Re_mean, (572) OH_S_Re_error,
+#     (573) OH_S_ALL_mean, (574) OH_S_ALL_error, (575) NH_Re_fit_R, (576) e_NH_Re_fit_R, (577) alpha_NH_Re_fit_R, (578) e_alpha_NH_Re_fit_R,
+#     (579) cc_r_NH_R, (580) sig_r_NH_R, (581) NH_R_cen_mean, (582) NH_R_cen_error, (583) NH_R_Re_mean, (584) NH_R_Re_error, (585) NH_R_ALL_mean,
+#     (586) NH_R_ALL_error]
+# schema: astropy-2.0
+cubename,P.A.,PA_PHOT
+SAMI107214,237.37,147.37
+SAMI15847,238.8685,148.8685
+SAMI16026,247.56332,157.56332
+SAMI16487,179.86847,89.86847
+SAMI197866,92.98721,2.9872100000000046
+SAMI202398,152.802,62.80200000000001
+SAMI202399,236.28043,146.28043
+SAMI202480,190.40297,100.40297
+SAMI202531,107.56433,17.564330000000012
+SAMI202636,176.62741,86.62741
+SAMI202673,123.86761,33.86761000000001
+SAMI202745,254.08185,164.08185
+SAMI203729,125.29001,35.29001
+SAMI204096,180.62219,90.62219
+SAMI204832,179.84219,89.84219
+SAMI205166,149.923035,59.923035
+SAMI205168,106.01419,16.014190000000013
+SAMI208520,235.09479,145.09479
+SAMI209279,155.7664,65.7664
+SAMI209701,221.95558,131.95558
+SAMI210070,196.50313,106.50313
+SAMI214860,113.940002,23.940002
+SAMI218713,137.94212,47.94211999999999
+SAMI220332,185.33392,95.33392
+SAMI220396,186.577484,96.577484
+SAMI220502,146.985535,56.985535
+SAMI227961,153.54175,63.54174999999999
+SAMI229163,269.67657,179.67657
+SAMI229167,104.90207,14.902070000000009
+SAMI230634,236.96729,146.96729
+SAMI230793,198.122314,108.122314
+SAMI238276,99.8118,9.811800000000005
+SAMI238282,122.50684,32.50684000000001
+SAMI238406,101.19116,11.191159999999996
+SAMI239560,130.91461,40.91461000000001
+SAMI240227,117.41577,27.41577000000001
+SAMI240432,171.53,81.53
+SAMI252005,263.25998,173.25998
+SAMI252021,228.56514,138.56514
+SAMI278773,179.01434,89.01434
+SAMI278840,135.2855,45.28550000000001
+SAMI278846,215.00148,125.00148
+SAMI287827,215.09241,125.09241
+SAMI289089,106.98785,16.98785000000001
+SAMI289097,257.51245,167.51245
+SAMI289197,261.58951,171.58951
+SAMI296829,229.76584,139.76584
+SAMI298590,142.46492,52.464920000000006
+SAMI298612,136.84593,46.84593000000001
+SAMI298666,100.11728,10.117279999999994
+SAMI298980,246.70042,156.70042
+SAMI300406,141.241,51.241000000000014
+SAMI300411,225.48814,135.48814
+SAMI301191,149.83348,59.833479999999994
+SAMI301201,247.42444,157.42444
+SAMI301381,184.42938,94.42938
+SAMI302810,165.45114,75.45114
+SAMI319018,98.65053,8.650530000000003
+SAMI319049,197.94,107.94
+SAMI319057,172.16754,82.16754
+SAMI319059,149.197754,59.197754
+SAMI319397,135.63968,45.63968
+SAMI319452,100.92497,10.924970000000002
+SAMI321146,197.39281,107.39281
+SAMI323575,106.449997,16.449997
+SAMI323577,191.71477,101.71477
+SAMI323855,172.759995,82.759995
+SAMI324323,187.95,97.95
+SAMI346046,267.64569,177.64569
+SAMI346752,193.53975,103.53975
+SAMI346793,159.294266,69.294266
+SAMI371170,100.47232,10.472319999999996
+SAMI371889,162.94141,72.94141
+SAMI371976,220.16353,130.16353
+SAMI372384,224.21071,134.21071
+SAMI376033,149.305435,59.305435
+SAMI376990,147.87366,57.87366
+SAMI381229,231.96272,141.96272
+SAMI386892,188.169586,98.169586
+SAMI387715,133.94122,43.94121999999999
+SAMI396833,119.45512,29.455119999999994
+SAMI417433,217.50337,127.50337
+SAMI418693,242.05107,152.05107
+SAMI422389,201.55052,111.55052
+SAMI460767,125.410004,35.410004
+SAMI463264,174.139984,84.139984
+SAMI463367,252.11179,162.11179
+SAMI463641,247.75,157.75
+SAMI485688,254.58084,164.58084
+SAMI485882,118.14804,28.14804000000001
+SAMI485883,144.93631,54.936310000000006
+SAMI485919,256.2699,166.2699
+SAMI485921,265.55704,175.55704
+SAMI485924,221.23463,131.23463
+SAMI486834,250.176,160.176
+SAMI487019,255.30356,165.30356
+SAMI487027,176.37305,86.37305
+SAMI487175,135.31657,45.31657000000001
+SAMI492486,117.05116,27.05116000000001
+SAMI492690,131.28336,41.28335999999999
+SAMI492957,148.365204,58.365204000000006
+SAMI493028,183.2914,93.2914
+SAMI49784,221.50737,131.50737
+SAMI505316,186.48245,96.48245
+SAMI505341,216.90793,126.90793
+SAMI505979,228.92418,138.92418
+SAMI508144,221.4736,131.4736
+SAMI508593,232.807,142.807
+SAMI508632,120.65836,30.658359999999988
+SAMI508908,171.57742,81.57742
+SAMI509075,226.34727,136.34727
+SAMI509852,105.00653,15.006529999999998
+SAMI513236,167.523834,77.523834
+SAMI514022,214.59805,124.59805
+SAMI516973,256.7331,166.7331
+SAMI536625,246.09206,156.09206
+SAMI543797,124.92462,34.924620000000004
+SAMI545986,262.39043,172.39043
+SAMI548946,157.28041,67.28041
+SAMI549182,187.86,97.86
+SAMI549296,199.43915,109.43915
+SAMI549313,251.46579,161.46579
+SAMI550328,202.043915,112.043915
+SAMI550330,194.85167,104.85167
+SAMI570119,134.4848,44.48480000000001
+SAMI570174,135.24066,45.24065999999999
+SAMI570197,129.89035,39.89035000000001
+SAMI573586,250.53851,160.53851
+SAMI575097,115.43431,25.43431000000001
+SAMI592863,108.7131,18.713099999999997
+SAMI593680,203.72229,113.72229
+SAMI594049,111.56064,21.560640000000006
+SAMI594906,133.86,43.86
+SAMI594946,238.4713,148.4713
+SAMI594986,93.87827,3.8782699999999863
+SAMI595088,244.60806,154.60806
+SAMI599310,218.04213,128.04213
+SAMI600929,121.630005,31.630005
+SAMI601013,110.43164,20.431639999999987
+SAMI601018,159.68901,69.68901
+SAMI601102,219.042,129.042
+SAMI609396,143.06282,53.06282
+SAMI618144,199.184006,109.184006
+SAMI618152,269.95282,179.95282
+SAMI618220,135.1659,45.16589999999999
+SAMI618988,127.550003,37.550003
+SAMI619095,180.575165,90.575165
+SAMI622084,157.37312,67.37312
+SAMI62244,251.10107,161.10107
+SAMI623144,133.14685,43.14685
+SAMI623620,92.80621,2.806209999999993
+SAMI63027,197.630005,107.630005
+SAMI63302,94.69348,4.693479999999994
+SAMI63777,205.14404,115.14404
+SAMI65384,125.71379,35.71378999999999
+SAMI77710,210.73831,120.73831
+SAMI77845,184.745544,94.745544
+SAMI78827,159.75009,69.75009
+SAMI79693,104.9208,14.920800000000014
+SAMI79810,197.9868,107.9868
+SAMI79850,184.37331,94.37331
+SAMI91627,187.580444,97.580444
+SAMI91689,214.57135,124.57135
+SAMI92944,94.869995,4.869995
+SAMI93020,190.24637,100.24637
+SAMI93023,231.1042,141.1042
+SAMI93062,180.10043,90.10043
+SAMI93604,131.4395,41.43950000000001
+SAMI93674,163.50314,73.50314

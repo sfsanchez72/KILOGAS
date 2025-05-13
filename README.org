@@ -1,3 +1,5 @@
+* Tables for KG from MaNGA?
+
 tables/get_mag_cubes_v3_1_1_redshift.csv      # DONE
 tables/get_proc_elines_MaNGA.clean.csv          # DONE
 tables/get_val_ind_Re_MaNGA.csv
@@ -11,3 +13,15 @@ tables/get_proc_OH_MaNGA.clean.csv
 tables/get_proc_elines_MaNGA.select.txt
 tables/get_mag_cubes_v3_1_1.txt
 tables/get_morh.txt
+
+
+* Tables KILOGAS from other catalogues
+
+# Legion
+/disk-a/sanchez/home/sda2/articulos/KILOGAS/analysis
+
+
+
+#
+#
+#

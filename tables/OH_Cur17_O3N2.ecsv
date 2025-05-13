@@ -1,0 +1,836 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: KGAS_ID, datatype: int64}
+# - {name: cubename, datatype: string}
+# - {name: OH_cen, datatype: float64}
+# - {name: e_OH_cen, datatype: float64}
+# - {name: OH_Re, datatype: float64}
+# - {name: e_OH_Re, datatype: float64}
+# - {name: OH_FoV, datatype: float64}
+# - {name: e_OH_FoV, datatype: float64}
+# - {name: OH_Re_fit, datatype: float64}
+# - {name: e_OH_Re_fit, datatype: float64}
+# - {name: slope_OH, datatype: float64}
+# - {name: e_slope_OH, datatype: float64}
+# delimiter: ','
+# meta: !!omap
+# - {EXTNAME: PIPE3D}
+# - comments: [(1) MaNGA_name, (2) nsa_redshift, (3) nsa_u_absmag, (4) nsa_z_absmag, (5) nsa_u_z_absmag, (6) nsa_mstar, (7) nsa_inclination,
+#     (8) nsa_petro_th50, (9) nsa_sersic_ba, (10) nsa_sersic_n, (11) nsa_sersic_phi, (12) nsa_sersic_th50, (13) name, (14) log_Mass_no_corr,
+#     (15) lSFR, (16) OH_O3N2, (17) e_OH_O3N2, '(18) a_ion_cen[3]', (19) frac_area_GAS, (20) frac_area_SFR_pure, (21) Av_w, (22) OH_O3N2_Re,
+#     (23) alpha_OH_O3N2_Re, (24) a_vel_Ha_cen_mean, (25) a_vel_ssp_cen_mean, (26) z_gas, (27) z_stars, (28) FoV, (29) nx, (30) ny, (31)
+#       Re_kpc, (32) mag_g, (33) log_Mass_corr, '(34) Av_ssp_stats[2]', (35) OH_O3N2_Re2, (36) e_OH_O3N2_Re2, (37) error_Mass, (38) e_lSFR,
+#     (39) Age_LW_Re, (40) e_Age_LW_Re, (41) ZH_LW_Re, (42) e_ZH_LW_Re, (43) Av_LW_Re, (44) e_Av_LW_Re, (45) Av_gas_LW_Re, (46) e_Av_gas_LW_Re,
+#     (47) OH_Z_Re, (48) e_ZH_LW_Re, (49) log_age_mean_LW, (50) s_log_age_mean_LW, (51) log_ZH_mean_LW, (52) s_log_ZH_mean_LW, (53) Av_ssp_stats_mean,
+#     (54) Av_ssp_stats_stddev, (55) Av_w, (56) e_Av_w, (57) OH_Re_fit_O3N2, (58) e_OH_Re_fit_O3N2, (59) alpha_OH_Re_fit_O3N2, (60) e_alpha_OH_Re_fit_O3N2,
+#     (61) cc_r_OH_O3N2, (62) sig_r_OH_O3N2, (63) OH_Re_fit_N2, (64) e_OH_Re_fit_N2, (65) alpha_OH_Re_fit_N2, (66) e_alpha_OH_Re_fit_N2,
+#     (67) cc_r_OH_N2, (68) sig_r_OH_N2, (69) OH_Re_fit_ONS, (70) e_OH_Re_fit_ONS, (71) alpha_OH_Re_fit_ONS, (72) e_alpha_OH_Re_fit_ONS,
+#     (73) cc_r_OH_ONS, (74) sig_r_OH_ONS, (75) OH_Re_fit_R23, (76) e_OH_Re_fit_R23, (77) alpha_OH_Re_fit_R23, (78) e_alpha_OH_Re_fit_R23,
+#     (79) cc_r_OH_R23, (80) sig_r_OH_R23, (81) stats_OH_Re_mean_mean, (82) stats_OH_Re_mean_stddev, (83) stats_a_OH_Re_mean_mean, (84)
+#       stats_a_OH_Re_mean_stddev, (85) log_Mass, (86) log_SFR_ssp, (87) log_NII_Ha_cen_mean, (88) log_NII_Ha_cen_stddev, (89) log_OIII_Hb_cen_mean,
+#     (90) log_OIII_Hb_cen_stddev, (91) log_SII_Ha_cen_mean, (92) log_SII_Ha_cen_stddev, (93) log_OII_Hb_cen_mean, (94) log_OII_Hb_cen_stddev,
+#     (95) EW_Ha_cen_mean, (96) EW_Ha_cen_stddev, (97) stats_y_200_mean, (98) stats_y_200_stddev, (99) stats_y_30_mean, (100) stats_y_30_stddev,
+#     (101) stats_EW_Ha_mean, (102) stats_EW_Ha_stddev, (103) ZH_LW_Re_fit, (104) e_ZH_LW_Re_fit, (105) alpha_ZH_LW_Re_fit, (106) e_alpha_ZH_LW_Re_fit,
+#     (107) ZH_LW_lRe_fit, (108) e_ZH_LW_lRe_fit, (109) alpha_ZH_LW_lRe_fit, (110) e_alpha_ZH_LW_lRe_fit, (111) ZH_MW_Re_fit, (112) e_ZH_MW_Re_fit,
+#     (113) alpha_ZH_MW_Re_fit, (114) e_alpha_ZH_MW_Re_fit, (115) Age_LW_Re_fit, (116) e_Age_LW_Re_fit, (117) alpha_Age_LW_Re_fit, (118)
+#       e_alpha_Age_LW_Re_fit, (119) Age_LW_lRe_fit, (120) e_Age_LW_lRe_fit, (121) alpha_Age_LW_lRe_fit, (122) e_alpha_Age_LW_lRe_fit,
+#     (123) Age_MW_Re_fit, (124) e_Age_MW_Re_fit, (125) alpha_Age_MW_Re_fit, (126) e_alpha_Age_MW_Re_fit, (127) ZH_LW_Re_fit_0_0.5_Gyr,
+#     (128) e_ZH_LW_Re_fit_0_0.5_Gyr, (129) alpha_ZH_LW_Re_fit_0_0.5_Gyr, (130) e_alpha_ZH_LW_Re_fit_0_0.5_Gyr, (131) ZH_LW_Re_fit_0.5_2.0_Gyr,
+#     (132) e_ZH_LW_Re_fit_0.5_2.0_Gyr, (133) alpha_ZH_LW_Re_fit_0.5_2.0_Gyr, (134) e_alpha_ZH_LW_Re_fit_0.5_2.0_Gyr, (135) ZH_LW_Re_fit2.0_14.0_Gyr,
+#     (136) e_ZH_LW_Re_fit2.0_14.0_Gyr, (137) alpha_ZH_LW_Re_fit2.0_14.0_Gyr, (138) e_alpha_ZH_LW_Re_fit2.0_14.0_Gyr, (139) Re_arc, (140)
+#       Re_kpc, (141) DL, (142) DA, (143) P.A., (144) Ellipticity, (145) Inclination, (146) sigma_cen, (147) e_sigma_cen, (148) lambda_Re,
+#     (149) e_lambda_Re, (150) elip_ab, (151) log_Mass_gas, (152) log_Mass_gas_Re, (153) log_Mass_gas_Av_ssp_ZH, (154) log_Mass_gas_Av_ssp,
+#     (155) log_Mass_gas_Av_gas_rad, (156) log_Mass_stars_sigma, (157) log_F_Ha, (158) log_F_Ha_cor, (159) log_L_Ha_cor, (160) NH_Re_log,
+#     (161) NO_Re_log, (162) sigma_cen_Ha, (163) e_sigma_cen_Ha, (164) rat_vel_sigma, (165) e_rat_vel_sigma, (166) OH_Re_fit_pyqz, (167)
+#       e_OH_Re_fit_pyqz, (168) alpha_OH_Re_fit_pyqz, (169) e_alpha_OH_Re_fit_pyqz, (170) cc_r_OH_pyqz, (171) sig_r_OH_pyqz, (172) OH_Re_mean_phot,
+#     (173) e_OH_Re_mean_phot, (174) alpha_OH_Re_mean_phot, (175) e_alpha_OH_Re_mean_phot, (176) OH_ZH_LW_Re_fit, (177) OH_ZH_LW_Re_fit_0_0.5Gyr,
+#     (178) OH_ZH_LW_Re_fit_0.5_2Gyr, (179) OH_ZH_LW_Re_fit_more_2Gyr, (180) XC, (181) YC, (182) ZH_LW_Re_fit_0_2.0_Gyr, (183) e_ZH_LW_Re_fit_0_2.0_Gyr,
+#     (184) alpha_ZH_LW_Re_fit_0_2.0_Gyr, (185) e_alpha_ZH_LW_Re_fit_0_2.0_Gyr, (186) OH_ZH_LW_Re_fit_0_2Gyr, (187) OH_ZH_MW_Re_fit, (188)
+#       OH_ZH_MW_Re_fit_0_2Gyr, (189) T50, (190) T80, (191) OH_ZH_LW_Re_fit_t50, (192) OH_ZH_LW_Re_fit_M_t50, (193) OH_ZH_LW_Re_fit_t80,
+#     (194) OH_ZH_LW_Re_fit_M_t80, (195) OH_Re_mean, (196) e_OH_Re_mean, (197) alpha_OH_Re_mean, (198) e_alpha_OH_Re_mean, (199) OH_Re_fit_mean,
+#     (200) e_OH_Re_fit_mean, (201) alpha_OH_Re_fit_mean, (202) e_alpha_OH_Re_fit_mean, (203) cc_r_OH_mean, (204) sig_r_OH_mean, (205)
+#       OH_Re_fit_t2, (206) e_OH_Re_fit_t2, (207) alpha_OH_Re_fit_t2, (208) e_alpha_OH_Re_fit_t2, (209) cc_r_OH_t2, (210) sig_r_OH_t2,
+#     (211) OH_ZH_LW_Re_fit_t90, (212) OH_ZH_LW_Re_fit_M_t90, (213) t90, (214) t70, (215) t60, (216) ZH_LW_Re_fit_M_t50, (217) e_ZH_LW_Re_fit_M_t50,
+#     (218) alpha_ZH_LW_Re_fit_M_t50, (219) e_alpha_ZH_LW_Re_fit_M_t50, (220) cc_ZH_LW_Re_M_t50, (221) sig_ZH_LW_Re_M_t50, (222) ZH_LW_Re_fit_M_t60,
+#     (223) e_ZH_LW_Re_fit_M_t60, (224) alpha_ZH_LW_Re_fit_M_t60, (225) e_alpha_ZH_LW_Re_fit_M_t60, (226) cc_ZH_LW_Re_M_t60, (227) sig_ZH_LW_Re_M_t60,
+#     (228) ZH_LW_Re_fit_M_t70, (229) e_ZH_LW_Re_fit_M_t70, (230) alpha_ZH_LW_Re_fit_M_t70, (231) e_alpha_ZH_LW_Re_fit_M_t70, (232) cc_ZH_LW_Re_M_t70,
+#     (233) sig_ZH_LW_Re_M_t70, (234) ZH_LW_Re_fit_M_t80, (235) e_ZH_LW_Re_fit_M_t80, (236) alpha_ZH_LW_Re_fit_M_t80, (237) e_alpha_ZH_LW_Re_fit_M_t80,
+#     (238) cc_ZH_LW_Re_M_t80, (239) sig_ZH_LW_Re_M_t80, (240) ZH_LW_Re_fit_M_t90, (241) e_ZH_LW_Re_fit_M_t90, (242) alpha_ZH_LW_Re_fit_M_t90,
+#     (243) e_alpha_ZH_LW_Re_fit_M_t90, (244) cc_ZH_LW_Re_M_t90, (245) sig_ZH_LW_Re_M_t90, (246) ZH_LW_Re_fit_t50, (247) e_ZH_LW_Re_fit_t50,
+#     (248) alpha_ZH_LW_Re_fit_t50, (249) e_alpha_ZH_LW_Re_fit_t50, (250) cc_ZH_LW_Re_t50, (251) sig_ZH_LW_Re_t50, (252) ZH_LW_Re_fit_t60,
+#     (253) e_ZH_LW_Re_fit_t60, (254) alpha_ZH_LW_Re_fit_t60, (255) e_alpha_ZH_LW_Re_fit_t60, (256) cc_ZH_LW_Re_t60, (257) sig_ZH_LW_Re_t60,
+#     (258) ZH_LW_Re_fit_t70, (259) e_ZH_LW_Re_fit_t70, (260) alpha_ZH_LW_Re_fit_t70, (261) e_alpha_ZH_LW_Re_fit_t70, (262) cc_ZH_LW_Re_t70,
+#     (263) sig_ZH_LW_Re_t70, (264) ZH_LW_Re_fit_t80, (265) e_ZH_LW_Re_fit_t80, (266) alpha_ZH_LW_Re_fit_t80, (267) e_alpha_ZH_LW_Re_fit_t80,
+#     (268) cc_ZH_LW_Re_t80, (269) sig_ZH_LW_Re_t80, (270) ZH_LW_Re_fit_t90, (271) e_ZH_LW_Re_fit_t90, (272) alpha_ZH_LW_Re_fit_t90, (273)
+#       e_alpha_ZH_LW_Re_fit_t90, (274) cc_ZH_LW_Re_t90, (275) sig_ZH_LW_Re_t90, (276) OH_Re_fit_M08, (277) e_OH_Re_fit_M08, (278) alpha_OH_Re_fit_M08,
+#     (279) e_alpha_OH_Re_fit_M08, (280) cc_r_OH_M08, (281) sig_r_OH_M08, (282) OH_Re_fit_T04, (283) e_OH_Re_fit_T04, (284) alpha_OH_Re_fit_T04,
+#     (285) e_alpha_OH_Re_fit_T04, (286) cc_r_OH_T04, (287) sig_r_OH_T04, (288) NH_Re_fit_ONS, (289) e_NH_Re_fit_ONS, (290) alpha_NH_Re_fit_ONS,
+#     (291) e_alpha_NH_Re_fit_ONS, (292) cc_r_NH_ONS, (293) sig_r_NH_ONS, (294) NO_Re_fit_ONS, (295) e_NO_Re_fit_ONS, (296) alpha_NO_Re_fit_ONS,
+#     (297) e_alpha_NO_Re_fit_ONS, (298) cc_r_NO_ONS, (299) sig_r_NO_ONS, (300) OH_Re_fit_dop, (301) e_OH_Re_fit_dop, (302) alpha_OH_Re_fit_dop,
+#     (303) e_alpha_OH_Re_fit_dop, (304) cc_r_OH_dop, (305) sig_r_OH_dop, (306) NO_Re_fit_EPM09, (307) e_NO_Re_fit_EPM09, (308) alpha_NO_Re_fit_EPM09,
+#     (309) e_alpha_NO_Re_fit_EPM09, (310) cc_r_NO_EPM09, (311) sig_r_NO_EPM09, (312) NO_Re_fit_N2S2, (313) e_NO_Re_fit_N2S2, (314) alpha_NO_Re_fit_N2S2,
+#     (315) e_alpha_NO_Re_fit_N2S2, (316) cc_r_NO_N2S2, (317) sig_r_NO_N2S2, (318) OH_Re_fit_O3N2_EPM09, (319) e_OH_Re_fit_O3N2_EPM09,
+#     (320) alpha_OH_Re_fit_O3N2_EPM09, (321) e_alpha_OH_Re_fit_O3N2_EPM09, (322) cc_r_OH_O3N2_EPM09, (323) sig_r_OH_O3N2_EPM09, (324)
+#       sigma_r_arcsec_SF, (325) sigma_r_arcsec_SF_arcsec, (326) Ha_flux_density_1sigma, (327) log_SFR_SF, (328) log_L_Ha_SF, (329) log_SFR_D_C,
+#     (330) log_L_Ha_D_C, (331) log_L_Ha_DF, (332) OH_O3N2_cen, (333) e_OH_O3N2_cen, (334) OH_N2_cen, (335) e_OH_N2_cen, (336) OH_ONS_cen,
+#     (337) e_OH_ONS_cen, (338) OH_R23_cen, (339) e_OH_R23_cen, (340) OH_pyqz_cen, (341) e_OH_pyqz_cen, (342) OH_t2_cen, (343) e_OH_t2_cen,
+#     (344) OH_M08_cen, (345) e_OH_M08_cen, (346) OH_T04_cen, (347) e_OH_T04_cen, (348) OH_dop_cen, (349) e_OH_dop_cen, (350) OH_O3N2_EPM09_cen,
+#     (351) e_OH_O3N2_EPM09_cen, (352) log_OI_Ha_cen, (353) e_log_OI_Ha_cen, (354) Ha_Hb_cen, (355) e_Ha_Hb_cen, (356) log_NII_Ha_Re,
+#     (357) e_log_NII_Ha_Re, (358) log_OIII_Hb_Re, (359) e_log_OIII_Hb_Re, (360) log_SII_Ha_Re, (361) e_log_SII_Ha_Re, (362) log_OII_Hb_Re,
+#     (363) e_log_OII_Hb_Re, (364) log_OI_Ha_Re, (365) e_log_OI_Ha_Re, (366) EW_Ha_Re, (367) e_EW_Ha_Re, (368) Ha_Hb_Re, (369) e_Ha_Hb_Re,
+#     (370) log_NII_Ha_ALL, (371) e_log_NII_Ha_ALL, (372) log_OIII_Hb_ALL, (373) e_log_OIII_Hb_ALL, (374) log_SII_Ha_ALL, (375) e_log_SII_Ha_ALL,
+#     (376) log_OII_Hb_ALL, (377) e_log_OII_Hb_ALL, (378) log_OI_Ha_ALL, (379) e_log_OI_Ha_ALL, (380) EW_Ha_ALL, (381) e_EW_Ha_ALL, (382)
+#       Ha_Hb_ALL, (383) Ha_Hb_ALL, (384) OH_O3N2_Re, (385) e_OH_O3N2_Re, (386) OH_N2_Re, (387) e_OH_N2_Re, (388) OH_ONS_Re, (389) e_OH_ONS_Re,
+#     (390) OH_R23_Re, (391) e_OH_R23_Re, (392) OH_pyqz_Re, (393) e_OH_pyqz_Re, (394) OH_t2_Re, (395) e_OH_t2_Re, (396) OH_M08_Re, (397)
+#       e_OH_M08_Re, (398) OH_T04_Re, (399) e_OH_T04_Re, (400) OH_dop_Re, (401) e_OH_dop_Re, (402) OH_O3N2_EPM09_Re, (403) e_OH_O3N2_EPM09_Re,
+#     (404) OH_O3N2_ALL, (405) e_OH_O3N2_ALL, (406) OH_N2_ALL, (407) e_OH_N2_ALL, (408) OH_ONS_ALL, (409) e_OH_ONS_ALL, (410) OH_R23_ALL,
+#     (411) e_OH_R23_ALL, (412) OH_pyqz_ALL, (413) e_OH_pyqz_ALL, (414) OH_t2_ALL, (415) e_OH_t2_ALL, (416) OH_M08_ALL, (417) e_OH_M08_ALL,
+#     (418) OH_T04_ALL, (419) e_OH_T04_ALL, (420) OH_dop_ALL, (421) e_OH_dop_ALL, (422) OH_O3N2_EPM09_ALL, (423) e_OH_O3N2_EPM09_ALL,
+#     (424) Sigma_Mass_cen, (425) e_Sigma_Mass_cen, (426) Sigma_Mass_Re, (427) e_Sigma_Mass_Re, (428) Sigma_Mass_ALL, (429) e_Sigma_Mass_ALL,
+#     (430) OH_Re_fit_ON, (431) e_OH_Re_fit_ON, (432) alpha_OH_Re_fit_ON, (433) e_alpha_OH_Re_fit_ON, (434) cc_r_OH_ON, (435) sig_r_OH_ON,
+#     (436) OH_ON_Re, (437) e_OH_ON_Re, (438) OH_ON_cen, (439) e_OH_ON_cen, (440) OH_ON_ALL, (441) e_OH_ON_ALL, (442) T30, (443) ZH_T30,
+#     (444) ZH_Re_T30, (445) a_ZH_T30, (446) T40, (447) ZH_T40, (448) ZH_Re_T40, (449) a_ZH_T40, (450) T50, (451) ZH_T50, (452) ZH_Re_T50,
+#     (453) a_ZH_T50, (454) T60, (455) ZH_T60, (456) ZH_Re_T60, (457) a_ZH_T60, (458) T70, (459) ZH_T70, (460) ZH_Re_T70, (461) a_ZH_T70,
+#     (462) T80, (463) ZH_T80, (464) ZH_Re_T80, (465) a_ZH_T80, (466) T90, (467) ZH_T90, (468) ZH_Re_T90, (469) a_ZH_T90, (470) T95, (471)
+#       ZH_T95, (472) ZH_Re_T95, (473) a_ZH_T95, (474) T99, (475) ZH_T99, (476) ZH_Re_T99, (477) a_ZH_T99, (478) log_Mass_gas_Av_gas_OH,
+#     (479) log_Mass_gas_Av_ssp_OH, (480) lSFR_NO_CEN, (481) vel_ssp_2, (482) e_vel_ssp_2, (483) vel_Ha_2, (484) e_vel_Ha_2, (485) vel_ssp_1,
+#     (486) e_vel_ssp_1, (487) vel_Ha_1, (488) e_vel_Ha_1, (489) log_SFR_ssp_100Myr, (490) log_SFR_ssp_10Myr, (491) vel_disp_Ha_cen, (492)
+#       vel_disp_ssp_cen, (493) vel_disp_Ha_1Re, (494) vel_disp_ssp_1Re, (495) vel_disp_Ha_1Re_mean, (496) vel_disp_ssp_1Re_mean, (497)
+#       log_Mass_Re, (498) e_log_Mass_Re, (499) log_SFR_Re, (500) e_log_SFR_Re, (501) KIN_Ha_1, (502) e_KIN_Ha_1, (503) KIN_ssp_1, (504)
+#       e_KIN_ssp_1, (505) KIN_Ha_05, (506) e_KIN_Ha_05, (507) KIN_ssp_05, (508) e_KIN_ssp_05, (509) log_U_P_Re_fit, (510) e_log_U_P_Re_fit,
+#     (511) alpha_log_U_P_Re_fit, (512) e_alpha_log_U_P_Re_fit, (513) log_U_iter_Re_fit, (514) e_log_U_iter_Re_fit, (515) alpha_log_U_iter_Re_fit,
+#     (516) e_alpha_log_U_iter_Re_fit, (517) log_U_pyqz_Re_fit, (518) e_log_U_pyqz_Re_fit, (519) alpha_log_U_pyqz_Re_fit, (520) e_alpha_log_U_pyqz_Re_fit,
+#     (521) OH_Re_fit_N2O2, (522) e_OH_Re_fit_N2O2, (523) alpha_OH_Re_fit_N2O2, (524) e_alpha_OH_Re_fit_N2O2, (525) cc_r_OH_N2O2, (526)
+#       sig_r_OH_N2O2, (527) log_Mass_in_Re, (528) ML_int, (529) ML_avg, (530) log_Mass_Re_derived, (531) F_Ha_cen, (532) e_F_Ha_cen,
+#     (533) Re_kpc_Mass, (534) R50_kpc_V, (535) e_R50_kpc_V, (536) R50_kpc_Mass, (537) e_R50_kpc_Mass, (538) log_Mass_corr_in_R50_V, (539)
+#       e_log_Mass_corr_in_R50_V, (540) log_Mass_in_Re, (541) rMgMs_zp, (542) rMgMs_e_zp, (543) rMgMs_alpha, (544) rMgMs_e_alpha, (545)
+#       rMgMs_cc, (546) rMgMs_sig, (547) rSFMS_zp, (548) rSFMS_e_zp, (549) rSFMS_alpha, (550) rSFMS_e_alpha, (551) rSFMS_cc, (552) rSFMS_sig,
+#     (553) rSK_zp, (554) rSK_e_zp, (555) rSK_alpha, (556) rSK_e_alpha, (557) rSK_cc, (558) rSK_sig, (559) log_Mass_gas_Av_EW_corr, (560)
+#       log_Mass_gas_Av_gas_log_lin, (561) log_Mass_gas_Av_ssp_log_lin, (562) log_Mass_gas_Av_gas_log_log, (563) OH_Re_fit_R, (564) e_OH_Re_fit_R,
+#     (565) alpha_OH_Re_fit_R, (566) e_alpha_OH_Re_fit_R, (567) cc_r_OH_R, (568) sig_r_OH_R, (569) OH_R_cen_mean, (570) OH_R_cen_error,
+#     (571) OH_R_Re_mean, (572) OH_R_Re_error, (573) OH_R_ALL_mean, (574) OH_R_ALL_error, (575) OH_Re_fit_S, (576) e_OH_Re_fit_S, (577)
+#       alpha_OH_Re_fit_S, (578) e_alpha_OH_Re_fit_S, (579) cc_r_OH_S, (580) sig_r_OH_S, (581) OH_S_cen_mean, (582) OH_S_cen_error, (583)
+#       OH_S_Re_mean, (584) OH_S_Re_error, (585) OH_S_ALL_mean, (586) OH_S_ALL_error, (587) NH_Re_fit_R, (588) e_NH_Re_fit_R, (589) alpha_NH_Re_fit_R,
+#     (590) e_alpha_NH_Re_fit_R, (591) cc_r_NH_R, (592) sig_r_NH_R, (593) NH_R_cen_mean, (594) NH_R_cen_error, (595) NH_R_Re_mean, (596)
+#       NH_R_Re_error, (597) NH_R_ALL_mean, (598) NH_R_ALL_error, (1) MaNGA_name, (2) Sigma_Mass_stars, (3) e_Sigma_Mass_stars, (4) Sigma_SFR,
+#     (5) e_Sigma_SFR, (6) Sigma_Mass_gas, (7) e_Sigma_Mass_gas, (8) Sigma_Mass_gas_ssp, (9) e_Sigma_Mass_gas_ssp, (10) ZH_LW, (11) e_ZH_LW,
+#     (12) ZH_MW, (13) e_ZH_MW, (14) Age_LW, (15) e_Age_LW, (16) Age_MW, (17) e_Age_MW, (18) OH_t2, (19) e_OH_t2, (20) OH_O3N2, (21) e_OH_O3N2,
+#     (22) Av_gas, (23) e_Av_gas, (24) Av_ssp, (25) e_Av_ssp, (26) disp_ssp, (27) e_disp_ssp, (28) disp_Ha, (29) e_disp_Ha, (30) vel_Ha,
+#     (31) e_vel_Ha, (32) vel_ssp, (33) e_vel_ssp, (34) SK_ssp, (35) e_SK_ssp, (36) SK_Ha, (37) e_SK_Ha, (38) KIN_ssp, (39) e_KIN_ssp,
+#     (40) KIN_Ha, (41) e_KIN_Ha, (42) ML, (43) e_ML, (44) Sigma_SFR_ssp, (45) e_Sigma_SFR_ssp, (46) Sigma_Mass_gas_rad, (47) e_Sigma_Mass_gas_rad,
+#     (48) Lambda, (49) e_Lambda, (50) OH_ONS, (51) e_OH_ONS, (52) NO_ONS, (53) e_NO_ONS, (54) NO_N2S2, (55) e_NO_N2S2, (1) name-obj,
+#     (2) redshift, (3) error redshift, (4) u band mag, (5) u band mag error, (6) u band abs mag, (7) u band abs mag error, (8) g band
+#       mag, (9) g band mag error, (10) g band abs mag, (11) g band abs mag error, (12) r band mag, (13) r band mag error, (14) r band
+#       abs mag, (15) r band abs mag error, (16) i band mag, (17) i band mag error, (18) i band abs mag, (19) i band abs mag error, (20)
+#       B band mag, (21) B band mag error, (22) B band abs mag, (23) B band abs mag error, (24) V band mag, (25) V band mag error, (26)
+#       V band abs mag, (27) V band abs mag error, (28) R band mag, (29) R band mag error, (30) R band abs mag, (31) R band abs mag error,
+#     (32) X centroid, (33) Y centroid, (34) Re (arcsec), (35) error Re (arcsec), (36) mean S/N at Re, (37) sigma S/N at Re, (38) ellipticy,
+#     (39) Pa (deg), (40) R50 (arcsec), (41) error R50 (arcsec), (42) R90 (arcsec), (43) error R90 (arcsec), (44) C (R50/R90), (45) e_C
+#       (R50/R90), (46) SN at Re, (47) error_SN at Re, (48) SN integrated, (49) SN at R50, (50) error_SN at R50, (51) Re (kpc), (52) error
+#       Re (kpc), (53) B-V (mag), (54) error B-V (mag), (55) B-R (mag), (56) error B-R (mag), (57) log10 Mass/Msun phot., (58) error Mass
+#       phot., (59) nRe (R_FoV/Re), (60) V-band SB at Re (mag), (61) error V-band SB at Re (mag), (62) V-band SB at R_50 (mag), (63) error
+#       V-band SB at R_50 (mag), (1) MaNGA_name, (2) nsa_redshift, (3) nsa_u_absmag, (4) nsa_z_absmag, (5) nsa_u_z_absmag, (6) nsa_mstar,
+#     (7) nsa_inclination, (8) nsa_petro_th50, (9) nsa_sersic_ba, (10) nsa_sersic_n, (11) nsa_sersic_phi, (12) nsa_sersic_th50, (13) name,
+#     '(14) flux_[OII]3726.03_Re_fit', '(15) e_flux_[OII]3726.03_Re_fit', '(16) flux_[OII]3726.03_alpha_fit', '(17) e_flux_[OII]3726.03_alpha_fit',
+#     '(18) flux_[OII]3728.82_Re_fit', '(19) e_flux_[OII]3728.82_Re_fit', '(20) flux_[OII]3728.82_alpha_fit', '(21) e_flux_[OII]3728.82_alpha_fit',
+#     (22) flux_HI3734.37_Re_fit, (23) e_flux_HI3734.37_Re_fit, (24) flux_HI3734.37_alpha_fit, (25) e_flux_HI3734.37_alpha_fit, (26) flux_HI3797.9_Re_fit,
+#     (27) e_flux_HI3797.9_Re_fit, (28) flux_HI3797.9_alpha_fit, (29) e_flux_HI3797.9_alpha_fit, (30) flux_HeI3888.65_Re_fit, (31) e_flux_HeI3888.65_Re_fit,
+#     (32) flux_HeI3888.65_alpha_fit, (33) e_flux_HeI3888.65_alpha_fit, (34) flux_HI3889.05_Re_fit, (35) e_flux_HI3889.05_Re_fit, (36)
+#       flux_HI3889.05_alpha_fit, (37) e_flux_HI3889.05_alpha_fit, (38) flux_HeI3964.73_Re_fit, (39) e_flux_HeI3964.73_Re_fit, (40) flux_HeI3964.73_alpha_fit,
+#     (41) e_flux_HeI3964.73_alpha_fit, '(42) flux_[NeIII]3967.46_Re_fit', '(43) e_flux_[NeIII]3967.46_Re_fit', '(44) flux_[NeIII]3967.46_alpha_fit',
+#     '(45) e_flux_[NeIII]3967.46_alpha_fit', (46) flux_CaII3968.47_Re_fit, (47) e_flux_CaII3968.47_Re_fit, (48) flux_CaII3968.47_alpha_fit,
+#     (49) e_flux_CaII3968.47_alpha_fit, (50) flux_Hepsilon3970.07_Re_fit, (51) e_flux_Hepsilon3970.07_Re_fit, (52) flux_Hepsilon3970.07_alpha_fit,
+#     (53) e_flux_Hepsilon3970.07_alpha_fit, (54) flux_Hdelta4101.77_Re_fit, (55) e_flux_Hdelta4101.77_Re_fit, (56) flux_Hdelta4101.77_alpha_fit,
+#     (57) e_flux_Hdelta4101.77_alpha_fit, (58) flux_Hgamma4340.49_Re_fit, (59) e_flux_Hgamma4340.49_Re_fit, (60) flux_Hgamma4340.49_alpha_fit,
+#     (61) e_flux_Hgamma4340.49_alpha_fit, (62) flux_Hbeta4861.36_Re_fit, (63) e_flux_Hbeta4861.36_Re_fit, (64) flux_Hbeta4861.36_alpha_fit,
+#     (65) e_flux_Hbeta4861.36_alpha_fit, '(66) flux_[OIII]4958.91_Re_fit', '(67) e_flux_[OIII]4958.91_Re_fit', '(68) flux_[OIII]4958.91_alpha_fit',
+#     '(69) e_flux_[OIII]4958.91_alpha_fit', '(70) flux_[OIII]5006.84_Re_fit', '(71) e_flux_[OIII]5006.84_Re_fit', '(72) flux_[OIII]5006.84_alpha_fit',
+#     '(73) e_flux_[OIII]5006.84_alpha_fit', (74) flux_HeI5015.68_Re_fit, (75) e_flux_HeI5015.68_Re_fit, (76) flux_HeI5015.68_alpha_fit,
+#     (77) e_flux_HeI5015.68_alpha_fit, '(78) flux_[NI]5197.9_Re_fit', '(79) e_flux_[NI]5197.9_Re_fit', '(80) flux_[NI]5197.9_alpha_fit',
+#     '(81) e_flux_[NI]5197.9_alpha_fit', '(82) flux_[NI]5200.26_Re_fit', '(83) e_flux_[NI]5200.26_Re_fit', '(84) flux_[NI]5200.26_alpha_fit',
+#     '(85) e_flux_[NI]5200.26_alpha_fit', (86) flux_HeI5876.0_Re_fit, (87) e_flux_HeI5876.0_Re_fit, (88) flux_HeI5876.0_alpha_fit, (89)
+#       e_flux_HeI5876.0_alpha_fit, (90) flux_NaI5889.95_Re_fit, (91) e_flux_NaI5889.95_Re_fit, (92) flux_NaI5889.95_alpha_fit, (93) e_flux_NaI5889.95_alpha_fit,
+#     (94) flux_NaI5895.92_Re_fit, (95) e_flux_NaI5895.92_Re_fit, (96) flux_NaI5895.92_alpha_fit, (97) e_flux_NaI5895.92_alpha_fit, '(98)
+#       flux_[OI]6300.3_Re_fit', '(99) e_flux_[OI]6300.3_Re_fit', '(100) flux_[OI]6300.3_alpha_fit', '(101) e_flux_[OI]6300.3_alpha_fit',
+#     '(102) flux_[NII]6548.05_Re_fit', '(103) e_flux_[NII]6548.05_Re_fit', '(104) flux_[NII]6548.05_alpha_fit', '(105) e_flux_[NII]6548.05_alpha_fit',
+#     (106) flux_Halpha6562.85_Re_fit, (107) e_flux_Halpha6562.85_Re_fit, (108) flux_Halpha6562.85_alpha_fit, (109) e_flux_Halpha6562.85_alpha_fit,
+#     '(110) flux_[NII]6583.45_Re_fit', '(111) e_flux_[NII]6583.45_Re_fit', '(112) flux_[NII]6583.45_alpha_fit', '(113) e_flux_[NII]6583.45_alpha_fit',
+#     '(114) flux_[SII]6716.44_Re_fit', '(115) e_flux_[SII]6716.44_Re_fit', '(116) flux_[SII]6716.44_alpha_fit', '(117) e_flux_[SII]6716.44_alpha_fit',
+#     '(118) flux_[SII]6730.82_Re_fit', '(119) e_flux_[SII]6730.82_Re_fit', '(120) flux_[SII]6730.82_alpha_fit', '(121) e_flux_[SII]6730.82_alpha_fit',
+#     '(122) flux_[ArIII]7135.8_Re_fit', '(123) e_flux_[ArIII]7135.8_Re_fit', '(124) flux_[ArIII]7135.8_alpha_fit', '(125) e_flux_[ArIII]7135.8_alpha_fit',
+#     (126) flux_HI9014.91_Re_fit, (127) e_flux_HI9014.91_Re_fit, (128) flux_HI9014.91_alpha_fit, (129) e_flux_HI9014.91_alpha_fit, '(130)
+#       flux_[SIII]9069.0_Re_fit', '(131) e_flux_[SIII]9069.0_Re_fit', '(132) flux_[SIII]9069.0_alpha_fit', '(133) e_flux_[SIII]9069.0_alpha_fit',
+#     '(134) flux_[FeII]9470.93_Re_fit', '(135) e_flux_[FeII]9470.93_Re_fit', '(136) flux_[FeII]9470.93_alpha_fit', '(137) e_flux_[FeII]9470.93_alpha_fit',
+#     '(138) flux_[SIII]9531.1_Re_fit', '(139) e_flux_[SIII]9531.1_Re_fit', '(140) flux_[SIII]9531.1_alpha_fit', '(141) e_flux_[SIII]9531.1_alpha_fit',
+#     (1) MaNGA_name, (2) nsa_redshift, (3) nsa_u_absmag, (4) nsa_z_absmag, (5) nsa_u_z_absmag, (6) nsa_mstar, (7) nsa_inclination, (8)
+#       nsa_petro_th50, (9) nsa_sersic_ba, (10) nsa_sersic_n, (11) nsa_sersic_phi, (12) nsa_sersic_th50, (13) name, (14) OH_Mar13_N2_Re_fit,
+#     (15) e_OH_Mar13_N2_Re_fit, (16) OH_Mar13_N2_alpha_fit, (17) e_OH_Mar13_N2_alpha_fit, (18) OH_Mar13_O3N2_Re_fit, (19) e_OH_Mar13_O3N2_Re_fit,
+#     (20) OH_Mar13_O3N2_alpha_fit, (21) e_OH_Mar13_O3N2_alpha_fit, (22) OH_T04_Re_fit, (23) e_OH_T04_Re_fit, (24) OH_T04_alpha_fit, (25)
+#       e_OH_T04_alpha_fit, (26) OH_Pet04_N2_lin_Re_fit, (27) e_OH_Pet04_N2_lin_Re_fit, (28) OH_Pet04_N2_lin_alpha_fit, (29) e_OH_Pet04_N2_lin_alpha_fit,
+#     (30) OH_Pet04_N2_poly_Re_fit, (31) e_OH_Pet04_N2_poly_Re_fit, (32) OH_Pet04_N2_poly_alpha_fit, (33) e_OH_Pet04_N2_poly_alpha_fit,
+#     (34) OH_Pet04_O3N2_Re_fit, (35) e_OH_Pet04_O3N2_Re_fit, (36) OH_Pet04_O3N2_alpha_fit, (37) e_OH_Pet04_O3N2_alpha_fit, (38) OH_Kew02_N2O2_Re_fit,
+#     (39) e_OH_Kew02_N2O2_Re_fit, (40) OH_Kew02_N2O2_alpha_fit, (41) e_OH_Kew02_N2O2_alpha_fit, (42) OH_Pil10_ONS_Re_fit, (43) e_OH_Pil10_ONS_Re_fit,
+#     (44) OH_Pil10_ONS_alpha_fit, (45) e_OH_Pil10_ONS_alpha_fit, (46) OH_Pil10_ON_Re_fit, (47) e_OH_Pil10_ON_Re_fit, (48) OH_Pil10_ON_alpha_fit,
+#     (49) e_OH_Pil10_ON_alpha_fit, (50) OH_Pil11_NS_Re_fit, (51) e_OH_Pil11_NS_Re_fit, (52) OH_Pil11_NS_alpha_fit, (53) e_OH_Pil11_NS_alpha_fit,
+#     (54) OH_Cur20_RS32_Re_fit, (55) e_OH_Cur20_RS32_Re_fit, (56) OH_Cur20_RS32_alpha_fit, (57) e_OH_Cur20_RS32_alpha_fit, (58) OH_Cur20_R3_Re_fit,
+#     (59) e_OH_Cur20_R3_Re_fit, (60) OH_Cur20_R3_alpha_fit, (61) e_OH_Cur20_R3_alpha_fit, (62) OH_Cur20_O3O2_Re_fit, (63) e_OH_Cur20_O3O2_Re_fit,
+#     (64) OH_Cur20_O3O2_alpha_fit, (65) e_OH_Cur20_O3O2_alpha_fit, (66) OH_Cur20_S2_Re_fit, (67) e_OH_Cur20_S2_Re_fit, (68) OH_Cur20_S2_alpha_fit,
+#     (69) e_OH_Cur20_S2_alpha_fit, (70) OH_Cur20_R2_Re_fit, (71) e_OH_Cur20_R2_Re_fit, (72) OH_Cur20_R2_alpha_fit, (73) e_OH_Cur20_R2_alpha_fit,
+#     (74) OH_Cur20_N2_Re_fit, (75) e_OH_Cur20_N2_Re_fit, (76) OH_Cur20_N2_alpha_fit, (77) e_OH_Cur20_N2_alpha_fit, (78) OH_Cur20_R23_Re_fit,
+#     (79) e_OH_Cur20_R23_Re_fit, (80) OH_Cur20_R23_alpha_fit, (81) e_OH_Cur20_R23_alpha_fit, (82) OH_Cur20_O3N2_Re_fit, (83) e_OH_Cur20_O3N2_Re_fit,
+#     (84) OH_Cur20_O3N2_alpha_fit, (85) e_OH_Cur20_O3N2_alpha_fit, (86) OH_Cur20_O3S2_Re_fit, (87) e_OH_Cur20_O3S2_Re_fit, (88) OH_Cur20_O3S2_alpha_fit,
+#     (89) e_OH_Cur20_O3S2_alpha_fit, (90) OH_KK04_Re_fit, (91) e_OH_KK04_Re_fit, (92) OH_KK04_alpha_fit, (93) e_OH_KK04_alpha_fit, (94)
+#       OH_Pil16_R_Re_fit, (95) e_OH_Pil16_R_Re_fit, (96) OH_Pil16_R_alpha_fit, (97) e_OH_Pil16_R_alpha_fit, (98) OH_Pil16_S_Re_fit, (99)
+#       e_OH_Pil16_S_Re_fit, (100) OH_Pil16_S_alpha_fit, (101) e_OH_Pil16_S_alpha_fit, (102) OH_Ho_Re_fit, (103) e_OH_Ho_Re_fit, (104)
+#       OH_Ho_alpha_fit, (105) e_OH_Ho_alpha_fit, (106) U_Dors_O32_Re_fit, (107) e_U_Dors_O32_Re_fit, (108) U_Dors_O32_alpha_fit, (109)
+#       e_U_Dors_O32_alpha_fit, (110) U_Dors_S_Re_fit, (111) e_U_Dors_S_Re_fit, (112) U_Dors_S_alpha_fit, (113) e_U_Dors_S_alpha_fit,
+#     (114) U_Mor16_O23_fs_Re_fit, (115) e_U_Mor16_O23_fs_Re_fit, (116) U_Mor16_O23_fs_alpha_fit, (117) e_U_Mor16_O23_fs_alpha_fit, (118)
+#       U_Mor16_O23_ts_Re_fit, (119) e_U_Mor16_O23_ts_Re_fit, (120) U_Mor16_O23_ts_alpha_fit, (121) e_U_Mor16_O23_ts_alpha_fit, (122)
+#       NH_Pil16_R_Re_fit, (123) e_NH_Pil16_R_Re_fit, (124) NH_Pil16_R_alpha_fit, (125) e_NH_Pil16_R_alpha_fit, (126) NO_Pil16_R_Re_fit,
+#     (127) e_NO_Pil16_R_Re_fit, (128) NO_Pil16_R_alpha_fit, (129) e_NO_Pil16_R_alpha_fit, (130) NO_Pil16_Ho_R_Re_fit, (131) e_NO_Pil16_Ho_R_Re_fit,
+#     (132) NO_Pil16_Ho_R_alpha_fit, (133) e_NO_Pil16_Ho_R_alpha_fit, (134) NO_Pil16_N2_R2_Re_fit, (135) e_NO_Pil16_N2_R2_Re_fit, (136)
+#       NO_Pil16_N2_R2_alpha_fit, (137) e_NO_Pil16_N2_R2_alpha_fit, (138) Ne_Oster_S_Re_fit, (139) e_Ne_Oster_S_Re_fit, (140) Ne_Oster_S_alpha_fit,
+#     (141) e_Ne_Oster_S_alpha_fit, (1) MaNGA_name, (2) nsa_redshift, (3) nsa_u_absmag, (4) nsa_z_absmag, (5) nsa_u_z_absmag, (6) nsa_mstar,
+#     (7) nsa_inclination, (8) nsa_petro_th50, (9) nsa_sersic_ba, (10) nsa_sersic_n, (11) nsa_sersic_phi, (12) nsa_sersic_th50, (13) name,
+#     (14) D4000, (15) e_D4000, (16) D4000_Re_fit, (17) e_D4000_fit, (18) slope_D4000, (19) e_slope_D4000, (20) D4000_OH_fit, (21) e_D4000_fit,
+#     (22) slope_D4000_OH, (23) e_slope_D4000_OH, (24) Sgas_OH_fit, (25) e_Sgas_fit, (26) slope_Sgas_OH, (27) e_slope_Sgas, (28) Hd_Re_fit,
+#     (29) e_Hd_Re_fit, (30) Hd_alpha_fit, (31) e_Hd_alpha_fit, (32) Hb_Re_fit, (33) e_Hb_Re_fit, (34) Hb_alpha_fit, (35) e_Hb_alpha_fit,
+#     (36) Mgb_Re_fit, (37) e_Mgb_Re_fit, (38) Mgb_alpha_fit, (39) e_Mgb_alpha_fit, (40) Fe5270_Re_fit, (41) e_Fe5270_Re_fit, (42) Fe5270_alpha_fit,
+#     (43) e_Fe5270_alpha_fit, (44) Fe5335_Re_fit, (45) e_Fe5335_Re_fit, (46) Fe5335_alpha_fit, (47) e_Fe5335_alpha_fit, (48) D4000_Re_fit,
+#     (49) e_D4000_Re_fit, (50) D4000_alpha_fit, (51) e_D4000_alpha_fit, (52) Hdmod_Re_fit, (53) e_Hdmod_Re_fit, (54) Hdmod_alpha_fit,
+#     (55) e_Hdmod_alpha_fit, (56) Hg_Re_fit, (57) e_Hg_Re_fit, (58) Hg_alpha_fit, (59) e_Hg_alpha_fit, (60) SN_Re_fit, (61) e_SN_Re_fit,
+#     (62) SN_alpha_fit, (63) e_SN_alpha_fit, (1) name, (2) log_Mass_no_corr, (3) lSFR, (4) OH_O3N2, (5) e_OH_O3N2, '(6) a_ion_cen[3]',
+#     (7) frac_area_GAS, (8) frac_area_SFR_pure, (9) Av_w, (10) OH_O3N2_Re, (11) alpha_OH_O3N2_Re, (12) a_vel_Ha_cen_mean, (13) a_vel_ssp_cen_mean,
+#     (14) z_gas, (15) z_stars, (16) FoV, (17) nx, (18) ny, (19) Re_kpc, (20) mag_g, (21) log_Mass_corr, '(22) Av_ssp_stats[2]', (23)
+#       OH_O3N2_Re2, (24) e_OH_O3N2_Re2, (25) error_Mass, (26) e_lSFR, (27) Age_LW_Re, (28) e_Age_LW_Re, (29) ZH_LW_Re, (30) e_ZH_LW_Re,
+#     (31) Av_LW_Re, (32) e_Av_LW_Re, (33) Av_gas_LW_Re, (34) e_Av_gas_LW_Re, (35) OH_Z_Re, (36) e_ZH_LW_Re, (37) log_age_mean_LW, (38)
+#       s_log_age_mean_LW, (39) log_ZH_mean_LW, (40) s_log_ZH_mean_LW, (41) Av_ssp_stats_mean, (42) Av_ssp_stats_stddev, (43) Av_w, (44)
+#       e_Av_w, (45) OH_Re_fit_O3N2, (46) e_OH_Re_fit_O3N2, (47) alpha_OH_Re_fit_O3N2, (48) e_alpha_OH_Re_fit_O3N2, (49) cc_r_OH_O3N2,
+#     (50) sig_r_OH_O3N2, (51) OH_Re_fit_N2, (52) e_OH_Re_fit_N2, (53) alpha_OH_Re_fit_N2, (54) e_alpha_OH_Re_fit_N2, (55) cc_r_OH_N2,
+#     (56) sig_r_OH_N2, (57) OH_Re_fit_ONS, (58) e_OH_Re_fit_ONS, (59) alpha_OH_Re_fit_ONS, (60) e_alpha_OH_Re_fit_ONS, (61) cc_r_OH_ONS,
+#     (62) sig_r_OH_ONS, (63) OH_Re_fit_R23, (64) e_OH_Re_fit_R23, (65) alpha_OH_Re_fit_R23, (66) e_alpha_OH_Re_fit_R23, (67) cc_r_OH_R23,
+#     (68) sig_r_OH_R23, (69) stats_OH_Re_mean_mean, (70) stats_OH_Re_mean_stddev, (71) stats_a_OH_Re_mean_mean, (72) stats_a_OH_Re_mean_stddev,
+#     (73) log_Mass, (74) log_SFR_ssp, (75) log_NII_Ha_cen_mean, (76) log_NII_Ha_cen_stddev, (77) log_OIII_Hb_cen_mean, (78) log_OIII_Hb_cen_stddev,
+#     (79) log_SII_Ha_cen_mean, (80) log_SII_Ha_cen_stddev, (81) log_OII_Hb_cen_mean, (82) log_OII_Hb_cen_stddev, (83) EW_Ha_cen_mean,
+#     (84) EW_Ha_cen_stddev, (85) stats_y_200_mean, (86) stats_y_200_stddev, (87) stats_y_30_mean, (88) stats_y_30_stddev, (89) stats_EW_Ha_mean,
+#     (90) stats_EW_Ha_stddev, (91) ZH_LW_Re_fit, (92) e_ZH_LW_Re_fit, (93) alpha_ZH_LW_Re_fit, (94) e_alpha_ZH_LW_Re_fit, (95) ZH_LW_lRe_fit,
+#     (96) e_ZH_LW_lRe_fit, (97) alpha_ZH_LW_lRe_fit, (98) e_alpha_ZH_LW_lRe_fit, (99) ZH_MW_Re_fit, (100) e_ZH_MW_Re_fit, (101) alpha_ZH_MW_Re_fit,
+#     (102) e_alpha_ZH_MW_Re_fit, (103) Age_LW_Re_fit, (104) e_Age_LW_Re_fit, (105) alpha_Age_LW_Re_fit, (106) e_alpha_Age_LW_Re_fit,
+#     (107) Age_LW_lRe_fit, (108) e_Age_LW_lRe_fit, (109) alpha_Age_LW_lRe_fit, (110) e_alpha_Age_LW_lRe_fit, (111) Age_MW_Re_fit, (112)
+#       e_Age_MW_Re_fit, (113) alpha_Age_MW_Re_fit, (114) e_alpha_Age_MW_Re_fit, (115) ZH_LW_Re_fit_0_0.5_Gyr, (116) e_ZH_LW_Re_fit_0_0.5_Gyr,
+#     (117) alpha_ZH_LW_Re_fit_0_0.5_Gyr, (118) e_alpha_ZH_LW_Re_fit_0_0.5_Gyr, (119) ZH_LW_Re_fit_0.5_2.0_Gyr, (120) e_ZH_LW_Re_fit_0.5_2.0_Gyr,
+#     (121) alpha_ZH_LW_Re_fit_0.5_2.0_Gyr, (122) e_alpha_ZH_LW_Re_fit_0.5_2.0_Gyr, (123) ZH_LW_Re_fit2.0_14.0_Gyr, (124) e_ZH_LW_Re_fit2.0_14.0_Gyr,
+#     (125) alpha_ZH_LW_Re_fit2.0_14.0_Gyr, (126) e_alpha_ZH_LW_Re_fit2.0_14.0_Gyr, (127) Re_arc, (128) Re_kpc, (129) DL, (130) DA, (131)
+#       P.A., (132) Ellipticity, (133) Inclination, (134) sigma_cen, (135) e_sigma_cen, (136) lambda_Re, (137) e_lambda_Re, (138) elip_ab,
+#     (139) log_Mass_gas, (140) log_Mass_gas_Re, (141) log_Mass_gas_Av_ssp_ZH, (142) log_Mass_gas_Av_ssp, (143) log_Mass_gas_Av_gas_rad,
+#     (144) log_Mass_stars_sigma, (145) log_F_Ha, (146) log_F_Ha_cor, (147) log_L_Ha_cor, (148) NH_Re_log, (149) NO_Re_log, (150) sigma_cen_Ha,
+#     (151) e_sigma_cen_Ha, (152) rat_vel_sigma, (153) e_rat_vel_sigma, (154) OH_Re_fit_pyqz, (155) e_OH_Re_fit_pyqz, (156) alpha_OH_Re_fit_pyqz,
+#     (157) e_alpha_OH_Re_fit_pyqz, (158) cc_r_OH_pyqz, (159) sig_r_OH_pyqz, (160) OH_Re_mean_phot, (161) e_OH_Re_mean_phot, (162) alpha_OH_Re_mean_phot,
+#     (163) e_alpha_OH_Re_mean_phot, (164) OH_ZH_LW_Re_fit, (165) OH_ZH_LW_Re_fit_0_0.5Gyr, (166) OH_ZH_LW_Re_fit_0.5_2Gyr, (167) OH_ZH_LW_Re_fit_more_2Gyr,
+#     (168) XC, (169) YC, (170) ZH_LW_Re_fit_0_2.0_Gyr, (171) e_ZH_LW_Re_fit_0_2.0_Gyr, (172) alpha_ZH_LW_Re_fit_0_2.0_Gyr, (173) e_alpha_ZH_LW_Re_fit_0_2.0_Gyr,
+#     (174) OH_ZH_LW_Re_fit_0_2Gyr, (175) OH_ZH_MW_Re_fit, (176) OH_ZH_MW_Re_fit_0_2Gyr, (177) T50, (178) T80, (179) OH_ZH_LW_Re_fit_t50,
+#     (180) OH_ZH_LW_Re_fit_M_t50, (181) OH_ZH_LW_Re_fit_t80, (182) OH_ZH_LW_Re_fit_M_t80, (183) OH_Re_mean, (184) e_OH_Re_mean, (185)
+#       alpha_OH_Re_mean, (186) e_alpha_OH_Re_mean, (187) OH_Re_fit_mean, (188) e_OH_Re_fit_mean, (189) alpha_OH_Re_fit_mean, (190) e_alpha_OH_Re_fit_mean,
+#     (191) cc_r_OH_mean, (192) sig_r_OH_mean, (193) OH_Re_fit_t2, (194) e_OH_Re_fit_t2, (195) alpha_OH_Re_fit_t2, (196) e_alpha_OH_Re_fit_t2,
+#     (197) cc_r_OH_t2, (198) sig_r_OH_t2, (199) OH_ZH_LW_Re_fit_t90, (200) OH_ZH_LW_Re_fit_M_t90, (201) t90, (202) t70, (203) t60, (204)
+#       ZH_LW_Re_fit_M_t50, (205) e_ZH_LW_Re_fit_M_t50, (206) alpha_ZH_LW_Re_fit_M_t50, (207) e_alpha_ZH_LW_Re_fit_M_t50, (208) cc_ZH_LW_Re_M_t50,
+#     (209) sig_ZH_LW_Re_M_t50, (210) ZH_LW_Re_fit_M_t60, (211) e_ZH_LW_Re_fit_M_t60, (212) alpha_ZH_LW_Re_fit_M_t60, (213) e_alpha_ZH_LW_Re_fit_M_t60,
+#     (214) cc_ZH_LW_Re_M_t60, (215) sig_ZH_LW_Re_M_t60, (216) ZH_LW_Re_fit_M_t70, (217) e_ZH_LW_Re_fit_M_t70, (218) alpha_ZH_LW_Re_fit_M_t70,
+#     (219) e_alpha_ZH_LW_Re_fit_M_t70, (220) cc_ZH_LW_Re_M_t70, (221) sig_ZH_LW_Re_M_t70, (222) ZH_LW_Re_fit_M_t80, (223) e_ZH_LW_Re_fit_M_t80,
+#     (224) alpha_ZH_LW_Re_fit_M_t80, (225) e_alpha_ZH_LW_Re_fit_M_t80, (226) cc_ZH_LW_Re_M_t80, (227) sig_ZH_LW_Re_M_t80, (228) ZH_LW_Re_fit_M_t90,
+#     (229) e_ZH_LW_Re_fit_M_t90, (230) alpha_ZH_LW_Re_fit_M_t90, (231) e_alpha_ZH_LW_Re_fit_M_t90, (232) cc_ZH_LW_Re_M_t90, (233) sig_ZH_LW_Re_M_t90,
+#     (234) ZH_LW_Re_fit_t50, (235) e_ZH_LW_Re_fit_t50, (236) alpha_ZH_LW_Re_fit_t50, (237) e_alpha_ZH_LW_Re_fit_t50, (238) cc_ZH_LW_Re_t50,
+#     (239) sig_ZH_LW_Re_t50, (240) ZH_LW_Re_fit_t60, (241) e_ZH_LW_Re_fit_t60, (242) alpha_ZH_LW_Re_fit_t60, (243) e_alpha_ZH_LW_Re_fit_t60,
+#     (244) cc_ZH_LW_Re_t60, (245) sig_ZH_LW_Re_t60, (246) ZH_LW_Re_fit_t70, (247) e_ZH_LW_Re_fit_t70, (248) alpha_ZH_LW_Re_fit_t70, (249)
+#       e_alpha_ZH_LW_Re_fit_t70, (250) cc_ZH_LW_Re_t70, (251) sig_ZH_LW_Re_t70, (252) ZH_LW_Re_fit_t80, (253) e_ZH_LW_Re_fit_t80, (254)
+#       alpha_ZH_LW_Re_fit_t80, (255) e_alpha_ZH_LW_Re_fit_t80, (256) cc_ZH_LW_Re_t80, (257) sig_ZH_LW_Re_t80, (258) ZH_LW_Re_fit_t90,
+#     (259) e_ZH_LW_Re_fit_t90, (260) alpha_ZH_LW_Re_fit_t90, (261) e_alpha_ZH_LW_Re_fit_t90, (262) cc_ZH_LW_Re_t90, (263) sig_ZH_LW_Re_t90,
+#     (264) OH_Re_fit_M08, (265) e_OH_Re_fit_M08, (266) alpha_OH_Re_fit_M08, (267) e_alpha_OH_Re_fit_M08, (268) cc_r_OH_M08, (269) sig_r_OH_M08,
+#     (270) OH_Re_fit_T04, (271) e_OH_Re_fit_T04, (272) alpha_OH_Re_fit_T04, (273) e_alpha_OH_Re_fit_T04, (274) cc_r_OH_T04, (275) sig_r_OH_T04,
+#     (276) NH_Re_fit_ONS, (277) e_NH_Re_fit_ONS, (278) alpha_NH_Re_fit_ONS, (279) e_alpha_NH_Re_fit_ONS, (280) cc_r_NH_ONS, (281) sig_r_NH_ONS,
+#     (282) NO_Re_fit_ONS, (283) e_NO_Re_fit_ONS, (284) alpha_NO_Re_fit_ONS, (285) e_alpha_NO_Re_fit_ONS, (286) cc_r_NO_ONS, (287) sig_r_NO_ONS,
+#     (288) OH_Re_fit_dop, (289) e_OH_Re_fit_dop, (290) alpha_OH_Re_fit_dop, (291) e_alpha_OH_Re_fit_dop, (292) cc_r_OH_dop, (293) sig_r_OH_dop,
+#     (294) NO_Re_fit_EPM09, (295) e_NO_Re_fit_EPM09, (296) alpha_NO_Re_fit_EPM09, (297) e_alpha_NO_Re_fit_EPM09, (298) cc_r_NO_EPM09,
+#     (299) sig_r_NO_EPM09, (300) NO_Re_fit_N2S2, (301) e_NO_Re_fit_N2S2, (302) alpha_NO_Re_fit_N2S2, (303) e_alpha_NO_Re_fit_N2S2, (304)
+#       cc_r_NO_N2S2, (305) sig_r_NO_N2S2, (306) OH_Re_fit_O3N2_EPM09, (307) e_OH_Re_fit_O3N2_EPM09, (308) alpha_OH_Re_fit_O3N2_EPM09,
+#     (309) e_alpha_OH_Re_fit_O3N2_EPM09, (310) cc_r_OH_O3N2_EPM09, (311) sig_r_OH_O3N2_EPM09, (312) sigma_r_arcsec_SF, (313) sigma_r_arcsec_SF_arcsec,
+#     (314) Ha_flux_density_1sigma, (315) log_SFR_SF, (316) log_L_Ha_SF, (317) log_SFR_D_C, (318) log_L_Ha_D_C, (319) log_L_Ha_DF, (320)
+#       OH_O3N2_cen, (321) e_OH_O3N2_cen, (322) OH_N2_cen, (323) e_OH_N2_cen, (324) OH_ONS_cen, (325) e_OH_ONS_cen, (326) OH_R23_cen,
+#     (327) e_OH_R23_cen, (328) OH_pyqz_cen, (329) e_OH_pyqz_cen, (330) OH_t2_cen, (331) e_OH_t2_cen, (332) OH_M08_cen, (333) e_OH_M08_cen,
+#     (334) OH_T04_cen, (335) e_OH_T04_cen, (336) OH_dop_cen, (337) e_OH_dop_cen, (338) OH_O3N2_EPM09_cen, (339) e_OH_O3N2_EPM09_cen,
+#     (340) log_OI_Ha_cen, (341) e_log_OI_Ha_cen, (342) Ha_Hb_cen, (343) e_Ha_Hb_cen, (344) log_NII_Ha_Re, (345) e_log_NII_Ha_Re, (346)
+#       log_OIII_Hb_Re, (347) e_log_OIII_Hb_Re, (348) log_SII_Ha_Re, (349) e_log_SII_Ha_Re, (350) log_OII_Hb_Re, (351) e_log_OII_Hb_Re,
+#     (352) log_OI_Ha_Re, (353) e_log_OI_Ha_Re, (354) EW_Ha_Re, (355) e_EW_Ha_Re, (356) Ha_Hb_Re, (357) e_Ha_Hb_Re, (358) log_NII_Ha_ALL,
+#     (359) e_log_NII_Ha_ALL, (360) log_OIII_Hb_ALL, (361) e_log_OIII_Hb_ALL, (362) log_SII_Ha_ALL, (363) e_log_SII_Ha_ALL, (364) log_OII_Hb_ALL,
+#     (365) e_log_OII_Hb_ALL, (366) log_OI_Ha_ALL, (367) e_log_OI_Ha_ALL, (368) EW_Ha_ALL, (369) e_EW_Ha_ALL, (370) Ha_Hb_ALL, (371) Ha_Hb_ALL,
+#     (372) OH_O3N2_Re, (373) e_OH_O3N2_Re, (374) OH_N2_Re, (375) e_OH_N2_Re, (376) OH_ONS_Re, (377) e_OH_ONS_Re, (378) OH_R23_Re, (379)
+#       e_OH_R23_Re, (380) OH_pyqz_Re, (381) e_OH_pyqz_Re, (382) OH_t2_Re, (383) e_OH_t2_Re, (384) OH_M08_Re, (385) e_OH_M08_Re, (386)
+#       OH_T04_Re, (387) e_OH_T04_Re, (388) OH_dop_Re, (389) e_OH_dop_Re, (390) OH_O3N2_EPM09_Re, (391) e_OH_O3N2_EPM09_Re, (392) OH_O3N2_ALL,
+#     (393) e_OH_O3N2_ALL, (394) OH_N2_ALL, (395) e_OH_N2_ALL, (396) OH_ONS_ALL, (397) e_OH_ONS_ALL, (398) OH_R23_ALL, (399) e_OH_R23_ALL,
+#     (400) OH_pyqz_ALL, (401) e_OH_pyqz_ALL, (402) OH_t2_ALL, (403) e_OH_t2_ALL, (404) OH_M08_ALL, (405) e_OH_M08_ALL, (406) OH_T04_ALL,
+#     (407) e_OH_T04_ALL, (408) OH_dop_ALL, (409) e_OH_dop_ALL, (410) OH_O3N2_EPM09_ALL, (411) e_OH_O3N2_EPM09_ALL, (412) Sigma_Mass_cen,
+#     (413) e_Sigma_Mass_cen, (414) Sigma_Mass_Re, (415) e_Sigma_Mass_Re, (416) Sigma_Mass_ALL, (417) e_Sigma_Mass_ALL, (418) OH_Re_fit_ON,
+#     (419) e_OH_Re_fit_ON, (420) alpha_OH_Re_fit_ON, (421) e_alpha_OH_Re_fit_ON, (422) cc_r_OH_ON, (423) sig_r_OH_ON, (424) OH_ON_Re,
+#     (425) e_OH_ON_Re, (426) OH_ON_cen, (427) e_OH_ON_cen, (428) OH_ON_ALL, (429) e_OH_ON_ALL, (430) T30, (431) ZH_T30, (432) ZH_Re_T30,
+#     (433) a_ZH_T30, (434) T40, (435) ZH_T40, (436) ZH_Re_T40, (437) a_ZH_T40, (438) T50, (439) ZH_T50, (440) ZH_Re_T50, (441) a_ZH_T50,
+#     (442) T60, (443) ZH_T60, (444) ZH_Re_T60, (445) a_ZH_T60, (446) T70, (447) ZH_T70, (448) ZH_Re_T70, (449) a_ZH_T70, (450) T80, (451)
+#       ZH_T80, (452) ZH_Re_T80, (453) a_ZH_T80, (454) T90, (455) ZH_T90, (456) ZH_Re_T90, (457) a_ZH_T90, (458) T95, (459) ZH_T95, (460)
+#       ZH_Re_T95, (461) a_ZH_T95, (462) T99, (463) ZH_T99, (464) ZH_Re_T99, (465) a_ZH_T99, (466) log_Mass_gas_Av_gas_OH, (467) log_Mass_gas_Av_ssp_OH,
+#     (468) lSFR_NO_CEN, (469) vel_ssp_2, (470) e_vel_ssp_2, (471) vel_Ha_2, (472) e_vel_Ha_2, (473) vel_ssp_1, (474) e_vel_ssp_1, (475)
+#       vel_Ha_1, (476) e_vel_Ha_1, (477) log_SFR_ssp_100Myr, (478) log_SFR_ssp_10Myr, (479) vel_disp_Ha_cen, (480) vel_disp_ssp_cen,
+#     (481) vel_disp_Ha_1Re, (482) vel_disp_ssp_1Re, (483) vel_disp_Ha_1Re_mean, (484) vel_disp_ssp_1Re_mean, (485) log_Mass_Re, (486)
+#       e_log_Mass_Re, (487) log_SFR_Re, (488) e_log_SFR_Re, (489) KIN_Ha_1, (490) e_KIN_Ha_1, (491) KIN_ssp_1, (492) e_KIN_ssp_1, (493)
+#       KIN_Ha_05, (494) e_KIN_Ha_05, (495) KIN_ssp_05, (496) e_KIN_ssp_05, (497) log_U_P_Re_fit, (498) e_log_U_P_Re_fit, (499) alpha_log_U_P_Re_fit,
+#     (500) e_alpha_log_U_P_Re_fit, (501) log_U_iter_Re_fit, (502) e_log_U_iter_Re_fit, (503) alpha_log_U_iter_Re_fit, (504) e_alpha_log_U_iter_Re_fit,
+#     (505) log_U_pyqz_Re_fit, (506) e_log_U_pyqz_Re_fit, (507) alpha_log_U_pyqz_Re_fit, (508) e_alpha_log_U_pyqz_Re_fit, (509) OH_Re_fit_N2O2,
+#     (510) e_OH_Re_fit_N2O2, (511) alpha_OH_Re_fit_N2O2, (512) e_alpha_OH_Re_fit_N2O2, (513) cc_r_OH_N2O2, (514) sig_r_OH_N2O2, (515)
+#       log_Mass_in_Re, (516) ML_int, (517) ML_avg, (518) log_Mass_Re_derived, (519) F_Ha_cen, (520) e_F_Ha_cen, (521) Re_kpc_Mass, (522)
+#       R50_kpc_V, (523) e_R50_kpc_V, (524) R50_kpc_Mass, (525) e_R50_kpc_Mass, (526) log_Mass_corr_in_R50_V, (527) e_log_Mass_corr_in_R50_V,
+#     (528) log_Mass_in_Re, (529) rMgMs_zp, (530) rMgMs_e_zp, (531) rMgMs_alpha, (532) rMgMs_e_alpha, (533) rMgMs_cc, (534) rMgMs_sig,
+#     (535) rSFMS_zp, (536) rSFMS_e_zp, (537) rSFMS_alpha, (538) rSFMS_e_alpha, (539) rSFMS_cc, (540) rSFMS_sig, (541) rSK_zp, (542) rSK_e_zp,
+#     (543) rSK_alpha, (544) rSK_e_alpha, (545) rSK_cc, (546) rSK_sig, (547) log_Mass_gas_Av_EW_corr, (548) log_Mass_gas_Av_gas_log_lin,
+#     (549) log_Mass_gas_Av_ssp_log_lin, (550) log_Mass_gas_Av_gas_log_log, (551) OH_Re_fit_R, (552) e_OH_Re_fit_R, (553) alpha_OH_Re_fit_R,
+#     (554) e_alpha_OH_Re_fit_R, (555) cc_r_OH_R, (556) sig_r_OH_R, (557) OH_R_cen_mean, (558) OH_R_cen_error, (559) OH_R_Re_mean, (560)
+#       OH_R_Re_error, (561) OH_R_ALL_mean, (562) OH_R_ALL_error, (563) OH_Re_fit_S, (564) e_OH_Re_fit_S, (565) alpha_OH_Re_fit_S, (566)
+#       e_alpha_OH_Re_fit_S, (567) cc_r_OH_S, (568) sig_r_OH_S, (569) OH_S_cen_mean, (570) OH_S_cen_error, (571) OH_S_Re_mean, (572) OH_S_Re_error,
+#     (573) OH_S_ALL_mean, (574) OH_S_ALL_error, (575) NH_Re_fit_R, (576) e_NH_Re_fit_R, (577) alpha_NH_Re_fit_R, (578) e_alpha_NH_Re_fit_R,
+#     (579) cc_r_NH_R, (580) sig_r_NH_R, (581) NH_R_cen_mean, (582) NH_R_cen_error, (583) NH_R_Re_mean, (584) NH_R_Re_error, (585) NH_R_ALL_mean,
+#     (586) NH_R_ALL_error, (1) MaNGA_name, (2) Sigma_Mass_stars, (3) e_Sigma_Mass_stars, (4) Sigma_SFR, (5) e_Sigma_SFR, (6) Sigma_Mass_gas,
+#     (7) e_Sigma_Mass_gas, (8) Sigma_Mass_gas_ssp, (9) e_Sigma_Mass_gas_ssp, (10) ZH_LW, (11) e_ZH_LW, (12) ZH_MW, (13) e_ZH_MW, (14)
+#       Age_LW, (15) e_Age_LW, (16) Age_MW, (17) e_Age_MW, (18) OH_t2, (19) e_OH_t2, (20) OH_O3N2, (21) e_OH_O3N2, (22) Av_gas, (23) e_Av_gas,
+#     (24) Av_ssp, (25) e_Av_ssp, (26) disp_ssp, (27) e_disp_ssp, (28) disp_Ha, (29) e_disp_Ha, (30) vel_Ha, (31) e_vel_Ha, (32) vel_ssp,
+#     (33) e_vel_ssp, (34) SK_ssp, (35) e_SK_ssp, (36) SK_Ha, (37) e_SK_Ha, (38) KIN_ssp, (39) e_KIN_ssp, (40) KIN_Ha, (41) e_KIN_Ha,
+#     (42) ML, (43) e_ML, (44) Sigma_SFR_ssp, (45) e_Sigma_SFR_ssp, (46) Sigma_Mass_gas_rad, (47) e_Sigma_Mass_gas_rad, (48) Lambda, (49)
+#       e_Lambda, (50) OH_ONS, (51) e_OH_ONS, (52) NO_ONS, (53) e_NO_ONS, (54) NO_N2S2, (55) e_NO_N2S2, (1) name-obj, (2) redshift, (3)
+#       error redshift, (4) u band mag, (5) u band mag error, (6) u band abs mag, (7) u band abs mag error, (8) g band mag, (9) g band
+#       mag error, (10) g band abs mag, (11) g band abs mag error, (12) r band mag, (13) r band mag error, (14) r band abs mag, (15) r
+#       band abs mag error, (16) i band mag, (17) i band mag error, (18) i band abs mag, (19) i band abs mag error, (20) B band mag, (21)
+#       B band mag error, (22) B band abs mag, (23) B band abs mag error, (24) V band mag, (25) V band mag error, (26) V band abs mag,
+#     (27) V band abs mag error, (28) R band mag, (29) R band mag error, (30) R band abs mag, (31) R band abs mag error, (32) X centroid,
+#     (33) Y centroid, (34) Re (arcsec), (35) error Re (arcsec), (36) mean S/N at Re, (37) sigma S/N at Re, (38) ellipticy, (39) Pa (deg),
+#     (40) R50 (arcsec), (41) error R50 (arcsec), (42) R90 (arcsec), (43) error R90 (arcsec), (44) C (R90/R50), (45) error C (R90/R50),
+#     (46) SN at Re, (47) error_SN at Re, (48) SN integrated, (49) SN at R50, (50) error_SN at R50, (51) R_50 (kpc), (52) error Re (kpc),
+#     (53) B-V (mag), (54) error B-V (mag), (55) B-R (mag), (56) error B-R (mag), (57) log10 Mass/Msun phot., (58) error Mass phot., (59)
+#       nRe (R_FoV/Re), (60) V-band SB at Re (mag), (61) error V-band SB at Re (mag), (62) V-band SB at R_50 (mag), (63) error V-band
+#       SB at R_50 (mag), (1) name, '(2) flux_[OII]3726.03_Re_fit', '(3) e_flux_[OII]3726.03_Re_fit', '(4) flux_[OII]3726.03_alpha_fit',
+#     '(5) e_flux_[OII]3726.03_alpha_fit', '(6) flux_[OII]3728.82_Re_fit', '(7) e_flux_[OII]3728.82_Re_fit', '(8) flux_[OII]3728.82_alpha_fit',
+#     '(9) e_flux_[OII]3728.82_alpha_fit', (10) flux_HI3734.37_Re_fit, (11) e_flux_HI3734.37_Re_fit, (12) flux_HI3734.37_alpha_fit, (13)
+#       e_flux_HI3734.37_alpha_fit, (14) flux_HI3797.9_Re_fit, (15) e_flux_HI3797.9_Re_fit, (16) flux_HI3797.9_alpha_fit, (17) e_flux_HI3797.9_alpha_fit,
+#     (18) flux_HeI3888.65_Re_fit, (19) e_flux_HeI3888.65_Re_fit, (20) flux_HeI3888.65_alpha_fit, (21) e_flux_HeI3888.65_alpha_fit, (22)
+#       flux_HI3889.05_Re_fit, (23) e_flux_HI3889.05_Re_fit, (24) flux_HI3889.05_alpha_fit, (25) e_flux_HI3889.05_alpha_fit, (26) flux_HeI3964.73_Re_fit,
+#     (27) e_flux_HeI3964.73_Re_fit, (28) flux_HeI3964.73_alpha_fit, (29) e_flux_HeI3964.73_alpha_fit, '(30) flux_[NeIII]3967.46_Re_fit',
+#     '(31) e_flux_[NeIII]3967.46_Re_fit', '(32) flux_[NeIII]3967.46_alpha_fit', '(33) e_flux_[NeIII]3967.46_alpha_fit', (34) flux_CaII3968.47_Re_fit,
+#     (35) e_flux_CaII3968.47_Re_fit, (36) flux_CaII3968.47_alpha_fit, (37) e_flux_CaII3968.47_alpha_fit, (38) flux_Hepsilon3970.07_Re_fit,
+#     (39) e_flux_Hepsilon3970.07_Re_fit, (40) flux_Hepsilon3970.07_alpha_fit, (41) e_flux_Hepsilon3970.07_alpha_fit, (42) flux_Hdelta4101.77_Re_fit,
+#     (43) e_flux_Hdelta4101.77_Re_fit, (44) flux_Hdelta4101.77_alpha_fit, (45) e_flux_Hdelta4101.77_alpha_fit, (46) flux_Hgamma4340.49_Re_fit,
+#     (47) e_flux_Hgamma4340.49_Re_fit, (48) flux_Hgamma4340.49_alpha_fit, (49) e_flux_Hgamma4340.49_alpha_fit, (50) flux_Hbeta4861.36_Re_fit,
+#     (51) e_flux_Hbeta4861.36_Re_fit, (52) flux_Hbeta4861.36_alpha_fit, (53) e_flux_Hbeta4861.36_alpha_fit, '(54) flux_[OIII]4958.91_Re_fit',
+#     '(55) e_flux_[OIII]4958.91_Re_fit', '(56) flux_[OIII]4958.91_alpha_fit', '(57) e_flux_[OIII]4958.91_alpha_fit', '(58) flux_[OIII]5006.84_Re_fit',
+#     '(59) e_flux_[OIII]5006.84_Re_fit', '(60) flux_[OIII]5006.84_alpha_fit', '(61) e_flux_[OIII]5006.84_alpha_fit', (62) flux_HeI5015.68_Re_fit,
+#     (63) e_flux_HeI5015.68_Re_fit, (64) flux_HeI5015.68_alpha_fit, (65) e_flux_HeI5015.68_alpha_fit, '(66) flux_[NI]5197.9_Re_fit',
+#     '(67) e_flux_[NI]5197.9_Re_fit', '(68) flux_[NI]5197.9_alpha_fit', '(69) e_flux_[NI]5197.9_alpha_fit', '(70) flux_[NI]5200.26_Re_fit',
+#     '(71) e_flux_[NI]5200.26_Re_fit', '(72) flux_[NI]5200.26_alpha_fit', '(73) e_flux_[NI]5200.26_alpha_fit', (74) flux_HeI5876.0_Re_fit,
+#     (75) e_flux_HeI5876.0_Re_fit, (76) flux_HeI5876.0_alpha_fit, (77) e_flux_HeI5876.0_alpha_fit, (78) flux_NaI5889.95_Re_fit, (79)
+#       e_flux_NaI5889.95_Re_fit, (80) flux_NaI5889.95_alpha_fit, (81) e_flux_NaI5889.95_alpha_fit, (82) flux_NaI5895.92_Re_fit, (83)
+#       e_flux_NaI5895.92_Re_fit, (84) flux_NaI5895.92_alpha_fit, (85) e_flux_NaI5895.92_alpha_fit, '(86) flux_[OI]6300.3_Re_fit', '(87)
+#       e_flux_[OI]6300.3_Re_fit', '(88) flux_[OI]6300.3_alpha_fit', '(89) e_flux_[OI]6300.3_alpha_fit', '(90) flux_[NII]6548.05_Re_fit',
+#     '(91) e_flux_[NII]6548.05_Re_fit', '(92) flux_[NII]6548.05_alpha_fit', '(93) e_flux_[NII]6548.05_alpha_fit', (94) flux_Halpha6562.85_Re_fit,
+#     (95) e_flux_Halpha6562.85_Re_fit, (96) flux_Halpha6562.85_alpha_fit, (97) e_flux_Halpha6562.85_alpha_fit, '(98) flux_[NII]6583.45_Re_fit',
+#     '(99) e_flux_[NII]6583.45_Re_fit', '(100) flux_[NII]6583.45_alpha_fit', '(101) e_flux_[NII]6583.45_alpha_fit', '(102) flux_[SII]6716.44_Re_fit',
+#     '(103) e_flux_[SII]6716.44_Re_fit', '(104) flux_[SII]6716.44_alpha_fit', '(105) e_flux_[SII]6716.44_alpha_fit', '(106) flux_[SII]6730.82_Re_fit',
+#     '(107) e_flux_[SII]6730.82_Re_fit', '(108) flux_[SII]6730.82_alpha_fit', '(109) e_flux_[SII]6730.82_alpha_fit', '(110) flux_[ArIII]7135.8_Re_fit',
+#     '(111) e_flux_[ArIII]7135.8_Re_fit', '(112) flux_[ArIII]7135.8_alpha_fit', '(113) e_flux_[ArIII]7135.8_alpha_fit', (1) name, (2)
+#       OH_Mar13_N2_Re_fit, (3) e_OH_Mar13_N2_Re_fit, (4) OH_Mar13_N2_alpha_fit, (5) e_OH_Mar13_N2_alpha_fit, (6) OH_Mar13_O3N2_Re_fit,
+#     (7) e_OH_Mar13_O3N2_Re_fit, (8) OH_Mar13_O3N2_alpha_fit, (9) e_OH_Mar13_O3N2_alpha_fit, (10) OH_T04_Re_fit, (11) e_OH_T04_Re_fit,
+#     (12) OH_T04_alpha_fit, (13) e_OH_T04_alpha_fit, (14) OH_Pet04_N2_lin_Re_fit, (15) e_OH_Pet04_N2_lin_Re_fit, (16) OH_Pet04_N2_lin_alpha_fit,
+#     (17) e_OH_Pet04_N2_lin_alpha_fit, (18) OH_Pet04_N2_poly_Re_fit, (19) e_OH_Pet04_N2_poly_Re_fit, (20) OH_Pet04_N2_poly_alpha_fit,
+#     (21) e_OH_Pet04_N2_poly_alpha_fit, (22) OH_Pet04_O3N2_Re_fit, (23) e_OH_Pet04_O3N2_Re_fit, (24) OH_Pet04_O3N2_alpha_fit, (25) e_OH_Pet04_O3N2_alpha_fit,
+#     (26) OH_Kew02_N2O2_Re_fit, (27) e_OH_Kew02_N2O2_Re_fit, (28) OH_Kew02_N2O2_alpha_fit, (29) e_OH_Kew02_N2O2_alpha_fit, (30) OH_Pil10_ONS_Re_fit,
+#     (31) e_OH_Pil10_ONS_Re_fit, (32) OH_Pil10_ONS_alpha_fit, (33) e_OH_Pil10_ONS_alpha_fit, (34) OH_Pil10_ON_Re_fit, (35) e_OH_Pil10_ON_Re_fit,
+#     (36) OH_Pil10_ON_alpha_fit, (37) e_OH_Pil10_ON_alpha_fit, (38) OH_Pil11_NS_Re_fit, (39) e_OH_Pil11_NS_Re_fit, (40) OH_Pil11_NS_alpha_fit,
+#     (41) e_OH_Pil11_NS_alpha_fit, (42) OH_Cur20_RS32_Re_fit, (43) e_OH_Cur20_RS32_Re_fit, (44) OH_Cur20_RS32_alpha_fit, (45) e_OH_Cur20_RS32_alpha_fit,
+#     (46) OH_Cur20_R3_Re_fit, (47) e_OH_Cur20_R3_Re_fit, (48) OH_Cur20_R3_alpha_fit, (49) e_OH_Cur20_R3_alpha_fit, (50) OH_Cur20_O3O2_Re_fit,
+#     (51) e_OH_Cur20_O3O2_Re_fit, (52) OH_Cur20_O3O2_alpha_fit, (53) e_OH_Cur20_O3O2_alpha_fit, (54) OH_Cur20_S2_Re_fit, (55) e_OH_Cur20_S2_Re_fit,
+#     (56) OH_Cur20_S2_alpha_fit, (57) e_OH_Cur20_S2_alpha_fit, (58) OH_Cur20_R2_Re_fit, (59) e_OH_Cur20_R2_Re_fit, (60) OH_Cur20_R2_alpha_fit,
+#     (61) e_OH_Cur20_R2_alpha_fit, (62) OH_Cur20_N2_Re_fit, (63) e_OH_Cur20_N2_Re_fit, (64) OH_Cur20_N2_alpha_fit, (65) e_OH_Cur20_N2_alpha_fit,
+#     (66) OH_Cur20_R23_Re_fit, (67) e_OH_Cur20_R23_Re_fit, (68) OH_Cur20_R23_alpha_fit, (69) e_OH_Cur20_R23_alpha_fit, (70) OH_Cur20_O3N2_Re_fit,
+#     (71) e_OH_Cur20_O3N2_Re_fit, (72) OH_Cur20_O3N2_alpha_fit, (73) e_OH_Cur20_O3N2_alpha_fit, (74) OH_Cur20_O3S2_Re_fit, (75) e_OH_Cur20_O3S2_Re_fit,
+#     (76) OH_Cur20_O3S2_alpha_fit, (77) e_OH_Cur20_O3S2_alpha_fit, (78) OH_KK04_Re_fit, (79) e_OH_KK04_Re_fit, (80) OH_KK04_alpha_fit,
+#     (81) e_OH_KK04_alpha_fit, (82) OH_Pil16_R_Re_fit, (83) e_OH_Pil16_R_Re_fit, (84) OH_Pil16_R_alpha_fit, (85) e_OH_Pil16_R_alpha_fit,
+#     (86) OH_Pil16_S_Re_fit, (87) e_OH_Pil16_S_Re_fit, (88) OH_Pil16_S_alpha_fit, (89) e_OH_Pil16_S_alpha_fit, (90) OH_Ho_Re_fit, (91)
+#       e_OH_Ho_Re_fit, (92) OH_Ho_alpha_fit, (93) e_OH_Ho_alpha_fit, (94) U_Dors_O32_Re_fit, (95) e_U_Dors_O32_Re_fit, (96) U_Dors_O32_alpha_fit,
+#     (97) e_U_Dors_O32_alpha_fit, (98) U_Dors_S_Re_fit, (99) e_U_Dors_S_Re_fit, (100) U_Dors_S_alpha_fit, (101) e_U_Dors_S_alpha_fit,
+#     (102) U_Mor16_O23_fs_Re_fit, (103) e_U_Mor16_O23_fs_Re_fit, (104) U_Mor16_O23_fs_alpha_fit, (105) e_U_Mor16_O23_fs_alpha_fit, (106)
+#       U_Mor16_O23_ts_Re_fit, (107) e_U_Mor16_O23_ts_Re_fit, (108) U_Mor16_O23_ts_alpha_fit, (109) e_U_Mor16_O23_ts_alpha_fit, (110)
+#       NH_Pil16_R_Re_fit, (111) e_NH_Pil16_R_Re_fit, (112) NH_Pil16_R_alpha_fit, (113) e_NH_Pil16_R_alpha_fit, (114) NO_Pil16_R_Re_fit,
+#     (115) e_NO_Pil16_R_Re_fit, (116) NO_Pil16_R_alpha_fit, (117) e_NO_Pil16_R_alpha_fit, (118) NO_Pil16_Ho_R_Re_fit, (119) e_NO_Pil16_Ho_R_Re_fit,
+#     (120) NO_Pil16_Ho_R_alpha_fit, (121) e_NO_Pil16_Ho_R_alpha_fit, (122) NO_Pil16_N2_R2_Re_fit, (123) e_NO_Pil16_N2_R2_Re_fit, (124)
+#       NO_Pil16_N2_R2_alpha_fit, (125) e_NO_Pil16_N2_R2_alpha_fit, (126) Ne_Oster_S_Re_fit, (127) e_Ne_Oster_S_Re_fit, (128) Ne_Oster_S_alpha_fit,
+#     (129) e_Ne_Oster_S_alpha_fit, (1) name, (2) D4000, (3) e_D4000, (4) D4000_Re_fit, (5) e_D4000_fit, (6) slope_D4000, (7) e_slope_D4000,
+#     (8) D4000_OH_fit, (9) e_D4000_fit, (10) slope_D4000_OH, (11) e_slope_D4000_OH, (12) Sgas_OH_fit, (13) e_Sgas_fit, (14) slope_Sgas_OH,
+#     (15) e_slope_Sgas, (16) Hd_Re_fit, (17) e_Hd_Re_fit, (18) Hd_alpha_fit, (19) e_Hd_alpha_fit, (20) Hb_Re_fit, (21) e_Hb_Re_fit, (22)
+#       Hb_alpha_fit, (23) e_Hb_alpha_fit, (24) Mgb_Re_fit, (25) e_Mgb_Re_fit, (26) Mgb_alpha_fit, (27) e_Mgb_alpha_fit, (28) Fe5270_Re_fit,
+#     (29) e_Fe5270_Re_fit, (30) Fe5270_alpha_fit, (31) e_Fe5270_alpha_fit, (32) Fe5335_Re_fit, (33) e_Fe5335_Re_fit, (34) Fe5335_alpha_fit,
+#     (35) e_Fe5335_alpha_fit, (36) D4000_Re_fit, (37) e_D4000_Re_fit, (38) D4000_alpha_fit, (39) e_D4000_alpha_fit, (40) Hdmod_Re_fit,
+#     (41) e_Hdmod_Re_fit, (42) Hdmod_alpha_fit, (43) e_Hdmod_alpha_fit, (44) Hg_Re_fit, (45) e_Hg_Re_fit, (46) Hg_alpha_fit, (47) e_Hg_alpha_fit,
+#     (48) SN_Re_fit, (49) e_SN_Re_fit, (50) SN_alpha_fit, (51) e_SN_alpha_fit, (52) e_Hd_Re_fit, (53) e_e_Hd_Re_fit, (54) e_Hd_alpha_fit,
+#     (55) e_e_Hd_alpha_fit, (56) e_Hb_Re_fit, (57) e_e_Hb_Re_fit, (58) e_Hb_alpha_fit, (59) e_e_Hb_alpha_fit, (60) e_Mgb_Re_fit, (61)
+#       e_e_Mgb_Re_fit, (62) e_Mgb_alpha_fit, (63) e_e_Mgb_alpha_fit, (64) e_Fe5270_Re_fit, (65) e_e_Fe5270_Re_fit, (66) e_Fe5270_alpha_fit,
+#     (67) e_e_Fe5270_alpha_fit, (68) e_Fe5335_Re_fit, (69) e_e_Fe5335_Re_fit, (70) e_Fe5335_alpha_fit, (71) e_e_Fe5335_alpha_fit, (72)
+#       e_D4000_Re_fit, (73) e_e_D4000_Re_fit, (74) e_D4000_alpha_fit, (75) e_e_D4000_alpha_fit, (76) e_Hdmod_Re_fit, (77) e_e_Hdmod_Re_fit,
+#     (78) e_Hdmod_alpha_fit, (79) e_e_Hdmod_alpha_fit, (80) e_Hg_Re_fit, (81) e_e_Hg_Re_fit, (82) e_Hg_alpha_fit, (83) e_e_Hg_alpha_fit,
+#     (84) e_SN_Re_fit, (85) e_e_SN_Re_fit, (86) e_SN_alpha_fit, (87) e_e_SN_alpha_fit]
+# schema: astropy-2.0
+KGAS_ID,cubename,OH_cen,e_OH_cen,OH_Re,e_OH_Re,OH_FoV,e_OH_FoV,OH_Re_fit,e_OH_Re_fit,slope_OH,e_slope_OH
+1,KG-MaNGA-1-178894,8.565302603120392,0.09535590303563299,8.668707019145408,0.07781101284965451,8.654948518574885,0.10027597151633715,,,,
+2,KG-MaNGA-1-179173,8.659238788713553,0.058392393450143715,8.632336084330262,0.09391437966950654,8.642090463882633,0.10323799065473153,,,,
+3,KG-MaNGA-1-179071,8.71792295444226,0.005913200502187075,8.627345749798662,0.08348193173587148,8.63497558958975,0.08872293720333471,8.67147675405866,0.00929675464926824,-0.0583051326514941,0.00794094238670781
+4,KG-MaNGA-1-178794,8.670307170934047,0.07658084927461613,8.688269862029681,0.09090961728203129,8.661944078892992,0.09843412480006046,,,,
+5,KG-MaNGA-1-54940,8.53580140494651,0.009122949892520552,8.73803156320312,0.03662669178384299,8.669113083477967,0.07263441298599513,8.71547042651906,0.0348697887056177,-0.0236347660956004,0.0285604545691902
+6,KG-MaNGA-1-277,8.725484976919931,0.0061910406960174235,8.63403930743334,0.028558192741763994,8.643684547621616,0.05843213071866534,8.66404834499932,0.0178551735394209,-0.0299666641586251,0.0152512258019385
+7,KG-MaNGA-1-55227,8.779392767718198,0.008703231273253394,8.774842883347775,0.00967516781936465,8.698395894506728,0.052735333483857755,8.76450561620348,0.00508791395191185,-0.0402816231954129,0.00434590704873975
+8,KG-MaNGA-1-954,8.638045139334414,0.0663230882124964,8.657491793597258,0.09692588443205166,8.655592505559582,0.09740914271852497,,,,
+9,KG-MaNGA-1-383,8.625132524430649,0.007884585691104349,8.659240018125375,0.03560540571337227,8.622746317280399,0.08631981901336068,8.62994930123993,0.00951789728700991,-0.0178138557899954,0.0081298342109843
+10,KG-MaNGA-1-55178,8.713447421161407,0.008251959921922347,8.723328572928912,0.012099003767192047,8.693307439703052,0.031472172742675456,8.71620163035553,0.00608918175566094,-0.0329692882267148,0.00520115280311305
+11,KG-MaNGA-1-78155,8.74595200327762,0.029253219692642527,8.734519745551442,0.044819534700723924,8.688053970478421,0.08406195478555716,8.73851529537863,0.0225368303534982,-0.190388838281222,0.0236820140336496
+12,KG-MaNGA-1-207,8.783214832277054,0.007706595932569729,8.782344522580347,0.013353045529148844,8.702049533275488,0.07191167684381596,8.77973658391385,0.00535472135360816,-0.0193623571847073,0.00457380401764431
+13,KG-MaNGA-1-54970,8.571122040639118,0.10830881408373898,8.580520775844667,0.10944222152263858,8.636483652794276,0.1049488976570209,,,,
+14,KG-SAMI-205168,8.63835287975445,0.10101169927978827,8.62352678920249,0.11763197227977096,8.643175194644103,0.10731886913887266,,,,
+15,KG-SAMI-210070,8.755433637834162,0.018855895090314483,8.752914845021248,0.023548461242014044,8.68673136421066,0.0693672963953872,8.74970398320402,0.00629378152398241,-0.0149081704013439,0.00537591432300564
+16,KG-SAMI-205166,8.78432685486427,0.03517640685192528,8.736489991583463,0.058502985020672305,8.681931090706398,0.08731230261337213,8.73913316833368,0.0138984036769683,-0.10577242968103,0.0139289065591642
+17,KG-SAMI-601018,8.736191173182757,0.04303527850374728,8.72331695754178,0.0606112684892314,8.66823665915441,0.09620915214625135,8.72047518296159,0.00976366701382608,-0.0287818851991897,0.0149657813164776
+18,KG-SAMI-575097,8.745245558629641,0.044387491859421827,8.685453144047425,0.0821810994930309,8.67866095907777,0.08683642953759899,8.72304129269228,0.0131613887310717,-0.0382414425436006,0.0112419692231775
+19,KG-SAMI-197866,8.778344138867375,0.028852128402474125,8.774405653884202,0.034195678817807176,8.722933979969008,0.06001493598415518,8.76097480450784,0.00719890904531946,-0.0396070906156556,0.00614904062037726
+20,KG-SAMI-204832,8.637940162938214,0.12582918868285756,8.623187607227777,0.11277235563669892,8.633315032751552,0.1083691915849831,,,,
+21,KG-SAMI-218713,8.699586800756464,0.062128616958773863,8.680227700532889,0.06840988600322434,8.644849635112129,0.10002409585829718,8.67463807480997,0.0203962783170214,-0.0345082551485597,0.0188112009612289
+22,KG-SAMI-623620,8.72147384234982,0.035905512053842785,8.595484736540628,0.06779552200762003,8.636442599010278,0.055588811598049584,8.66087984133846,0.0117759923437825,-0.0162688381332537,0.0108608323074274
+23,KG-SAMI-302810,8.71649168307257,0.05341636475666171,8.66933454090676,0.09332413196120999,8.673332261155748,0.08654249767859373,8.70323277879256,0.0122964761431927,0.00443259340973706,0.0100993086023624
+24,KG-MaNGA-1-40777,8.72701442433316,0.017601658481857383,8.703326525206,0.05247193857502654,8.668099988843313,0.0861197111408703,8.71747971301903,0.00710462623843525,-0.0231393945147476,0.00606850774995419
+25,KG-MaNGA-1-602390,8.716037407556076,0.030390068803084196,8.79442489161567,0.02263034945177035,8.76203549135995,0.0359550807998478,8.77684743805996,0.0101081744335799,-0.0166262459612586,0.00863402701696216
+26,KG-MaNGA-1-39995,8.636073277792802,0.010282551162728687,8.556680472040892,0.07076287912741265,8.560519003767016,0.06544378307266623,8.5849123711294,0.0136524127977937,-0.0663757611088817,0.0116613837362445
+27,KG-MaNGA-1-39880,8.704915788010846,0.007731899408264109,8.666789401106943,0.041942594635114606,8.658873508183108,0.06708324231605076,8.68763890771175,0.00396042651370896,-0.0290659807840167,0.00338284917249358
+28,KG-MaNGA-1-602324,8.563414459091346,0.007788382963026581,8.659629977142865,0.07781564108654744,8.663505081621174,0.07049439596339876,8.70065063411857,0.00870828032096207,-0.0365086749211254,0.00743828948110449
+29,KG-MaNGA-1-40810,8.800908281234204,0.011365298046847556,8.748104258834983,0.04142477717699382,8.695763179388063,0.0755999314383344,8.75118675241924,0.0146147085673872,-0.104715921541584,0.0124833410271058
+30,KG-MaNGA-1-40534,8.721152787794821,0.00853132907745767,8.674906510466954,0.029483520162675216,8.660448303817669,0.059947042048965275,8.67801151015057,0.00521499872774839,-0.0389159046125043,0.00445445814223613
+31,KG-MaNGA-1-40778,8.652726715701442,0.10983717084546088,8.685339504290608,0.07982792936970629,8.660525782922292,0.09776451142918156,,,,
+32,KG-MaNGA-1-601940,8.668814727037745,0.09883432183627053,8.652421691355254,0.09894014861322392,8.671687224228315,0.09003916085132332,,,,
+33,KG-MaNGA-1-40577,8.77435949705078,0.013462137641024203,8.6695547792841,0.06087098863533472,8.663913334912731,0.05994082486924438,8.73478436594952,0.00329974987526575,-0.0546782204526479,0.00281852373635504
+34,KG-MaNGA-1-286,8.65144710918047,0.10605758732127728,8.65697215816316,0.09474759007047576,8.624769244406922,0.10299954918176572,,,,
+35,KG-MaNGA-1-60334,8.518124555025055,0.11808475299596549,8.630510391535243,0.09415922546841926,8.631178862237224,0.09475629438886188,8.74970497525137,0.0129648863948926,-0.0697305098820603,0.0110741242289488
+36,KG-MaNGA-1-77735,8.710915809845561,0.01347280453634648,8.538177499737301,0.02890566877840975,8.51569218761547,0.05564949925919121,8.56260100989253,0.0148770304854905,-0.154721594688914,0.01270740666259
+37,KG-MaNGA-1-78451,8.739308333120979,0.01360211662921825,8.737333567352495,0.04992481486489069,8.7275537105988,0.05316033595432928,8.77150157280727,0.0156543545838158,-0.0159286341467123,0.0133713680247506
+38,KG-MaNGA-1-78291,8.662371574268308,0.03974065747606419,8.687768236982796,0.04993989670679231,8.6753991975485,0.062077439073967865,,,,
+39,KG-MaNGA-1-606422,8.680355567563758,0.03612573233422078,8.774783059982555,0.02310785691331483,8.737992407046313,0.04188669398070504,8.76200700687355,0.0142837069343138,0.00745111296968173,0.0122006117309907
+40,KG-MaNGA-1-54829,8.653447113035963,0.10588486832277455,8.667772578243909,0.09790747878512959,8.659025958107021,0.09988382301080079,,,,
+41,KG-MaNGA-1-78377,8.776310100518643,0.023628271892459536,8.680786202817835,0.02994741259028867,8.67424862642842,0.04479346633593245,8.671960393424,0.00829737075751092,-0.166277368383986,0.00831558103033321
+42,KG-MaNGA-1-78294,8.767972186471681,0.009058616387946078,8.707201661252652,0.020133020448014318,8.695796187040905,0.035111686455205154,8.72840920819352,0.00365503574180967,-0.056659636061632,0.00312199572238394
+43,KG-MaNGA-1-78117,8.628301886450883,0.12830594493710573,8.659154516724373,0.09896477666788492,8.660566787088733,0.09868313630103012,,,,
+44,KG-MaNGA-1-78021,8.624203656923298,0.05665701088916475,8.654860956639762,0.09681785461825987,8.662910715576338,0.09151219464952542,8.72758222833803,0.030043701868689,-0.00181958442307365,0.0247954461270966
+45,KG-MaNGA-1-77800,8.637103757762992,0.11715993959900455,8.670150123450009,0.09265381154849724,8.670903180938843,0.09020495252006425,,,,
+46,KG-MaNGA-1-605957,8.676270252054726,0.006676744297623589,8.603936712883575,0.008890598159843516,8.587335375757187,0.027306722742822347,8.61153796931692,0.00459294273139011,-0.0741711681947447,0.00392312102355934
+47,KG-MaNGA-1-54602,8.632416672310143,0.07696586834011593,8.637135280484527,0.08626260778223058,8.630663512564213,0.10705102848838738,,,,
+48,KG-MaNGA-1-52600,8.678554571895189,0.019217423965119513,8.690088649510738,0.02936288146475652,8.67181411964841,0.08200956509064528,8.6933281849344,0.00773365070947441,0.0140588040994194,0.00660579708077938
+49,KG-MaNGA-1-52554,8.690426651532759,0.009366804764947263,8.629496615531025,0.038677372460559876,8.627387886699633,0.06617534580422167,8.64711597064571,0.00704344909569816,-0.0576699536825856,0.00601625250775557
+50,KG-MaNGA-1-52637,8.64435312033784,0.010044330915622969,8.605437259068264,0.025648147105419114,8.600468298334537,0.053741369599354764,8.60884947327677,0.00582098284664067,-0.0307294017245853,0.00497206726035589
+51,KG-MaNGA-1-52368,8.721883455193717,0.019231553742052324,8.682909654100806,0.05032176920588373,8.650985186683176,0.06781022676928443,8.69297647599676,0.0154300850591247,-0.0434678905153209,0.013179805329826
+52,KG-MaNGA-1-52677,8.601164946372128,0.006492551647951418,8.60207895196585,0.007784504517382246,8.580394871818765,0.07708234692370391,8.60256868984181,0.0066913226091967,-0.00834852497361585,0.00571547914676749
+53,KG-MaNGA-1-52578,8.755177069308294,0.013496972402683757,8.725442435947457,0.04807604814910727,8.696263810025355,0.06141519998544391,8.73619642834073,0.0067516099460045,-0.0259918222299309,0.00576697434980337
+54,KG-MaNGA-1-556831,8.661712636393816,0.07985639852131454,8.667308260161079,0.09462860254931608,8.66560159154998,0.09786101656454824,,,,
+55,KG-MaNGA-1-382729,8.72011617641263,0.02018062886368833,8.59147294213435,0.07330048336561057,8.609129767792517,0.07898691787876516,8.6349099887889,0.0085429979493119,-0.0703233856028624,0.00729711142055239
+56,KG-MaNGA-1-382473,8.557823417802933,0.007708896864580007,8.49034096450619,0.016937125441739843,8.480682863033275,0.054523862273651635,8.50867739236895,0.0101806709700602,-0.0420739493640456,0.00869595086470744
+57,KG-MaNGA-1-297825,8.679718327312912,0.12010018188426058,8.680050325080224,0.10162483735237311,8.652375009701489,0.10654929777967193,,,,
+58,KG-MaNGA-1-297854,8.76346872270214,0.0154081608936207,8.700596089219653,0.05379784597795815,8.706237886613735,0.04564949716514538,8.73070835864036,0.00359958363282638,-0.033155724896482,0.00307463059129571
+59,KG-MaNGA-1-458678,8.65942449858853,0.04997492120698391,8.743144375308356,0.03817998027023368,8.68514075923461,0.07532152373691564,8.74457701437951,0.0145809500446926,-0.0331275052941008,0.0119426752150059
+60,KG-MaNGA-1-458727,8.772508811815172,0.007554880534723052,8.805624745887673,0.007807835592329969,8.752051082381323,0.029819558618161178,8.79066965071324,0.00982310479744575,-0.00247345664523978,0.00839053112596122
+61,KG-MaNGA-1-412000,8.674955352842993,0.05807023183760994,8.666118038898366,0.028220442167542083,8.660114863823376,0.03422660329327224,8.64799657937704,0.0266592832071813,-0.172891103439184,0.0267177924427738
+62,KG-MaNGA-1-297986,8.759209556034266,0.010533528112009846,8.762918197526579,0.019138811219274986,8.70244436571596,0.062165016674220364,8.77143215413457,0.00931758194397429,-0.00625917665875573,0.00795873228797672
+63,KG-MaNGA-1-117014,8.75603141214385,0.007517972941342597,8.738431546582996,0.03277417514656108,8.69962930033685,0.058616230410076714,8.76031036146901,0.00809992180548334,-0.0327011849646048,0.00691865224164481
+64,KG-MaNGA-1-117104,8.773163488773454,0.015676863847227232,8.671895473730741,0.08587108667697897,8.673412446064747,0.08665382008115403,8.74581874214458,0.00969454803656657,-0.0613728357797526,0.0082807227175352
+65,KG-MaNGA-1-117981,8.683502643899775,0.038817755265795756,8.693958125049885,0.07286579062094516,8.702004132004006,0.058474093800277266,8.72931073612366,0.00892299107877459,-0.0241614386411215,0.00730846646299219
+66,KG-MaNGA-1-116989,8.670525840457039,0.008732783645925722,8.790322037927654,0.01819872306486769,8.75119072779488,0.03567977757489343,8.77220289260262,0.0207501723550151,-0.00534517780722161,0.0177240262222475
+67,KG-MaNGA-1-117946,8.789298059776984,0.009541111046359472,8.74074048504334,0.029658057308382765,8.706907745858656,0.04653799443910258,8.74489542393952,0.00738374318955421,-0.0710241092863838,0.00630691907859603
+68,KG-MaNGA-1-38033,8.64734431997129,0.0262375326912398,8.69988079645498,0.06618730813149742,8.670770500803963,0.07856406395723019,8.77125953093655,0.0158905593892829,-0.0396035170054136,0.0109120726131241
+69,KG-MaNGA-1-603996,8.758520050409528,0.06049302802234851,8.636967787538733,0.1129534490102717,8.653956561340646,0.10299052467705487,,,,
+70,KG-MaNGA-1-603974,8.67732932525183,0.06686790513211036,8.74294097286936,0.026310814216762447,8.71197526484136,0.04281030459423542,8.72806450853873,0.0289061991306536,-0.10302200332563,0.0236759159629204
+71,KG-MaNGA-1-38353,8.661125478306053,0.08715964997147674,8.653781712146884,0.10087431533166528,8.658390360094838,0.10080457868219457,,,,
+72,KG-MaNGA-1-38293,8.707642997171021,0.07758772746355398,8.645026569659446,0.10976485545882556,8.648930838949525,0.10327639405265802,,,,
+73,KG-MaNGA-1-37995,8.615386088499697,0.04936532626553003,8.696458743497875,0.06568753535928096,8.678741000593002,0.07293086785676356,8.78346350464351,0.0262452778293214,-0.074704813839027,0.0196958872285803
+74,KG-MaNGA-1-38029,8.680007337633041,0.016239474892933543,8.787541016650433,0.019171890470633602,8.741623647744202,0.04171399451526032,8.75905671479524,0.0189867090356672,-0.014808203651774,0.0162177413789537
+75,KG-MaNGA-1-604048,8.684529766514038,0.019425716056643023,8.723029766821744,0.028724138570896483,8.703672937744614,0.03264050672021181,8.71082890883381,0.00910214406050845,-0.0304111302015974,0.00777471325283404
+76,KG-MaNGA-1-38521,8.61948747271435,0.0674208633096352,8.675111862823924,0.08391426104500928,8.674471234800935,0.08454559298396153,,,,
+77,KG-MaNGA-1-38514,8.73700184821191,0.035574167560095744,8.632616435564021,0.05142960030489039,8.609682801938114,0.08343751567421062,8.64211282048847,0.0178703716537209,-0.0878914548287067,0.0152642074664651
+78,KG-MaNGA-1-82669,8.650835638301045,0.0729035762030233,8.67528962004016,0.09061590231645018,8.659291687962481,0.10019189210039256,,,,
+79,KG-SAMI-594049,8.707153632625827,0.08632909704160976,8.638799475123344,0.11434245956759677,8.657492522558384,0.09884005556085426,,,,
+80,KG-SAMI-93020,8.672088410107524,0.08262626790225296,8.657782380777137,0.10177582661590472,8.660451845001452,0.10589654211406532,,,,
+81,KG-SAMI-92944,8.70161545527902,0.020739903217590172,8.678200536880915,0.030364239981113438,8.665215630144823,0.05358691139192899,8.68247203550997,0.00207399991987786,-0.0262854293316809,0.0017715336690189
+82,KG-MaNGA-1-82432,8.75773997089898,0.012546032747460831,8.732693616943623,0.022393022917912998,8.715572486836995,0.04641705208158693,8.75114865188115,0.00589593331815307,-0.0522682245014301,0.00503608716822593
+83,KG-SAMI-593680,8.767418873030937,0.022121536317364476,8.6955740432743,0.0832234836629391,8.73290825692549,0.05734156029509849,8.74440599976655,0.00885315477961283,-0.0472956518010443,0.00816514028253768
+84,KG-MaNGA-1-70384,8.77976950130671,0.008451270946657735,8.720369269040853,0.05729095332909384,8.709878235962124,0.06239689846660863,8.77435345985571,0.00514787430187309,-0.0264283434531397,0.00439712295176097
+85,KG-SAMI-93604,8.73627617075747,0.041923599973612995,nan,nan,8.70424898726192,0.0510573075848809,8.59756984602761,0.0260978347631641,-0.225226496641604,0.0460899021241971
+86,KG-MaNGA-1-368248,8.794702625032999,0.013388301325707997,8.783982218213348,0.011891901969199899,8.74014372011962,0.020173122633069848,8.7699564011192,0.0111618398288921,-0.0721043922039784,0.00953402884713851
+87,KG-MaNGA-1-559752,8.634861120520315,0.13236276573826244,8.658025052619694,0.09734836727420586,8.656783112500978,0.10072591526421862,,,,
+88,KG-SAMI-107214,8.725240634488832,0.05528522333835733,8.661363853948208,0.06853823165767828,8.697746525201707,0.06070277034544126,8.66150194287612,0.0177085701641386,-0.0802406854385124,0.0312740989063443
+89,KG-SAMI-93062,8.76956297510726,0.018269737123311005,8.749088406488072,0.026564177186107,8.702250562045654,0.06397139264759814,8.75051793069683,0.00440861550975682,-0.0284294603051809,0.00376567555979128
+90,KG-SAMI-93023,8.675131527905558,0.09536445936153261,8.643054136274843,0.10953191251755848,8.647748369226571,0.10434302121019143,,,,
+91,KG-SAMI-78827,8.63648728419071,0.11603931839367503,8.64797464911809,0.10963298996954243,8.649202234725882,0.10509977508147632,,,,
+92,KG-SAMI-509075,8.678325215351512,0.07660721225462404,8.650199515569934,0.10257783178421324,8.649133229281084,0.10320046237715551,,,,
+93,KG-SAMI-240432,8.725194592029855,0.05992315413718071,8.695243046844112,0.07901073122764941,8.709085587548826,0.06926618283843348,8.74070106335679,0.00500725358394457,-0.0046278935618797,0.00461811963767959
+94,KG-SAMI-493028,8.627889037192874,0.13389571589860863,8.637157151966504,0.10836110385290702,8.64087383026254,0.1104868351248357,,,,
+95,KG-SAMI-63302,8.712139019517018,0.03833731081750766,8.692594685645302,0.07762686416158054,8.697425721696844,0.07529880078186625,8.71333178030894,0.0131114320080052,-0.0554415053059472,0.0111992980465502
+96,KG-SAMI-63777,8.732611317947004,0.040276165502269846,8.742584596404738,0.04103142528947462,8.724848849823497,0.05286427750420756,8.72668772877361,0.016994182093355,-0.0548521272666964,0.0170314792928362
+97,KG-SAMI-485882,8.620117910462067,0.10279100577936383,8.630937660320486,0.10723503462136368,8.650721264239142,0.10433211832829596,,,,
+98,KG-SAMI-485919,8.7327433000617,0.05740888292197116,8.725711473380453,0.05868431454912304,8.710684347132949,0.06554915458997734,8.72918458008571,0.0133037125002709,-0.0384405362631116,0.0113635368985769
+99,KG-SAMI-505341,8.658620085147039,0.08860023947476048,8.63273945118621,0.1032351948385229,8.623296269198592,0.11482772357407037,,,,
+100,KG-SAMI-485924,8.76414497458338,0.033077585418867794,8.771786452062166,0.027579496170453768,8.704480793628717,0.05703542583559967,8.7615811702634,0.00605764273374148,-0.0551706706055819,0.0047510923401894
+101,KG-SAMI-619095,8.787609748323462,0.028057046597370013,8.788343603885831,0.02723296024917196,8.714667710984546,0.06535090601244951,8.77274442222703,0.010284346306903,-0.0490421219568441,0.00878450648522775
+102,KG-MaNGA-1-212392,8.663826578041194,0.0793772304785316,8.688359966541869,0.08513309916703865,8.662094983102298,0.09781750230681975,,,,
+103,KG-MaNGA-1-212462,8.717476283474337,0.06661728095540778,8.66319627710602,0.09693131077146042,8.675723820832575,0.09112273145671662,,,,
+104,KG-MaNGA-1-212693,8.70286162664462,0.047571349843347356,8.731920647150552,0.05753797570269293,8.712079018861871,0.06432085665407788,8.73938284920304,0.0144961531561721,0.0314479565348608,0.0145279679215432
+105,KG-MaNGA-1-212396,8.80323876775019,0.023939927493031997,8.688329937794238,0.0910898819150143,8.68195592789445,0.09238173148241212,,,,
+106,KG-MaNGA-1-212496,8.616321574060805,0.13411931314558442,8.660751062919784,0.10802897984496458,8.659471234253816,0.10411934391361721,,,,
+107,KG-MaNGA-1-212493,8.70381473084315,0.022848748268607548,8.747397906585025,0.040433743092774546,8.677188859550487,0.08395266367874572,8.73652876329995,0.0203436325337424,-0.0446082952300262,0.017376775012506
+108,KG-MaNGA-1-109679,8.802505831152997,0.016655387290823245,8.756794112579996,0.025460478985383738,8.679821438014807,0.0682103764291981,8.74988240955609,0.0146757519201315,-0.0828956393668514,0.0125354819908638
+110,KG-MaNGA-1-212813,8.771038729430275,0.02280484227150167,8.745905437168476,0.03824157837006938,8.758017790957746,0.03339655391575156,8.76812507359924,0.0171901471273585,-0.0532938840465133,0.0146831849507967
+111,KG-MaNGA-1-212222,8.802450281771383,0.01123682251528945,8.785997558352511,0.026530827707056944,8.713327127098417,0.06717779557740657,8.80305804644236,0.0090679949411976,-0.0227559547912097,0.00774554434397985
+112,KG-MaNGA-1-78783,8.794569878765328,0.02095922499660144,8.646641520438145,0.05173823598789205,8.64116912055784,0.06979397304674206,8.69151718718416,0.00743958474752497,-0.127296081249877,0.0063546168625388
+113,KG-MaNGA-1-182803,8.675345515692285,0.08406181493085527,8.66263767244492,0.10133512314239364,8.653317320948153,0.10443808269160047,,,,
+114,KG-MaNGA-1-78873,8.712890212543025,0.01875806349818636,8.69633613885681,0.06745662203150309,8.693775091785499,0.06557704822466821,8.73655359698781,0.00768882749736229,-0.0132850718179413,0.00656751075846608
+115,KG-MaNGA-1-1258,8.665907191698636,0.006552317799990541,8.66551580396264,0.013008208106463144,8.618559327369471,0.07590786714303889,8.64852251867607,0.00528928876036998,-0.0183715531905776,0.00451791392774523
+116,KG-MaNGA-1-78665,8.589063830792128,0.00788062370903507,8.557047299646104,0.010237612411898156,8.551364377701326,0.06603597521747437,8.55780589635802,0.00326973458625903,-0.0404568847410096,0.00279288579174804
+117,KG-MaNGA-1-1151,8.656282303082536,0.009252552356126341,8.549085031862083,0.01972425876401884,8.540142685805927,0.05686762293015133,8.56075602427583,0.0126736239762426,-0.0856481015228586,0.0108253386932248
+118,KG-MaNGA-1-79095,8.728414001144111,0.007933710913636155,8.596028700282314,0.025427652272944926,8.5569069683939,0.05028277911787994,8.64910923535821,0.00341795261985562,-0.120114514030939,0.00291948812878555
+119,KG-MaNGA-1-1278,8.728613477980266,0.016870351519080635,8.737046327491017,0.04406646399767494,8.672281078783517,0.09099642193646211,8.7405140523195,0.0136865750057953,-0.0247016301530863,0.011690563824972
+120,KG-MaNGA-1-78452,8.800967521462734,0.020859406572014346,8.724087792669305,0.02124430901849385,8.671534929546304,0.06697676759806512,8.71507297693773,0.00783065125470225,-0.0988360320236234,0.00668865134231399
+121,KG-MaNGA-1-78627,8.725464239412027,0.03528116907562069,8.583960216426812,0.07881558646276896,8.613870197729149,0.0745116483699774,8.64430580802362,0.0153588369621058,-0.0977025783057034,0.0141652395664659
+122,KG-MaNGA-1-37126,8.6917534464772,0.012864339712679857,8.658455419905277,0.03951680236074937,8.647260500888919,0.08096906531788488,8.68839513106182,0.00723653107777942,-0.029486720248949,0.00618117596260219
+123,KG-MaNGA-1-37385,8.671326763686512,0.00970311820484265,8.717542619824142,0.05717382323225753,8.693504768704685,0.06969230783451032,8.73521343866045,0.015060901540608,0.0154524024077704,0.0132700318368753
+124,KG-MaNGA-1-36645,8.736256914635566,0.03965214233899229,8.55276142145887,0.10422999812738865,8.589082990875049,0.09331770995996631,8.6173014498933,0.0271838234480859,-0.108041652629527,0.0272434838942453
+125,KG-MaNGA-1-109234,8.7345876392053,0.04193867522098752,8.703250872021334,0.05950919533747175,8.667525124665183,0.09093528480869081,,,,
+126,KG-MaNGA-1-36867,8.749197652847753,0.012951064251250814,8.653270975893928,0.026064576625217706,8.63892165565166,0.055639858794556706,8.68167736808223,0.004084383767793,-0.0872382636797318,0.00348872885311669
+127,KG-MaNGA-1-37796,8.59742927460491,0.03012764300938724,8.606613673761284,0.08124065045398159,8.591548643009247,0.078831225450639,8.57602449504012,0.0211359019448525,-0.0771315666685621,0.0194933454428128
+128,KG-MaNGA-1-547747,8.659032678759887,0.05743504556854034,8.672260451316879,0.07943670081632338,8.647574711448106,0.10299003198806655,8.66585444305481,0.0257889613237302,-0.0943433797897696,0.0258455604604005
+129,KG-MaNGA-1-36975,8.61832317505539,0.11246684513350722,8.641899873222078,0.10791697052247114,8.646960605743388,0.10552284067937587,,,,
+130,KG-MaNGA-1-36942,8.662142971534815,0.09500334300412995,8.674663930597934,0.09854599422762156,8.651012363729059,0.10532411084763392,,,,
+131,KG-MaNGA-1-109073,8.737712129869713,0.012363655441667332,8.62748914895912,0.06436750251045453,8.630659156510026,0.05971228273830397,8.66654344034077,0.00733302373225281,-0.109977774399525,0.00626359640272578
+132,KG-SAMI-346046,8.643330278128873,0.08639144421442017,8.656984151672958,0.09437177358712696,8.65610275793924,0.10070235433527559,,,,
+133,KG-SAMI-323575,8.618996552863283,0.02836719916389903,8.573908903126318,0.09852372746850788,8.594669049542889,0.08277342860750911,8.56643590428461,0.0118453132132213,-0.0484037691421886,0.0118713101695563
+134,KG-SAMI-278846,8.634104785452179,0.019516843295694346,8.58939507366575,0.09867880821264946,8.609862153465006,0.09817101480427105,8.60759759983909,0.012017762704268,-0.0474832710005804,0.0102651263642017
+135,KG-SAMI-278773,8.705738744567839,0.07675506569005264,8.69324953286747,0.08256221262393457,8.661902916709362,0.10403505973635058,,,,
+136,KG-SAMI-550330,8.58341163656004,0.01914910738477375,8.543026443694856,0.07503252347636347,8.547457151450091,0.0685552300207521,8.54726227274921,0.00747863956233758,-0.0407481385397473,0.00638797603421221
+137,KG-SAMI-203729,8.53507375992124,0.01646694686213453,8.53939709908146,0.02013811764853025,8.568332120974482,0.08877892775041288,8.54729192441712,0.00819251601751189,0.0178887807571751,0.00699774277708442
+138,KG-MaNGA-1-117026,8.694231450028761,0.019757886909672624,8.628489159430606,0.07233736715147748,8.629679907659655,0.07349382144275483,8.65327007286204,0.00443907531358112,-0.0687696744021113,0.00379169319243885
+139,KG-MaNGA-1-117663,8.4802945056984,0.007344675147448034,8.4430237175831,0.05609624303288804,8.455498997047744,0.06498348248157258,8.4364369438276,0.0121196936535906,-0.0672926810473605,0.0103521919937176
+140,KG-MaNGA-1-117122,8.617104904316832,0.00927863284722976,8.61086107467671,0.07503571072634853,8.591031964922498,0.07025114357386586,8.57657033704158,0.0140532035572655,-0.0891803359076261,0.0120037243110107
+141,KG-MaNGA-1-117388,8.650761435113775,0.009233554298245543,8.642347463670898,0.02330920127239012,8.625717042514928,0.08864495027374451,8.6435332943116,0.00692777951749879,-0.0193844599411906,0.00591745185193228
+142,KG-MaNGA-1-116972,8.632874916394318,0.11917403511727942,8.653862769685857,0.10292715715910825,8.653168432507096,0.10197982757323489,,,,
+143,KG-MaNGA-1-116700,8.526952276575248,0.00810088772887739,8.549107321701847,0.013089430504032428,8.603100609234177,0.07048538783800082,8.55170235396252,0.00347028671520622,0.0347309198136029,0.00296418996848316
+144,KG-MaNGA-1-118083,8.737978677004499,0.023660264832018416,8.727055613753546,0.05134613998124967,8.7212802590251,0.05495710620160969,8.73682081033844,0.0178769576998518,-0.0314218813868657,0.0152698330223558
+145,KG-MaNGA-1-118034,8.648712713050351,0.07310119031895752,8.620894689609585,0.10372488171583673,8.632887461529954,0.09895604309833356,8.62968404047195,0.0806318811139624,0.0283162494325991,0.0529874081830261
+146,KG-MaNGA-1-117465,8.666037679102555,0.06164750862066304,8.73676463514017,0.0471844278190254,8.703769468334011,0.06456270294168438,8.72364643704783,0.0150827779775105,-0.0530308280769701,0.0143767808107165
+147,KG-MaNGA-1-117381,8.731210198213802,0.007118159570134589,8.788614805937694,0.02235504547081807,8.71159714177698,0.061090610105950974,8.77182593578191,0.0225665731701047,-0.032085024253079,0.0192755283074328
+148,KG-MaNGA-1-37478,8.70389976079681,0.0839471616052679,8.68932309977049,0.08952595633678419,8.669766867520568,0.09473654083293791,,,,
+149,KG-MaNGA-1-38103,8.663015159506747,0.04843743059908442,8.62421399041197,0.056902768290748855,8.626240497008071,0.09552752611676547,,,,
+150,KG-MaNGA-1-37908,8.772458383914861,0.007680081116299668,8.653382631333601,0.013675378148174846,8.618229781510825,0.03362558007503009,8.68462228475324,0.00463599936306986,-0.119611944618008,0.00395989839850722
+151,KG-MaNGA-1-37415,8.759078619228964,0.006010541446863807,8.696270590424342,0.04204049042869237,8.692193393393449,0.04467655762532252,8.71773902491844,0.00439138268964071,-0.0447688071832494,0.00375095592515907
+152,KG-MaNGA-1-37421,8.752948292099246,0.016921538400259315,8.759024865651044,0.034688658007754884,8.709478254319176,0.06368601790146422,8.76514142940862,0.0113293978555806,-0.019806086269279,0.00967715068766906
+153,KG-MaNGA-1-109112,8.64350383614701,0.11407230954607028,8.671681280310223,0.08602393492926579,8.65269106822337,0.10223234730943849,,,,
+154,KG-MaNGA-1-36849,8.742959769158617,0.020735837640565954,8.664334139017985,0.06140024922877123,8.674455370611565,0.05875488635553954,8.71510884413156,0.00706495661861318,-0.0367949901695275,0.00603462343468569
+155,KG-MaNGA-1-36847,8.659668930718757,0.1136456233210678,8.64512386993131,0.11332738145721934,8.655639942652359,0.1017103716106912,,,,
+156,KG-MaNGA-1-37407,8.780073290130138,0.012969620479430637,8.642259036038526,0.04325169585228754,8.653016829337638,0.04464711500477991,8.68029063373819,0.0113172153919088,-0.0702691778192836,0.00966674487985806
+157,KG-MaNGA-1-118178,8.775517695895058,0.013751627718203697,8.691011161004313,0.03066320513488647,8.646219481684607,0.06428543606607198,8.72514651755831,0.00483839780745751,-0.0852568688484052,0.00413277962928899
+158,KG-MaNGA-1-118337,8.7494023006318,0.02647751836429012,8.54414333121059,0.06974464370945187,8.557863722877,0.07770060054336692,8.59827845733527,0.0150192784928707,-0.120885393251799,0.0128289096250587
+159,KG-MaNGA-1-118238,8.688320322934032,0.010920483828731817,8.648867873999563,0.08203019315806481,8.651396211101973,0.07670505298846207,8.67199094420285,0.0109536670234066,-0.0070770707925426,0.0093562153716619
+160,KG-MaNGA-1-118223,8.674073784141333,0.014135701010510397,8.649351098413787,0.06341928174705207,8.63053292842862,0.08475166185560744,8.66139715010343,0.00664295169545782,-0.0168893624500983,0.00567416250954473
+161,KG-MaNGA-1-117938,8.757005936374988,0.008862191496242405,8.718075318473545,0.013255828981177779,8.67965925719247,0.06655778525179458,8.71552915737296,0.0051818050161715,-0.051852036075706,0.0044261053071687
+162,KG-MaNGA-1-118444,8.648147841350601,0.09627635159125553,8.693531529326881,0.06814191568619862,8.649882609117931,0.09548180874096611,8.69489028450637,0.0121003072400479,-0.0389149943363034,0.00949043705101798
+163,KG-MaNGA-1-118480,8.74412863416627,0.009807735298199834,8.689685903594881,0.012765594655485822,8.640805753209191,0.05346718450247257,8.70601673082668,0.00227339637157123,-0.0685411172427007,0.0019418507091847
+164,KG-MaNGA-1-118217,8.701278261381752,0.00663365123165705,8.664229193758288,0.009235473973821321,8.637544130679697,0.057221999098242625,8.64181489271694,0.025017885875048,0.0203718199503197,0.0204911535020681
+165,KG-MaNGA-1-118369,8.674922014697565,0.006259377720783196,8.651062065412063,0.016498650769543727,8.604856392595707,0.08137256750967672,8.65047347043597,0.00758535014601047,-0.0436228632100738,0.00647912424979571
+166,KG-MaNGA-1-117936,8.6326755898775,0.11694024676723358,8.636345059064015,0.11496520435490082,8.651726950447333,0.10557752988453423,,,,
+167,KG-MaNGA-1-382566,8.782620267770303,0.01966613408498537,8.613390768993707,0.04016109666546081,8.60175792837559,0.060769643544318803,8.63728246426719,0.00863139009106518,-0.117875408392853,0.00737261270369702
+168,KG-MaNGA-1-412119,8.76698400897529,0.022577096542169734,8.758676327624604,0.03688409853797606,8.698160636854485,0.07450804080638423,8.7611836074904,0.010972862292496,-0.0401071816945971,0.00937261125728945
+169,KG-MaNGA-1-556959,8.745786246319481,0.02706852911341706,8.695592029534984,0.059445322375963824,8.656769647759532,0.09213231282456488,8.71668261478423,0.0089913983631336,-0.0473894896644819,0.00768011839305696
+170,KG-MaNGA-1-411980,8.762359524249607,0.02733289556979661,8.66665052907649,0.07525312981188576,8.668671480859249,0.07677631354399565,8.73613802435569,0.00826121955280165,-0.0805253159090924,0.00705642678414726
+171,KG-MaNGA-1-458712,8.65956689099009,0.08090443818434079,8.663646443015628,0.09353788209019177,8.646609331986182,0.10541386077420717,,,,
+172,KG-MaNGA-1-382349,8.754011521218297,0.026431562822336344,8.78861905743676,0.024565663163043063,8.711648344099192,0.06170064087471743,8.77498141813823,0.0126228457797131,-0.0379127305058227,0.0107819658444884
+173,KG-MaNGA-1-297970,8.535572990279793,0.06986107923945716,8.650293829996567,0.06941869645121218,8.636154307796218,0.09703796597043624,8.65735006115635,0.0235437188059089,-0.0266828796425959,0.0176684900635543
+174,KG-MaNGA-1-458697,8.73992481830003,0.018830479730419382,8.74358257891682,0.04174631883017161,8.691744439452195,0.07355481563263305,8.68625671394375,0.058337215877146,0.0274113409254659,0.0471532137353064
+175,KG-MaNGA-1-458614,8.777998085772168,0.01596885768390003,8.615075815088224,0.04189428810257589,8.614052225457964,0.05898654993502026,8.64512315939719,0.0143789658395845,-0.106350255079606,0.0122819783483872
+176,KG-MaNGA-1-458609,8.66345564167728,0.10023413524972807,8.651631421279776,0.09733748879371117,8.650267414736131,0.1047961765681273,,,,
+177,KG-MaNGA-1-60570,8.641665537198651,0.09602539581828565,8.621396713219015,0.10682027396956421,8.642502353757337,0.10421511438161343,,,,
+178,KG-MaNGA-1-1093,8.754726133604201,0.011782044838624986,8.689168391145124,0.06692225202662043,8.704975595244825,0.05191596079506295,8.73974465357045,0.00483550972005264,-0.0292499572251152,0.00413031273233892
+179,KG-MaNGA-1-79052,8.70801511093762,0.0064300287416145145,8.667871136504393,0.006447769250031494,8.658647888671641,0.008984494579801348,8.67903287644376,0.00398787617111201,-0.0331773265100549,0.00340629564991457
+180,KG-MaNGA-1-78439,8.786523633918968,0.01102627968162597,8.783449136346885,0.015323289217590916,8.756798611591002,0.02814367469870783,8.78444950215152,0.0100226229487022,-0.0244599286389695,0.00856095211737191
+181,KG-MaNGA-1-78239,8.514963646271289,0.1519634513488736,8.657488096951269,0.10627020029742791,8.641759467794468,0.10913734986247545,,,,
+182,KG-MaNGA-1-78213,8.745954676237956,0.008824599228844482,8.677292809963692,0.0839525175620994,8.6779462634033,0.0805207183504626,8.71756012176507,0.0280546450087886,-0.0871865269174602,0.025874404974943
+183,KG-MaNGA-1-78353,8.592182440534161,0.0482897419288099,8.7000574922728,0.08072834531312569,8.696528420246581,0.07193496228569726,,,,
+184,KG-MaNGA-1-60629,8.665905829804839,0.04926188458512269,8.662734814185654,0.09091662883707266,8.658332219820242,0.09500626782256393,,,,
+185,KG-MaNGA-1-55399,8.750480031026129,0.01271936110954113,8.771547690655112,0.010137477279089022,8.751919801901803,0.01647180973817701,8.75981968815768,0.00965558753421842,-0.0308602329346356,0.00824744410406461
+186,KG-MaNGA-1-78766,8.661183568170728,0.09535063652182234,8.659982918427342,0.09835941737854742,8.659047682785271,0.09889112437160029,,,,
+187,KG-MaNGA-1-55513,8.752128183275376,0.010389743088424797,8.609510290049785,0.06020317976090446,8.61691606366497,0.060629778609720915,8.6367790980628,0.0118672797134879,-0.120545171535559,0.0109450253660853
+188,KG-MaNGA-1-78252,8.739054624366862,0.023142013254911515,8.67581133697189,0.06179164794989572,8.675317744223031,0.06500857917993062,8.71431208169714,0.00463833621182588,-0.044723958176975,0.00396189444788554
+189,KG-MaNGA-1-1243,8.695837893857162,0.008485341951660522,8.739550511972798,0.018141476230787545,8.70789255708499,0.03251362636550458,8.72735836502937,0.0157948879736859,-0.0177152924297637,0.0134914064246512
+190,KG-SAMI-371889,8.693599488172357,0.08357741169141857,8.652721274985229,0.11172913241727639,8.650691080945846,0.10623863276762546,,,,
+191,KG-SAMI-202531,8.712834035175039,0.06437419529683568,8.681421998184339,0.08523851761340269,8.662795406645701,0.09363029622662684,,,,
+192,KG-SAMI-549313,8.714917629096398,0.016222703551583156,8.714968369782037,0.027872225194035982,8.669559343182755,0.08413393645525062,8.70880599273285,0.00552835899305701,-0.0192621394376938,0.00472211883749769
+193,KG-SAMI-214860,8.672943115166628,0.05234534162604979,8.51516846809546,0.08949140966936257,8.545020711923454,0.07815962920920444,8.54148944116791,0.017522284484066,-0.125331745820325,0.0161605568234727
+194,KG-SAMI-371976,8.726041855466997,0.07405099299030321,8.679976427019144,0.09553955869003256,8.662139468571956,0.09806232785525142,,,,
+195,KG-MaNGA-1-214291,8.689280570848489,0.040944452824941996,8.716240207035685,0.06104689842042023,8.67865635916193,0.08696122434308966,,,,
+196,KG-MaNGA-1-213726,8.704732007430412,0.009422284401890427,8.710313228109728,0.016641613926148303,8.633407780831174,0.057131453908784,8.71934898156561,0.021708730839362,-0.0788260949637062,0.0185427912629156
+197,KG-SAMI-301381,8.733419872423367,0.02494031029161606,8.670821696372155,0.08303466972279802,8.672262214115811,0.0842450905727523,8.70042607641304,0.00785551861222214,-0.0325892921768775,0.00670989211512395
+198,KG-SAMI-346752,8.74250446855166,0.05359924731454565,8.626958479120013,0.09132013638166168,8.650542124980074,0.08050598889701205,8.68334155093742,0.0070339277369983,-0.077248316740776,0.00600811971693435
+199,KG-SAMI-346793,8.762492481754494,0.03703957045462839,8.67860830068276,0.06936729028241635,8.70067785089565,0.0599600343890554,8.71450783562073,0.00590564800478643,-0.0529920946994898,0.0054466961912168
+200,KG-SAMI-514022,8.644109779517091,0.1112360848008696,8.630040717732392,0.1079189200467432,8.644013875979015,0.1064818080716561,,,,
+201,KG-SAMI-618144,8.681207091133402,0.08866486442130278,8.69065407709896,0.08565477217525704,8.646710963526706,0.10694451205976,,,,
+202,KG-SAMI-463641,8.771566713986289,0.029071580891032272,8.699471514327344,0.06835874796136863,8.686244638606064,0.07859452524008108,8.73582447650883,0.0103053632488734,-0.05736593488592,0.00880245837614325
+203,KG-SAMI-460767,8.607314417261856,0.10422930211120919,8.6109395613711,0.12161580265276081,8.630071620379873,0.11466610578526985,,,,
+204,KG-SAMI-319049,8.73942174135327,0.037415649850468045,8.686237215718377,0.07633896221237838,8.67676065446477,0.07988449238570264,8.72901968002046,0.00864553955960828,-0.0174810398531657,0.00738469865398205
+205,KG-SAMI-319018,8.730414493094862,0.02604264380320066,8.655116414074477,0.07915819121404255,8.645008587900186,0.08325748056868532,,,,
+206,KG-SAMI-91627,8.777577750234759,0.0347649418915133,8.693163813945803,0.04186924649676084,8.710346706596468,0.04198545628768118,8.69018833494421,0.00765469991326163,-0.10771679346433,0.00927842413728683
+207,KG-SAMI-618152,8.721454858484075,0.04461233645633829,8.705417722708544,0.06155648547947874,8.67360125135949,0.08808638879108863,8.7175278698307,0.00956807005626927,-0.0312837701087025,0.00882449659894045
+208,KG-SAMI-62244,8.686069322281536,0.07852580015540347,8.66427987923832,0.08949158224877801,8.65356730214075,0.10285097461445199,,,,
+209,KG-SAMI-485688,8.739593223754671,0.040927719173161084,8.690174553861867,0.07776101163861768,8.681240854268957,0.08265993662620019,8.74051416639332,0.0181752536740548,0.00835575254748325,0.015524626359891
+210,KG-SAMI-278840,8.767171242873562,0.023862193064616385,8.74577142106346,0.029404236864481258,8.671669356924523,0.08468191717742109,8.73031285081195,0.00688014913581367,-0.0705370529174164,0.00689524902666858
+211,KG-SAMI-323577,8.635774189775695,0.11730226597600778,8.588500403410732,0.1209129356032687,8.596591248278738,0.12040961742740912,8.59176878348034,0.0281027947388222,-0.00445256483470288,0.0254365601974972
+212,KG-SAMI-371170,8.743080264289015,0.05039582300896428,8.676436194412073,0.09051101677578953,8.668575779833493,0.0930280335968649,,,,
+213,KG-SAMI-376033,8.66460832201939,0.10264594691828241,8.64462457219147,0.10891451407853875,8.645546516679884,0.10856283909162807,,,,
+214,KG-SAMI-301191,8.715618114483316,0.0835851083519421,8.677925854656802,0.0906954654063457,8.662451107283712,0.10076790453070747,,,,
+215,KG-SAMI-323855,8.73079271704436,0.03928737320305336,8.765901159277016,0.03586901470197489,8.761671280084277,0.03757095783650688,8.74914172679592,0.0187438007573979,-0.0399755725603765,0.0227197584938156
+216,KG-SAMI-550328,8.687823203950954,0.0381765420808442,8.666555251718963,0.028729687327958976,8.654167069116761,0.04196196330868593,8.662542158494,0.00644531658116102,-0.0209254198856929,0.00527910200300815
+217,KG-SAMI-387715,8.583754341044564,0.12172571193367328,8.637538790789929,0.11637334800416052,8.648947247893567,0.10831353847348661,,,,
+218,KG-SAMI-623144,8.717795700206574,0.05791001237236403,8.76600382423833,0.03878558765828269,8.759921349805618,0.04303151703439742,8.74759597228804,0.0227224773723782,-0.0528522293307386,0.0275423968150039
+219,KG-MaNGA-1-60653,8.579292820726106,0.006939214854781832,8.695542880709835,0.05480052340890335,8.693693589691147,0.059681588434348926,8.69830751678069,0.0134187952170156,0.0649054077397692,0.0114618362791513
+220,KG-MaNGA-1-182358,8.623987606134573,0.034902108253262995,8.56572135805396,0.09480797026412725,8.58550937638223,0.07722767263616079,8.57024660202876,0.0111931971779049,-0.0790110138958506,0.0151532931068937
+221,KG-MaNGA-1-78343,8.670363168198946,0.00856345668624274,8.609650551289413,0.010133393581761936,8.602406604406882,0.01923922121654515,8.61745267321966,0.00965863805552077,-0.0509819058553591,0.00890802619233469
+222,KG-MaNGA-1-380,8.722268963486966,0.006510415150153134,8.720671894228555,0.029881813403113595,8.689720792874972,0.06178470087314373,8.72442717642262,0.00299775368206652,-0.00393640261535133,0.00256056980924038
+223,KG-MaNGA-1-296,8.77987616147184,0.008580516488934906,8.754355338668814,0.023148312391360434,8.721991829561045,0.051691609167060865,8.77950032937023,0.00403914831778837,-0.0208129890966636,0.00345009041251292
+224,KG-MaNGA-1-78858,nan,0.006601576441045438,8.727383616552254,0.06462014575010878,8.695743482181642,0.08005862957218782,8.75650096362919,0.00745731711915694,-0.106989302916861,0.0114306005166795
+225,KG-MaNGA-1-182525,8.662803844806804,0.07474840435987512,8.626296348357622,0.09694184977983507,8.636804994973872,0.10007161503435126,,,,
+226,KG-MaNGA-1-78284,8.77258646574779,0.006172390486884326,8.661124403127271,0.011653091261623002,8.657462606896921,0.03819033573230866,8.70317601711333,0.00622008380180509,-0.0844787620446265,0.00531296446706987
+227,KG-MaNGA-1-411,8.63303571731811,0.030453204363044578,8.632674277674708,0.0874972175635725,8.62874063080653,0.09215418355817849,8.64493842365034,0.0129087053310242,-0.036325359314677,0.0105730061993287
+228,KG-MaNGA-1-38374,8.670425456430632,0.07542363864668054,8.549323083465355,0.10443996159669539,8.595580890922193,0.10170461147239124,,,,
+229,KG-MaNGA-1-38541,8.668622756512976,0.006093300763318703,8.664804620887178,0.006669171620206732,8.636305886949668,0.07757843999619757,8.66587768249611,0.00192516395222512,-0.00456723667366792,0.00164440351567089
+230,KG-MaNGA-1-38272,8.778667695212514,0.01253569629330849,8.68954952397068,0.036918369833174966,8.673355385219095,0.06444078200876399,8.71049611386561,0.00813492618354005,-0.0792772270520495,0.00694855168074131
+231,KG-MaNGA-1-38155,8.780513959813486,0.006139332882463638,8.711692240076406,0.008517414495534769,8.677609515114352,0.01979950927359255,8.72319626875473,0.00384761851332605,-0.0847081526976502,0.00328649277011494
+232,KG-MaNGA-1-38041,8.68577586685397,0.00592275793329812,8.713528280819412,0.052444676266775056,8.702786032478611,0.06047092341987838,8.71613923442495,0.00528526810993935,0.0475387350352264,0.00487452852940688
+233,KG-MaNGA-1-37998,8.6605748180456,0.09467818366723747,8.659095855579341,0.07898071119267568,8.641630311574003,0.09469627893899611,,,,
+234,KG-MaNGA-1-38167,8.65320806358014,0.04622948475376243,8.631138453160734,0.07398700836812305,8.625135595166853,0.08984202040637135,8.61268525071329,0.0243504030095839,0.0107460805012107,0.0190983553016345
+235,KG-MaNGA-1-38543,8.66047623671104,0.04620470568049188,8.70424324477538,0.03183298654704941,8.673666503924046,0.05964439134385586,8.7160202497008,0.028823524051856,0.000672769585086419,0.0189414387102088
+236,KG-MaNGA-1-38463,8.620404285355526,0.11941379132487914,8.648417372178066,0.10392985183153595,8.648563733455566,0.10430165573036744,,,,
+237,KG-MaNGA-1-38553,8.812202754048144,0.014499488050509234,8.748673431906258,0.020389829679718308,8.69148636598354,0.05488172005097417,8.75140159566749,0.0117737830876583,-0.094540723292474,0.010056728041118
+238,KG-MaNGA-1-38168,8.747574729495076,0.005196760390514715,8.640176233070324,0.08144098662643806,8.646729493806475,0.07771066879862261,8.70249327214839,0.00487118607772561,-0.0698431425586752,0.00416078615145523
+239,KG-MaNGA-1-38398,8.755142261700241,0.019567561285040877,8.670009593330896,0.08697575741482998,8.679766079827834,0.08085393184644908,8.73324739894616,0.0248772402790753,-0.066517095239298,0.0212492142956546
+240,KG-MaNGA-1-38062,8.613436919556994,0.026653324249261992,8.656939408924588,0.07382884984117592,8.631714896636607,0.09063774502916387,8.67889682775432,0.0226987966386311,-0.0545698303160283,0.0190274815717002
+241,KG-MaNGA-1-38042,8.766032307653013,0.009497425217336793,8.75267552747306,0.04432818603456775,8.743747419427107,0.04460559667678941,8.7726210170806,0.00198116453361052,-0.0130762631877057,0.00169223713150571
+242,KG-SAMI-418693,8.596798051449758,0.1060643372399508,8.628832049375383,0.10166386492603272,8.645333318612524,0.1046711921772143,,,,
+243,KG-SAMI-372384,8.628664001579608,0.1009684935837914,8.626694996293622,0.11573188941491798,8.638602532985741,0.11305137589375146,,,,
+244,KG-SAMI-324323,8.771806648291625,0.027828993879446966,8.741083660137717,0.03829281260492527,8.669265665265831,0.08455202703352499,8.7430757455856,0.00796986589141905,-0.0472947505559289,0.00680756331227133
+245,KG-MaNGA-1-54586,8.709201166593374,0.06766130283410873,8.652289834504222,0.0961241963060028,8.650425549490027,0.10119738098385923,8.69124368032176,0.0511389572672783,-0.086460582605815,0.0464300436620978
+246,KG-SAMI-601102,8.692887901999606,0.08451018545054409,8.65138133716337,0.10482099942584759,8.65296500206252,0.10547115431325746,,,,
+247,KG-SAMI-386892,8.696023035779355,0.07155767020412145,8.668779304139136,0.09527484427534155,8.665631753791702,0.09467345761668033,,,,
+248,KG-SAMI-376990,8.745633239692589,0.0324903272020298,8.680802690005088,0.09172465763686068,8.679687381880873,0.08835897590157805,8.65253423385642,0.0146317462648966,-0.1307873756678,0.0198083832790278
+249,KG-SAMI-601013,8.699994474543013,0.07094535505605766,8.644752005120731,0.11234045616865192,8.651491880691585,0.10415565705220685,,,,
+250,KG-SAMI-600929,8.673251055178834,0.09443431764605925,8.646804360745795,0.10797347621327862,8.63834087504497,0.10731449892521051,,,,
+251,KG-MaNGA-1-53870,8.759939319482067,0.01936628671803827,8.662209457343803,0.059577369881762,8.669544559158053,0.058786689838450576,8.71435057775559,0.00510485558975994,-0.0781312002782396,0.00436037796629792
+252,KG-SAMI-536625,8.734190657125577,0.03782409933349207,8.710921540112082,0.06405306484920878,8.693286305268746,0.07298288656879053,8.74593415864277,0.00885842019701821,-0.0135098110666084,0.00756653338456204
+253,KG-SAMI-622084,8.690590206024375,0.015675331143878028,8.592282121860444,0.10108801641847376,8.629305824351214,0.08336122540392145,8.58747874114361,0.00998899633064252,-0.128208727139632,0.0153111668437483
+254,KG-SAMI-208520,8.74430106739846,0.03185091385588837,8.655790135425057,0.06799411041317427,8.667599325489435,0.0656264232279841,8.64100590331752,0.00978735522602527,-0.147360043449271,0.013250071460727
+255,KG-SAMI-209279,8.608431119126356,0.024180974095715017,8.535937645400507,0.07369188440448594,8.530776706727364,0.06851949220033068,8.53722390569876,0.0131461697399501,-0.071536684367823,0.0112289697264456
+256,KG-MaNGA-1-213739,nan,0.11781910932449939,8.417997002424372,0.11118504620189204,8.427114481690067,0.12449678546550284,,,,
+257,KG-MaNGA-1-214169,8.671104993200846,0.053048450895368124,8.744292369492001,0.03941826157770704,8.67985042703733,0.08061705381446672,8.74437933902773,0.0207385136589478,-0.0296693085226426,0.0162655009089787
+258,KG-SAMI-301201,8.678205065631262,0.060347424001479175,8.663446726697986,0.08964838224310737,8.665282237715713,0.08392469824053234,8.67065236680464,0.00928690453677541,0.00922641133957201,0.00793252878661197
+259,KG-SAMI-204096,8.770394084501866,0.03241523324486933,8.71644331718447,0.031350473348005954,8.689192416452391,0.04807806564019587,8.6999713387453,0.0209386703731606,-0.13427059412792,0.0193114415349857
+260,KG-MaNGA-1-76735,8.724451531858417,0.015078325365155531,8.675946227460468,0.05367656395178045,8.672282576506655,0.06377473232368122,8.70907551146793,0.0040797412540787,-0.0106867376687758,0.00348476339040141
+261,KG-SAMI-543797,8.668525475507703,0.09013298839634133,8.6562087794101,0.10952523424701673,8.651886974117694,0.1057852125365904,,,,
+262,KG-SAMI-15847,8.569218038847097,0.019345283056934233,8.519288340934642,0.056056300711610295,8.529296430532881,0.058728073959359736,8.53849347941142,0.011340272128929,-0.0246568051174966,0.00968643908791354
+263,KG-SAMI-319397,8.542046454515134,0.13082463921632098,8.563392945345894,0.13984386187246034,8.629730777797691,0.11817140638512978,,,,
+264,KG-SAMI-227961,8.732733869416514,0.05609771819543462,8.683933293387472,0.0911159103158392,8.689120213506161,0.08618766705283484,8.73674461455183,0.0134212822502435,-0.00180493016463681,0.0114639606105252
+265,KG-SAMI-463367,8.786277549988304,0.028152670184456125,8.678951076017615,0.05854289618827785,8.702987984576117,0.050911930647584445,8.72315207880331,0.00920590610106234,-0.0492135689477617,0.00786334293244278
+266,KG-SAMI-618220,8.708308987631005,0.08053194839031584,8.732479759152401,0.0558965390601754,8.70670058269556,0.0708881373795167,8.74758193083233,0.0151040805555272,-0.0525085815896536,0.0148063211702751
+267,KG-SAMI-319452,8.65194354863225,0.0936901121614268,8.645593833227391,0.1057518329801551,8.656743266607268,0.10114838408736894,,,,
+268,KG-SAMI-238406,8.737344687479602,0.046884147057821055,8.69186169920295,0.06618669389237669,8.693976052151438,0.06797039526466601,8.70135738847888,0.00542378434940733,-0.0277527315346061,0.00657428405988767
+269,KG-SAMI-238282,8.523695409549118,0.16415529760526387,8.601579514092252,0.12179517419037031,8.62390950009472,0.11822188233933724,,,,
+270,KG-SAMI-238276,8.532947269779557,0.14018122354129697,8.550499935744597,0.13852043036718392,8.616782987749398,0.11901331232032798,,,,
+271,KG-SAMI-570197,8.680023332403804,0.016053011531062485,8.676375424840726,0.015937240439433058,8.625688982431203,0.04307312239459293,8.67194889089007,0.00313940184693805,-0.024698520588345,0.00268156040852615
+272,KG-SAMI-594946,8.669395828054194,0.09521216135042414,8.686418371900066,0.09528107788038612,8.665589723045342,0.10140774869919256,,,,
+273,KG-SAMI-79850,8.698047259133027,0.0731286816072843,8.637740483458835,0.09788196951023756,8.640660891731965,0.10079867710501202,8.69982503008275,0.0215733532331955,-0.033274110228093,0.0194939557002844
+274,KG-SAMI-505979,8.744953106369117,0.029625347851927296,8.656867848937395,0.05354631384049365,8.656159831684404,0.05597155478366171,8.67218104801191,0.00761370770043915,-0.0684197554796373,0.00650334621912173
+275,KG-SAMI-570119,8.642705713176444,0.023587460799453747,8.518516049186196,0.06808579137193176,8.54562534765853,0.060335217504107204,8.53896789956134,0.0152087581004478,-0.100146309265717,0.0184348583035731
+276,KG-SAMI-570174,8.380385174750817,0.049967278283228916,8.455783359191349,0.11982571058739595,8.43515695853122,0.11042810002734359,8.18482436979902,0.0759635421357142,-0.369506708519136,0.158180161889575
+277,KG-SAMI-594906,8.773650413796787,0.016156620458342735,8.763359808721235,0.016956712703148136,8.701978731889946,0.05334958727735713,8.75286445400249,0.00364196573536061,-0.0411549984079897,0.00311083180851061
+278,KG-SAMI-487175,8.711776435186188,0.017463031125919053,8.683273088987823,0.03671952999019847,8.643751553148165,0.06815981783086883,8.67481496629439,0.00559897602033381,-0.0581216012472917,0.00478243727831722
+279,KG-SAMI-79693,8.700666323576069,0.07017587038173324,8.663504653198068,0.09538060948437757,8.664981073210825,0.09445909019355579,,,,
+280,KG-SAMI-79810,8.634650292246848,0.09036326780685724,8.645524824297002,0.08707380152742979,8.651807986158744,0.10230226555852141,,,,
+281,KG-MaNGA-1-70386,8.667637600920134,0.08909754760195904,8.680589313871174,0.08942216155624573,8.676709651071324,0.08881726959040549,,,,
+282,KG-SAMI-486834,8.684475722454996,0.03306781837163394,8.608173105067973,0.0712669195673154,8.62763754116959,0.06760511160765628,8.64681256093142,0.00842742208648842,-0.0581781389607354,0.00719839081292104
+283,KG-SAMI-595088,8.717934485055567,0.017160703994710504,8.63512801596549,0.024292154103527593,8.599776273591381,0.04551947664533088,8.63579694402307,0.0040137674192387,-0.105934910484197,0.00342841099203668
+284,KG-MaNGA-1-14151,8.771057261628222,0.02177667536344502,8.618680003046604,0.060808297572688234,8.596122950639018,0.07649741228845623,8.66375282352694,0.00542289941467827,-0.161099981099326,0.00463203918415349
+285,KG-MaNGA-1-14162,8.679544864239093,0.007186795025205288,8.468852488423668,0.05428748088721087,8.497471702502553,0.06735593475261074,8.45538421068816,0.0790908353425765,0.0296065875053605,0.0675564528124263
+286,KG-SAMI-594986,8.710516349576311,0.059038137384353054,8.658248087746255,0.09181383101559062,8.6596619675191,0.09369946638345628,8.71543900883394,0.00562457557065383,-0.00936799210499543,0.00480430346301135
+287,KG-SAMI-509852,8.752270331126244,0.024211351044859657,8.627886672269453,0.06649621631189488,8.662074685661779,0.05563144567022553,8.59061426656333,0.00571230716901388,-0.191753797318207,0.010088180905138
+288,KG-SAMI-65384,8.623271663968627,0.06248501977760309,8.638012037224607,0.0745145624482382,8.626014886632637,0.10616185546391553,8.58535125118792,0.172630552037043,0.0434096908083248,0.110208112723555
+289,KG-SAMI-49784,8.635851021875016,0.07133777931318255,8.640996800272394,0.09983087106708907,8.648380257665098,0.10334105284899889,,,,
+290,KG-SAMI-513236,8.703845554901713,0.07291628982651403,8.664634461400794,0.08878567920974768,8.668592952524957,0.08870623347537969,8.6878627353569,0.0424035568827737,-0.0461037022283648,0.0465264362346399
+291,KG-MaNGA-1-51315,8.771027301161814,0.011790984639307384,8.791539807840062,0.016105154464320686,8.748052549366973,0.03420709696120285,8.77288043537096,0.0129488461122739,-0.0477854793560693,0.0110604232155364
+292,KG-MaNGA-1-51779,8.69157068933712,0.08208051532331931,8.648451450146359,0.10331909857925577,8.653794544129623,0.10264560695610941,,,,
+293,KG-MaNGA-1-51568,8.387194853509039,0.10377373001721717,8.428071220047105,0.11767084566511439,8.597966661915692,0.11004970326241523,,,,
+294,KG-MaNGA-1-51799,8.64527134471809,0.01168356783742716,8.638377550547547,0.0649178334626698,8.641639149418795,0.08766654526277692,8.64325893693644,0.00642448551736917,-0.0162436955191493,0.00548755681765603
+295,KG-MaNGA-1-51332,8.768736619716378,0.009308233649032546,8.73415257947194,0.008179223849590382,8.620754913613677,0.03545794043993828,8.71945338795509,0.00511689538851862,-0.0896865236559048,0.00437066191504102
+296,KG-MaNGA-1-51776,8.696585559766117,0.0920749199002295,8.651298100711845,0.10560523993885697,8.66189730240961,0.09976244706994258,,,,
+297,KG-MaNGA-1-51079,8.606695176635847,0.015313185365649105,8.520669247580512,0.07682342880371101,8.538696202085386,0.07669010016483264,8.54883824051971,0.0127534176914158,-0.0359153839410892,0.010893495519872
+298,KG-MaNGA-1-51612,8.70441828767034,0.026752871054387575,8.538232312502972,0.06776288899400418,8.517142803089081,0.08116994947567856,8.56325916046699,0.0207332550149198,-0.178011738477313,0.017709576058927
+299,KG-MaNGA-1-51616,8.666161234415204,0.006847539508804002,8.645552326298693,0.007500231443676885,8.589933616931638,0.06317866662790994,8.63837487262074,0.00357342015192881,-0.0463032692447123,0.00305228271805591
+300,KG-MaNGA-1-51378,nan,0.007102811605275442,8.755707533175404,0.020013277427773372,8.75073722210634,0.02599439566498118,8.74270519431765,0.00883414862575859,-0.0795559720480604,0.0096930890458075
+301,KG-SAMI-573586,8.76800439449528,0.020030892880616085,8.713658500383495,0.028403862836989473,8.683328532152236,0.058826162538163744,8.71029615692992,0.00731889250462836,-0.0643591551392954,0.00675011173990992
+302,KG-SAMI-202636,8.743418261309072,0.024052956425040028,8.684008620134714,0.0730207962791448,8.658104189708297,0.0943123910805083,8.71677066949687,0.00630733045639212,-0.0351985078849719,0.00966789712998755
+303,KG-SAMI-549182,8.699073747031404,0.07265407726608221,8.609861751863562,0.09597133686494264,8.607818887454659,0.10842156727027302,,,,
+304,KG-SAMI-381229,8.525146322014344,0.13659013056323233,8.608070927171163,0.12061967449836317,8.628650454311929,0.11335323540345221,,,,
+305,KG-SAMI-599310,8.718699435430517,0.07457034733407937,8.706536645002776,0.0694252881118616,8.700324109978462,0.0747417899864179,8.7519666162669,0.0201894887555451,-0.00449020695799703,0.015834893141604
+306,KG-SAMI-202398,8.765194698462702,0.03109772267514282,8.755590946689892,0.04374539653860313,8.691025552387455,0.07841344295668169,,,,
+307,KG-SAMI-202480,8.604712455041291,0.0925583220106802,8.640216557376288,0.09647441351552265,8.646021670048704,0.10702204494355244,,,,
+308,KG-SAMI-202673,8.668187689612017,0.0835170783294816,8.711312664102715,0.06379781278826772,8.710522491208673,0.06346760629479925,8.7029722061939,0.0239556834812133,-0.0607828270934182,0.0324310818077396
+309,KG-SAMI-300406,8.704709746123633,0.08400126770549121,8.649581685230556,0.10732963004849326,8.651744044551256,0.10354566977349852,,,,
+310,KG-SAMI-300411,8.687043796691345,0.0829266892623434,8.651273310548783,0.10912216255241523,8.65020121748676,0.10450140701827401,,,,
+311,KG-SAMI-91689,8.640709705825612,0.10488350340295582,8.638587081466806,0.10488342832065987,8.643601500989663,0.10848492665802704,,,,
+312,KG-SAMI-618988,8.658411515139989,0.11957408386038185,8.643577451259933,0.10822612433675265,8.648603199280055,0.10289159118783876,,,,
+313,KG-SAMI-296829,8.625222748105916,0.0728718919936784,8.675586035951072,0.07205215046169543,8.646673549835496,0.09243685608192294,8.69507806775648,0.0220787820674217,-0.00230741790455406,0.0173166918175856
+314,KG-SAMI-319057,8.739713881304732,0.03695165767285348,8.670772861726427,0.05445715710932587,8.658359782971715,0.0694437686766595,8.69331704970031,0.00582157658646186,-0.062917247726332,0.00497257441084986
+315,KG-SAMI-319059,8.626667111231626,0.12645425683140926,8.617872544658791,0.1278976400532722,8.633436658201838,0.11351268103340202,,,,
+316,KG-SAMI-77710,8.521046282240775,0.1750045541650757,8.567107534921794,0.13681610715018497,8.60683661453832,0.13129733293472937,,,,
+317,KG-SAMI-77845,8.395976156816683,0.02685157036169133,8.441932494618566,0.0953307606045466,8.436429501962253,0.09562444777553421,8.41387184075575,0.0152927804336314,0.0184362069467435,0.0130625248204864
+318,KG-SAMI-508144,8.488905056905752,0.17563374752691147,8.519516345882819,0.14550073273406322,8.606943911573408,0.12310954715970962,,,,
+319,KG-SAMI-492486,8.647564180515268,0.09798099908844511,8.665228490112082,0.09648890269366077,8.642470635959826,0.11043360848234982,,,,
+320,KG-SAMI-16026,8.691229981847052,0.04818138682941694,8.708488413976104,0.05092073494440076,8.667272754654903,0.08791591558277155,8.71429801844331,0.00810760353194639,0.000712619938396248,0.00692521368696362
+321,KG-SAMI-548946,8.811706847036756,0.01679436144657595,8.766345897724017,0.027407232629113397,8.69387909319504,0.07164227809776787,8.76794334659178,0.00539935625693695,-0.0611807046081812,0.00461192949359178
+322,KG-MaNGA-1-213825,8.734959655596674,0.055777015437512865,8.686075843008801,0.08782017948941401,8.66799318608674,0.09514778739972496,,,,
+323,KG-SAMI-209701,8.608778852020494,0.11405181990938304,8.666750888349984,0.08362172621184262,8.65481617163182,0.08716576141631163,8.72000990338087,0.0226029628738633,0.0206403954332623,0.0226525696869797
+324,KG-SAMI-516973,8.696385549933346,0.0755083639278374,8.666311962392852,0.10166175544914835,8.660728831532836,0.10193611232211598,,,,
+325,KG-MaNGA-1-213815,8.657306926462441,0.05164243418486135,8.778431934138062,0.02794115337189539,8.694877408901759,0.0681823930738345,8.75222818622491,0.0201902629127206,-0.0559505447112288,0.0172457723809047
+326,KG-SAMI-202745,8.6781674074812,0.07315558734665145,8.653703337538637,0.09814440278044011,8.661996902667298,0.09481840520258893,8.69021352953959,0.0340164464346508,0.0298313731354383,0.0233591483120287
+327,KG-SAMI-549296,8.631269538761066,0.14768892927350472,8.65039237095068,0.10832165194244715,8.644179589958501,0.11440286123904642,,,,
+328,KG-SAMI-202399,8.724409153938607,0.06142858997428454,8.670132056460641,0.10178492714892855,8.664825325541182,0.10228671819746313,,,,
+329,KG-SAMI-417433,8.665504775869223,0.09167806240395127,8.66567633719645,0.10272312194192548,8.652832274455015,0.1062857062967195,,,,
+330,KG-SAMI-422389,8.64909762281892,0.12495902182901782,8.645225863843574,0.10770988412224251,8.641821919575124,0.11021761046725606,,,,
+331,KG-MaNGA-1-36892,8.72024670323278,0.007655269780238094,8.641699327640252,0.009831401615358237,8.632457431203294,0.027521015014526064,8.65751588617059,0.00844635616819052,-0.0588936071477589,0.00721456360198711
+332,KG-MaNGA-1-36899,8.723367280208898,0.009141805901620807,8.676245004334579,0.017695995178439877,8.665608694992418,0.04306140156190992,8.69248303643676,0.00510553659846472,-0.0382458665031084,0.00436095965862966
+333,KG-MaNGA-1-37068,8.779524606971913,0.009835113006118577,8.751061340489471,0.030665396201563673,8.701097468465788,0.06560465918078935,8.75148790505323,0.00281264766412977,-0.0396912788927642,0.00340926989591487
+334,KG-MaNGA-1-36927,8.775487402696635,0.01662398764596342,8.71192778383622,0.05446937112006379,8.710771613622562,0.05556192260241231,8.75653292128213,0.00355537561784885,-0.0395756143214113,0.00303686974751621
+335,KG-MaNGA-1-37018,8.733904945817345,0.02560306362199861,8.710426701498097,0.04816151635868807,8.68850556559463,0.05700393142250826,8.70678343389404,0.0110711982842271,-0.0720268079106952,0.011095496287428
+336,KG-MaNGA-1-36854,8.60216093413152,0.10565612555476347,8.66021813887566,0.09940765166857395,8.661082256400372,0.09738210768402046,,,,
+337,KG-MaNGA-1-109167,8.732397699161165,0.011666668240707943,8.714804808615366,0.02022680534226906,8.617392521010878,0.07533999926391811,,,,
+338,KG-MaNGA-1-36392,8.719295332361185,0.007472229489950304,8.70368212265664,0.015034458045731421,8.694183704835758,0.031031975738407092,8.72145371664825,0.00505670475444857,-0.0168726235294898,0.0043192493118906
+339,KG-MaNGA-1-603795,8.660827376033396,0.046203674854581704,8.683637633277796,0.07399310960215387,8.666178501752716,0.08345182340002902,8.7540315756768,0.0273095954649713,-0.12481205256988,0.0206996336200901
+340,KG-MaNGA-1-36878,8.768952719512514,0.006311048781665912,8.75127347330686,0.028345477784808577,8.717470544598426,0.048643132226839796,8.76421915244004,0.00566501990369674,-0.0275220061658446,0.00483884950952747
+341,KG-SAMI-16487,8.749284941669107,0.04527055893772186,8.660060322852843,0.09933295389130121,8.660878555391932,0.09875360648306915,8.68679098498381,0.028768990212263,-0.111691332869591,0.0288321296302663
+342,KG-SAMI-492957,8.577254097985243,0.030285928793078183,8.538319134949626,0.07821181135621037,8.54203994087466,0.07480065195286532,8.5460321486883,0.00814859074982581,-0.0343345464639758,0.00696022344553539
+343,KG-SAMI-93674,8.717283747821504,0.05922143555568406,8.65553463356676,0.07570135224253675,8.673348644635304,0.0722586332473995,8.70968523051403,0.0269670055260485,0.0281690829593424,0.0270261901210463
+344,KG-SAMI-505316,8.714849256710119,0.07704551383904283,8.738422111102688,0.05489847057784775,8.702507466154703,0.07694216378183567,8.77303139559046,0.009989813493619,-0.0180147571017594,0.00783514783813255
+345,KG-SAMI-508908,8.765442015477072,0.03634676508041962,8.716007659346836,0.07213522144165929,8.712376284646975,0.07245345441718058,8.75423875267759,0.00640289738214696,-0.0162054540302523,0.00546911703468838
+346,KG-SAMI-485921,8.672470707877276,0.11796329772652064,8.669387453298095,0.10070594905325891,8.656840262569377,0.10513626941735814,,,,
+347,KG-SAMI-508632,8.718616005866512,0.06692145274153449,8.684104464017993,0.09006170406937306,8.661249393760455,0.09913090482988157,,,,
+348,KG-SAMI-508593,8.673305407221118,0.04680566007109501,8.695160153585038,0.06302977344120686,8.651018446410301,0.09868164513530425,8.69805221932773,0.0135395944924289,-0.0369227842510593,0.0119715163765531
+349,KG-SAMI-485883,8.592570728300323,0.1249094985929154,8.640863399931835,0.10438535757048194,8.652212811853941,0.10803123845143259,,,,
+350,KG-MaNGA-1-83094,8.675040401229412,0.07382833835636285,8.682554029147546,0.08165682572390855,8.661701421546294,0.09660788844966996,,,,
+351,KG-MaNGA-1-297863,8.655424233064906,0.08963348885927509,8.673725671884847,0.08533747976517422,8.647150744272954,0.0970198464719502,,,,
+352,KG-MaNGA-1-412058,8.809092927618059,0.007457252750863586,8.741494205802073,0.043044102634262046,8.681586739275616,0.0843780487554814,8.75829713533315,0.0159482344151088,-0.102724131247156,0.0136223892571003
+353,KG-MaNGA-1-297905,8.727156770350168,0.05267179476550319,8.680567948034826,0.08196638015571032,8.667371527168932,0.09372036815441667,,,,
+354,KG-MaNGA-1-297902,8.690219979144356,0.09780847195675466,8.692098190033361,0.0912725813795623,8.666832974288335,0.10044560065112029,,,,
+355,KG-MaNGA-1-297909,8.659134779471776,0.07071745083199037,8.650345513259088,0.09143323819027899,8.653727797617453,0.10045069268989218,,,,
+356,KG-MaNGA-1-412272,8.665999287041702,0.09251524773285057,8.653665553526954,0.08819239690479712,8.65288942626697,0.10335385530172367,,,,
+357,KG-MaNGA-1-297987,8.653061210684141,0.10176426907051546,8.620122137348678,0.10107324410672686,8.642156026349861,0.10830594994028671,,,,
+358,KG-MaNGA-1-382678,8.781875689892585,0.015780732431096286,8.69850585581474,0.06660315569279497,8.687681177508983,0.07319126406393703,8.75012240663525,0.00878474303686547,-0.0662455186933807,0.00750360109194365
+359,KG-MaNGA-1-382352,8.596257338769847,0.05613808577344638,8.627264924963603,0.10048225926152826,8.641669040515257,0.10380383614613206,,,,
+360,KG-MaNGA-1-368846,8.705142054250262,0.012071248967711572,8.677296898011848,0.05740349116810071,8.667955213771668,0.0787134259538277,8.69334087356533,0.00866528681280624,-0.0172315400236398,0.0074015660239253
+361,KG-MaNGA-1-83451,8.69302977619143,0.08610057724519894,8.654330092721755,0.1024367490030891,8.654525033445774,0.10287930893782178,,,,
+362,KG-SAMI-321146,8.622790870826698,0.12226556231106787,8.629313869092668,0.1075940665109942,8.65491818145124,0.10546744260643645,,,,
+363,KG-SAMI-298612,8.687382979529062,0.033399637257042473,8.586714041073128,0.10623781188744531,8.607509143158238,0.0834124296916285,8.62303472734232,0.0261564936870686,-0.0140492860946097,0.0286996781665631
+364,KG-SAMI-298590,8.750114708684114,0.03919084512661097,8.700703473209831,0.08218336894666327,8.677966704562706,0.08914292693239562,,,,
+365,KG-SAMI-229163,8.791292977327299,0.02518181719984259,8.722074858750608,0.06568506377417895,8.709876421806493,0.07268068721731115,8.72239224792163,0.0113627621835217,-0.121644125071271,0.0174168797183394
+366,KG-SAMI-252021,8.768443461230914,0.020685440877084176,8.724093259871012,0.06031104493428107,8.683496551019752,0.0851647173762495,8.76261957177097,0.011316171920348,-0.0263281404407658,0.0104367463905331
+367,KG-SAMI-252005,8.737996889779572,0.053335144437831966,8.70481352440626,0.0725259894241269,8.70175719722808,0.0758738349046228,8.75149921907654,0.0145450930307793,-0.0112592274092159,0.0122248176995565
+368,KG-SAMI-240227,8.760160498715324,0.04240507244500406,8.753072388165384,0.038781874061342515,8.750674451174506,0.04144353430140627,8.75939972762383,0.0125792923869882,-0.0259557275077698,0.0113858401279044
+369,KG-SAMI-229167,8.756628018164621,0.030487096173462274,8.691633001085966,0.05964595314505913,8.705571972396328,0.04831469508969339,8.71668984521708,0.00600874249576383,-0.031393184260684,0.00513244457614886
+370,KG-MaNGA-1-40883,8.580908576693904,0.0744880166574681,8.630819998235884,0.07876116797463076,8.613411241043202,0.08536665101692799,8.70989405085596,0.0636585896049903,-0.255359164219428,0.0437144555582617
+371,KG-MaNGA-1-41260,8.652757389284433,0.009433498831851314,8.565331287365682,0.08627895987125661,8.569273953828622,0.08724028576634268,8.5769127537102,0.0097869351278009,-0.0462757349621591,0.00835963633808827
+372,KG-MaNGA-1-41133,8.725646449624884,0.006305467846061077,8.718107059773955,0.01253554672418681,8.658274746908322,0.07854578085497924,8.70465641024474,0.0142830721274594,-0.0545623597253692,0.0122000695025629
+373,KG-MaNGA-1-601909,8.73229449260104,0.021861867414061098,8.659900584223559,0.04814900879447617,8.64297493249796,0.07046263723715268,8.65995318167115,0.0178806844362625,-0.117817232405214,0.0152730162621254
+374,KG-MaNGA-1-40796,8.674452595904631,0.009122376088859034,8.62983807565219,0.03663962136793768,8.61239699975154,0.06974030921182434,8.63338539559272,0.00829318394570787,-0.0719729791839857,0.00708372958088336
+375,KG-MaNGA-1-41030,8.646232551637123,0.012931385254960763,8.627949758240941,0.043019746301421434,8.63268534222936,0.062136499845783684,8.60790486904058,0.00817473478124161,-0.0313042759936284,0.00698255470575054
+376,KG-MaNGA-1-39946,8.711921817832016,0.012936401390945585,8.567028020953797,0.0311681200941657,8.58210287506421,0.08123514834888362,8.61160635158904,0.0149900750862899,-0.109865123077427,0.0128039651602532
+377,KG-MaNGA-1-39922,8.658167199680124,0.04374203602113379,8.648331999740188,0.0514300457274329,8.648756011167583,0.09627803495635728,,,,
+378,KG-MaNGA-1-41257,8.795166087447738,0.014341148455608452,8.702518112313221,0.07182395732753652,8.693537545494657,0.07583594668777138,8.74311448091111,0.0211943295095938,-0.0859403946852849,0.0181034087603713
+379,KG-MaNGA-1-41258,8.684752888310015,0.0517756312035562,8.666420879184805,0.09790825037453701,8.670332999842415,0.08894565347932318,,,,
+380,KG-MaNGA-1-229070,8.790984645488015,0.009902932891160187,8.730801345296557,0.008716898570369674,8.707329648016058,0.017626654534851623,8.72349447892269,0.00644296803924416,-0.0880253024129539,0.00550334390109616
+381,KG-MaNGA-1-229064,8.68800482468685,0.00859119848280919,8.663864436165046,0.0544197222183961,8.655196336353,0.0467578716246592,8.6611310723509,0.00766463438054915,-0.0235013890747751,0.00654684589701541
+382,KG-MaNGA-1-202091,8.688575842310584,0.09703941150738805,8.657056870893276,0.09075417043445767,8.653900084785036,0.09707770816104071,,,,
+383,KG-MaNGA-1-289864,8.71127724526361,0.062420908309090674,8.664772003736614,0.09640414894918109,8.670128813831674,0.09470198891804996,,,,
+384,KG-MaNGA-1-550945,8.721662165098243,0.058438766949996404,8.654187859193964,0.10318038094894096,8.655788777174415,0.102241728883701,,,,
+385,KG-MaNGA-1-289865,8.590154389224045,0.11244157141195231,8.662847301867057,0.10049137659023764,8.657726649845646,0.1001829768873358,,,,
+386,KG-MaNGA-1-180172,8.740097725126358,0.01913919429369974,8.696596928406537,0.06869188395002704,8.678811118042653,0.07928610796588917,8.74597369082849,0.0101514260769489,-0.0296961819050358,0.00867097096364906
+387,KG-MaNGA-1-180614,8.732272006623106,0.08769608490089034,8.685386985680479,0.08376871257323401,8.652700646182197,0.10279341317701228,,,,
+388,KG-MaNGA-1-180623,8.726270738302176,0.03266693975157172,8.728388040387518,0.04759607771335447,8.692697854437757,0.06819083764433954,8.75820863185457,0.0121292773730411,-0.0173680864269444,0.0103603780507749
+389,KG-MaNGA-1-180540,8.814390033689408,0.009280069896696204,8.67432405984324,0.07844290299732576,8.709526170062572,0.06079159798369777,8.7097046231173,0.0163303112737161,-0.0874333802009064,0.0179181003204247
+390,KG-MaNGA-1-180472,8.685686222000628,0.03000953195859778,8.77742041839158,0.02720553813837529,8.698127329656561,0.06853700102391569,8.75102422374508,0.0209420970096232,-0.0282681663137615,0.0178879611309688
+391,KG-MaNGA-1-180513,8.741094482680433,0.022914057481330047,8.63633794716102,0.0733976457832096,8.665507191282025,0.06317960994605526,8.68778619042642,0.00967113169114938,-0.0906612758711038,0.00826072134534885
+392,KG-MaNGA-1-180886,8.614748895443409,0.008250248476958762,8.44026546627441,0.043764377383968545,8.467272903688992,0.07074723122222772,8.44527047719038,0.0111419505497706,0.0441296511167902,0.00951704016392863
+393,KG-MaNGA-1-35957,8.646200943050639,0.007391383584207981,8.583677798596952,0.008411693929296159,8.576807483534777,0.016450235487638673,8.6072225365493,0.00462964130575771,-0.0589179900005012,0.00395446758219423
+394,KG-MaNGA-1-35334,8.61106312017528,0.11595152093673428,8.626569593748286,0.09919864162596014,8.64009136049499,0.10237876988731795,,,,
+395,KG-MaNGA-1-35530,8.631111848036618,0.10108724146613042,8.661940039927872,0.10012744484667538,8.656622680070244,0.10168299596083775,,,,
+396,KG-MaNGA-1-35371,8.762963860258761,0.005951247695716337,8.727476869687624,0.0064981000900628805,8.70225053699316,0.018789321038220813,8.73170400900593,0.002961106204418,-0.0480936227920247,0.00252926689552437
+397,KG-MaNGA-1-138167,8.720646225699998,0.03491527874292933,8.632797932570725,0.07610795464324033,8.630927329046884,0.0897875652065677,8.66411089695648,0.0204518579866188,-0.137991829469017,0.0174692171730759
+398,KG-MaNGA-1-138401,8.601165188848624,0.011798918548721657,8.465177274302144,0.06296054042318602,8.462756457222797,0.0758437416640251,8.4841083148886,0.0191724709324099,-0.128372960934757,0.0163764122888928
+399,KG-MaNGA-1-81110,8.648520229646211,0.08660636407518081,8.625072518275958,0.11520744939055712,8.633931777687861,0.10837452271792247,8.64055171358088,0.0238549829889827,-0.115756914663219,0.0289151308957366
+400,KG-MaNGA-1-62037,8.616817971291615,0.010850696473204103,8.58316981399534,0.060833674123642406,8.567750667612723,0.07021417216192805,8.58299225167813,0.00567031351906857,-0.0510183650494648,0.00484337111908597
+401,KG-MaNGA-1-4036,8.695227444864694,0.056861120504186985,8.718891997781359,0.05997215910516524,8.686217200782206,0.07805839960487386,8.73499723330035,0.0276014142553957,-0.0365547431567566,0.0314419728438798
+402,KG-MaNGA-1-613941,8.761619794371926,0.006161773107582114,8.756946134915255,0.02014892935484833,8.710503419187688,0.05471345317957298,8.75353969458077,0.00493227844287246,-0.0153399978394274,0.0042129689797863
+403,KG-MaNGA-1-138298,8.740313730787754,0.028200954895557115,8.677855881726696,0.07356289676617633,8.65750346263156,0.08302022632338239,8.71084211469085,0.00690001639383726,-0.0661680888417993,0.00589373762328061
+404,KG-SAMI-592863,8.614380080272731,0.043614681553599655,8.571690116382356,0.10225280779690787,8.577552724096737,0.0964297876384132,8.55219477524049,0.0149504179788009,-0.0824757407921525,0.0202397994158936
+405,KG-SAMI-63027,8.655523691711064,0.09566363278582303,8.654186014190143,0.09549828276358133,8.648072835419752,0.10093312147585544,,,,
+406,KG-SAMI-463264,8.73490782035089,0.039173646921603834,8.676926236986263,0.05882015927338995,8.648996602007065,0.07077878729031713,8.6895820217692,0.0060804412164317,-0.0561917464224845,0.00519368695927113
+407,KG-MaNGA-1-38470,8.671332299621046,0.007631061236915959,8.664561274864559,0.04969926078361166,8.625986992579135,0.0818735994987089,8.66834486646926,0.00794838818532996,-0.026262078691689,0.00678921785376603
+408,KG-MaNGA-1-38299,8.79508987353546,0.012177694027660644,8.756443201404437,0.03623926864208696,8.720677154012249,0.05658755934492144,8.77463123443173,0.00655881947335423,-0.0531183451129952,0.00560229989148125
+409,KG-MaNGA-1-604037,8.541423995125273,0.13878727955557318,8.657274489765076,0.0945173338623857,8.656657094614872,0.09904926580138894,,,,
+410,KG-MaNGA-1-139929,8.43399267685244,0.09760976924198872,8.528302386011486,0.1138958760781295,8.579014882981053,0.11301973298401698,,,,
+411,KG-SAMI-220332,8.779625190889284,0.03239333488944311,8.646881886724538,0.10780599886574001,8.673807970284702,0.09175812838836538,8.74570093482878,0.0112827673436625,-0.0302248765183619,0.0199258538985571
+412,KG-SAMI-230793,8.627228371586371,0.12595454813504955,8.652804847906069,0.10822983787980747,8.64750582811626,0.11152048208693635,,,,
+413,KG-SAMI-287827,8.679331079583513,0.028678497234845817,8.749015948238938,0.03799771105550348,8.692368816878874,0.07861015412868505,8.75951111036111,0.0276964034671346,-0.0958792862295259,0.022188208039903
+414,KG-SAMI-609396,8.481504357322324,0.019942731172556356,8.478958284927966,0.01978716803174597,8.502165263151122,0.03324617730768497,8.48067953928524,0.00537254311058788,0.0318786183844147,0.00458902670026259
+415,KG-SAMI-289197,8.642220933706277,0.09144797313116453,8.650197219066087,0.11090447846971747,8.648267024083495,0.10780236946989843,,,,
+416,KG-SAMI-289097,8.607531605509013,0.11681096180332096,8.6513585108325,0.09689856766823964,8.644633791868875,0.10939598917777486,,,,
+417,KG-SAMI-289089,8.798800871345584,0.0314102072707958,8.693887947569781,0.06819923935384682,8.688483361198896,0.07439997868781711,,,,
+418,KG-SAMI-220396,8.635052421749162,0.10960146572607143,8.654263616933932,0.10199209893923439,8.642999941922849,0.1065132056004916,,,,
+419,KG-SAMI-220502,8.60446250994569,0.1017264444549918,8.646495554749283,0.10906813179037503,8.650290640831294,0.1071804392376685,,,,
+420,KG-SAMI-230634,8.632834531057007,0.12537191646754295,8.647640134519316,0.10921706167572792,8.645329987935643,0.11085066065028837,,,,
+421,KG-SAMI-396833,8.619899579360663,0.026430775663379497,8.670156418579346,0.052160349414407246,8.665668555339604,0.07122647972072842,8.69745458098209,0.0128976082468475,0.0228773562812959,0.0197694968759773
+422,KG-MaNGA-1-144455,8.755170286724276,0.012952949439287788,8.703182978970355,0.04417416175873169,8.68372637725654,0.06592043399495211,8.72214505300289,0.00809716232330034,-0.062925816830235,0.00691629519449674
+423,KG-MaNGA-1-144884,8.565256445254546,0.022154115366208565,8.575963497154934,0.04941621336062265,8.634626806550475,0.09580142957886728,,,,
+424,KG-MaNGA-1-144889,8.749710908468543,0.0083145774300237,8.702378285829228,0.02833116881178605,8.678981436291707,0.061982109981599476,8.73714611662461,0.0034336244893501,-0.0271080895701667,0.0029328744573962
+425,KG-MaNGA-1-627461,8.76487962619345,0.017805444110066376,8.673858217327282,0.08679860983095368,8.672724647986923,0.08686969916657056,8.71551322710891,0.0104279915180288,-0.043825904209075,0.00961759008279099
+426,KG-MaNGA-1-627411,8.787165067176696,0.012902708051503125,8.715396711949467,0.06710852712639208,8.732638350907557,0.05631307243774952,8.7774478805807,0.01458065641273,-0.0510772004364625,0.0124542549418559
+427,KG-MaNGA-1-144478,8.606202956726479,0.07528628203998025,8.63350737663484,0.10669320724453733,8.645412301339618,0.10128461955202034,,,,
+428,KG-MaNGA-1-480,8.714302362539936,0.005934402792951733,8.708428682233793,0.01981478341479844,8.666343979766163,0.0781946361082627,8.71628864476459,0.00295090847402622,-0.00386778821688194,0.00252055637313549
+429,KG-MaNGA-1-1037,8.595368811825555,0.007867663432512202,8.588681637026076,0.08290669135377694,8.628143913522733,0.08998672310434482,8.59823214369665,0.00561838816921604,0.0194222539058778,0.00479901841460526
+430,KG-MaNGA-1-245,8.649571415121304,0.10091699375422306,8.654530073087495,0.1048382356243008,8.65528426737101,0.09957925806242775,,,,
+431,KG-SAMI-545986,8.780401222688063,0.025517605383004145,8.65618205180113,0.05853531241000235,8.701267312516572,0.046268761249957324,8.61292519353808,0.00659910855177808,-0.196953489418963,0.0116543104061529
+432,KG-MaNGA-1-83058,8.604828666953921,0.14002511224093733,8.659420781651168,0.0985915636609099,8.653372016839942,0.10381774774419587,,,,
+433,KG-SAMI-492690,8.615076834856673,0.10130063511980145,8.631708596764993,0.10971487029804332,8.643772002036638,0.1118221088575541,,,,
+434,KG-SAMI-487019,8.708810538799433,0.038922108031951834,8.655611396198553,0.09416711998103552,8.671258502837615,0.07810094015561145,8.699730516855,0.0112624987496721,-0.012942083046286,0.00962000795713741
+435,KG-SAMI-487027,8.771303035676159,0.015024784004282029,8.699660909074971,0.05156137138519284,8.724666312386526,0.03388266949669303,8.70851683109076,0.00528313186397247,-0.0670499441071286,0.00809800211645512
+436,KG-SAMI-239560,8.74421141614363,0.018084850520959945,8.685968730739624,0.08246720857992508,8.690921157253737,0.07305615706289616,8.71935607413822,0.00628064844660603,-0.0369323891492763,0.00536469653628969
+437,KG-MaNGA-1-82684,8.632081765069461,0.09859975361394022,8.674700784443182,0.0946849981261544,8.66107437366477,0.09568175665307382,,,,
+438,KG-MaNGA-1-83063,8.666316602428946,0.08460545842371428,8.65598949869041,0.10778596392184778,8.653667045518093,0.10351445388523871,,,,
+439,KG-MaNGA-1-82687,8.614671394891522,0.10513730853221326,8.65810730141345,0.09743159426914548,8.653198228436732,0.10173911779558097,,,,
+440,KG-SAMI-298666,8.745981178955667,0.019443051174275933,8.565635063257957,0.1300196262985225,8.68101239538815,0.03592569094993075,8.68160377252035,0.0197984391129155,-0.00628952004308693,0.0303471134105565
+441,KG-SAMI-298980,8.765618024900379,0.017224357370586512,8.737690459123916,0.028109298461237643,8.706746335709706,0.0523628877914261,8.73606950237502,0.00538815487127304,-0.0509886640060168,0.00460236168616175
+442,KG-MaNGA-1-70172,8.802519930761699,0.013103999128034269,8.774390312280824,0.017108332312216964,8.74781456624563,0.030928187176425957,8.77949976391418,0.00475095493668094,-0.0526259345342776,0.0040580891781411
+443,KG-MaNGA-1-83002,8.665840987459108,0.08971925175126967,8.653751007150886,0.10540821263436786,8.656522709373833,0.10205126761699361,,,,
+444,KG-MaNGA-1-82991,8.74846441242363,0.02028869779969477,8.672700216790883,0.08481527055236474,8.662723208653432,0.09740478070083451,,,,
+445,KG-MaNGA-1-412631,8.58959620898546,0.055540612513719445,8.64099086370994,0.1043696495516892,8.645613831809346,0.09821200728100704,,,,
+446,KG-MaNGA-1-383589,8.717564202215014,0.007325980653144606,8.723976853324395,0.010012739513492217,8.67327546984879,0.08109632724008466,8.71589268859783,0.00904647337286049,-0.0141621611470882,0.00772716141997206
+447,KG-MaNGA-1-460434,8.716383451725543,0.054732539451717056,8.633935850216053,0.10238624029468031,8.631647364538265,0.10091074895405479,8.61808240500861,0.0267044250173481,-0.10323279010412,0.0228099276073303
+448,KG-MaNGA-1-383612,8.678075728908608,0.10507982214406714,8.66716286274115,0.09370247686887151,8.660599828286754,0.09656422103609125,,,,
+449,KG-MaNGA-1-383608,8.682047649751528,0.03390154179676935,8.713053764949523,0.04185649899437915,8.641611854467474,0.09873905823978485,8.68961785669554,0.0492385446557626,0.0500358021544522,0.0454120180241422
+450,KG-MaNGA-1-383040,8.763979229789681,0.029613439663462388,8.724215816408234,0.054816555012656386,8.696553169811688,0.07086941424804896,8.7475310897005,0.010220246314092,-0.0530495415392547,0.00872975465309879
+451,KG-MaNGA-1-383050,8.809433794777565,0.01723740872011818,8.783433702274234,0.026270474392891357,8.71713796822506,0.06454259670078552,8.78764429585372,0.00807618680831585,-0.00879961536813467,0.00661488282531627
+452,KG-MaNGA-1-412207,8.780116300568663,0.018842603696307195,8.744151409084786,0.04704899001585659,8.715753143355439,0.06414685012365921,8.77171692540331,0.00973662731201999,-0.0303641714877593,0.00831666527110966

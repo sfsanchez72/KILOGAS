@@ -1,0 +1,74 @@
+# %ECSV 1.0
+# ---
+# datatype:
+# - {name: KGAS_ID, datatype: string}
+# - {name: cubename, datatype: string}
+# - {name: OH_Mar13_N2, datatype: float64}
+# - {name: e_OH_Mar13_N2, datatype: float64}
+# - {name: OH_Mar13_O3N2, datatype: float64}
+# - {name: e_OH_Mar13_O3N2, datatype: float64}
+# - {name: OH_T04, datatype: float64}
+# - {name: e_OH_T04, datatype: float64}
+# - {name: OH_Pet04_N2_lin, datatype: float64}
+# - {name: e_OH_Pet04_N2_lin, datatype: float64}
+# - {name: OH_Pet04_N2_poly, datatype: float64}
+# - {name: e_OH_Pet04_N2_poly, datatype: float64}
+# - {name: OH_Pet04_O3N2, datatype: float64}
+# - {name: e_OH_Pet04_O3N2, datatype: float64}
+# - {name: OH_Kew02_N2O2, datatype: float64}
+# - {name: e_OH_Kew02_N2O2, datatype: float64}
+# - {name: OH_Pil10_ONS, datatype: float64}
+# - {name: e_OH_Pil10_ONS, datatype: float64}
+# - {name: OH_Pil10_ON, datatype: float64}
+# - {name: e_OH_Pil10_ON, datatype: float64}
+# - {name: OH_Pil11_NS, datatype: float64}
+# - {name: e_OH_Pil11_NS, datatype: float64}
+# - {name: OH_Cur20_RS32, datatype: float64}
+# - {name: e_OH_Cur20_RS32, datatype: float64}
+# - {name: OH_Cur20_R3, datatype: float64}
+# - {name: e_OH_Cur20_R3, datatype: float64}
+# - {name: OH_Cur20_O3O2, datatype: float64}
+# - {name: e_OH_Cur20_O3O2, datatype: float64}
+# - {name: OH_Cur20_S2, datatype: float64}
+# - {name: e_OH_Cur20_S2, datatype: float64}
+# - {name: OH_Cur20_R2, datatype: float64}
+# - {name: e_OH_Cur20_R2, datatype: float64}
+# - {name: OH_Cur20_N2, datatype: float64}
+# - {name: e_OH_Cur20_N2, datatype: float64}
+# - {name: OH_Cur20_R23, datatype: float64}
+# - {name: e_OH_Cur20_R23, datatype: float64}
+# - {name: OH_Cur20_O3N2, datatype: float64}
+# - {name: e_OH_Cur20_O3N2, datatype: float64}
+# - {name: OH_Cur20_O3S2, datatype: float64}
+# - {name: e_OH_Cur20_O3S2, datatype: float64}
+# - {name: OH_KK04, datatype: float64}
+# - {name: e_OH_KK04, datatype: float64}
+# - {name: OH_Pil16_R, datatype: float64}
+# - {name: e_OH_Pil16_R, datatype: float64}
+# - {name: OH_Pil16_S, datatype: float64}
+# - {name: e_OH_Pil16_S, datatype: float64}
+# - {name: OH_Ho, datatype: float64}
+# - {name: e_OH_Ho, datatype: float64}
+# - {name: U_Dors_O32, datatype: float64}
+# - {name: e_U_Dors_O32, datatype: float64}
+# - {name: U_Dors_S, datatype: float64}
+# - {name: e_U_Dors_S, datatype: float64}
+# - {name: U_Mor16_O23_fs, datatype: float64}
+# - {name: e_U_Mor16_O23_fs, datatype: float64}
+# - {name: U_Mor16_O23_ts, datatype: float64}
+# - {name: e_U_Mor16_O23_ts, datatype: float64}
+# - {name: NH_Pil16_R, datatype: float64}
+# - {name: e_NH_Pil16_R, datatype: float64}
+# - {name: NO_Pil16_R, datatype: float64}
+# - {name: e_NO_Pil16_R, datatype: float64}
+# - {name: NO_Pil16_Ho_R, datatype: float64}
+# - {name: e_NO_Pil16_Ho_R, datatype: float64}
+# - {name: NO_Pil16_N2_R2, datatype: float64}
+# - {name: e_NO_Pil16_N2_R2, datatype: float64}
+# - {name: Ne_Oster_S, datatype: float64}
+# - {name: e_Ne_Oster_S, datatype: float64}
+# delimiter: ','
+# schema: astropy-2.0
+KGAS_ID,cubename,OH_Mar13_N2,e_OH_Mar13_N2,OH_Mar13_O3N2,e_OH_Mar13_O3N2,OH_T04,e_OH_T04,OH_Pet04_N2_lin,e_OH_Pet04_N2_lin,OH_Pet04_N2_poly,e_OH_Pet04_N2_poly,OH_Pet04_O3N2,e_OH_Pet04_O3N2,OH_Kew02_N2O2,e_OH_Kew02_N2O2,OH_Pil10_ONS,e_OH_Pil10_ONS,OH_Pil10_ON,e_OH_Pil10_ON,OH_Pil11_NS,e_OH_Pil11_NS,OH_Cur20_RS32,e_OH_Cur20_RS32,OH_Cur20_R3,e_OH_Cur20_R3,OH_Cur20_O3O2,e_OH_Cur20_O3O2,OH_Cur20_S2,e_OH_Cur20_S2,OH_Cur20_R2,e_OH_Cur20_R2,OH_Cur20_N2,e_OH_Cur20_N2,OH_Cur20_R23,e_OH_Cur20_R23,OH_Cur20_O3N2,e_OH_Cur20_O3N2,OH_Cur20_O3S2,e_OH_Cur20_O3S2,OH_KK04,e_OH_KK04,OH_Pil16_R,e_OH_Pil16_R,OH_Pil16_S,e_OH_Pil16_S,OH_Ho,e_OH_Ho,U_Dors_O32,e_U_Dors_O32,U_Dors_S,e_U_Dors_S,U_Mor16_O23_fs,e_U_Mor16_O23_fs,U_Mor16_O23_ts,e_U_Mor16_O23_ts,NH_Pil16_R,e_NH_Pil16_R,NO_Pil16_R,e_NO_Pil16_R,NO_Pil16_Ho_R,e_NO_Pil16_Ho_R,NO_Pil16_N2_R2,e_NO_Pil16_N2_R2,Ne_Oster_S,e_Ne_Oster_S
+12,KG-MaNGA-1-207,8.5753632379292,0.003549391259805714,8.572184857925178,0.008552770236032533,8.978600358749311,0.01820402770528188,8.69319809165041,0.0043791190867732265,8.785283619673885,0.0094127247807326,8.788596058903781,0.01278918913799262,9.0135620565163,0.011192440448948297,8.555838041114987,0.02618471041311439,8.527847073515714,0.01327222775596582,8.562432357093746,0.02229953346477361,8.765434686590428,0.007307117699262778,8.760476073774091,0.009752132004800594,8.7610574704522,0.014468730914328069,8.80005965262807,0.004599210117056093,8.732206420520171,0.01416860236239637,nan,nan,8.750763943449043,0.014353758085153748,8.78321326812787,0.007706595932569729,8.591409394096662,0.012847592298063062,9.012592590587468,0.004449679907441386,8.601169616627796,0.0273756129691791,8.607369723372827,0.029551528992148485,8.685726849334138,0.01010048091028509,3.204798817197163,0.05535272007026338,3.1783890747461667,0.015308108286288076,4.521782884751032,0.10707575357854224,3.6473895520939625,0.04537108202480604,7.803262560034606,0.034826134004807364,0.7990785470675421,0.038044820984934946,0.8831972423003025,0.027729003813181167,0.8052649519396551,0.01869716238570224,nan,nan
+88,KG-SAMI-107214,8.565644451565905,0.031703663404094966,8.530244578009965,0.07656598457652761,8.836541720475255,0.6874826700768103,8.66663413195799,0.03170232630175917,8.7334637596757,0.06206223893610948,8.717471743393153,0.10681836436833243,8.960536022396104,0.205819693749103,8.535043309070122,0.13549258203180348,8.526614676058893,0.14142649451261727,8.48293223648539,0.09514907774543023,8.68194433086156,0.07169329287839607,8.68732431729941,0.07914484892227826,8.636602718919372,0.11163056768820026,nan,nan,8.752943930708868,0.044175712686181784,nan,nan,8.660370057021032,0.09541555463950659,8.725068406680355,0.05528522333835733,nan,nan,8.896260622934408,0.4060146345937089,8.547848836318655,0.15037124082777117,8.485893978912243,0.15818920673444292,8.651614459171974,0.1383572087590511,3.042697293650371,0.5843773395329404,3.4947854998967265,0.3045712305028793,4.225156596934311,1.1304348535227369,3.5092771407240666,0.47899781928929536,7.757760355249231,0.3915391315460497,0.8185979849387319,0.3668084182044452,0.9208500808746102,0.29479985836312406,0.8792875051699577,0.2634338492250751,2.8800643684284783,0.5572222891383989

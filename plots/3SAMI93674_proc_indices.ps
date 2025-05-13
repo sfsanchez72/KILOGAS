@@ -1,0 +1,531 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%For: sanchez
+%%Title: PGPLOT PostScript plot
+%%Creator: PGPLOT
+%%CreationDate: 16-Dec-2024 22:25
+%%BoundingBox: (atend)
+%%DocumentFonts: (atend)
+%%LanguageLevel: 1
+%%Orientation: Landscape
+%%Pages: (atend)
+%%EndComments
+%%BeginProlog
+/L {moveto rlineto currentpoint stroke moveto} bind def
+/C {rlineto currentpoint stroke moveto} bind def
+/D {moveto 0 0 rlineto currentpoint stroke moveto} bind def
+/SLW {5 mul setlinewidth} bind def
+/SCF /pop load def
+/BP {newpath moveto} bind def
+/LP /rlineto load def
+/EP {rlineto closepath eofill} bind def
+/MB {gsave translate MFAC dup scale 1 setlinewidth 2 setlinecap 0 setlinejoin newpath} bind def
+/ME /grestore load def
+/CC {0 360 arc stroke} bind def
+/FC {0 360 arc fill} bind def
+/fonts [
+/0 /Symbol
+/a /Times-Roman
+/b /Times-Italic
+/c /Times-Bold
+/d /Times-BoldItalic
+/e /Helvetica
+/f /Helvetica-Oblique
+/g /Helvetica-Bold
+/h /Helvetica-BoldOblique
+/i /Courier
+/j /Courier-Oblique
+/k /Courier-Bold
+/l /Courier-BoldOblique
+/m /NewCenturySchlbk-Roman
+/n /NewCenturySchlbk-Italic
+/o /NewCenturySchlbk-Bold
+/p /NewCenturySchlbk-BoldItalic
+/q /ZapfChancery
+/r /ZapfChancery-Oblique
+/s /ZapfChancery-Bold
+/t /URWGroteskT-Bold
+/u /URWAntiquaT-RegularCondensed
+/0 /Cyrillic
+/0 /ZapfDingbats
+] def
+/encvec [
+8#136 /degree
+8#244 /currency
+8#246 /bar
+8#250 /dieresis
+8#252 /ordfeminine
+8#255 /endash
+8#257 /macron
+8#260 /ring
+8#261 /plusminus
+8#264 /acute
+8#265 /mu
+8#270 /cedilla
+8#271 /dotlessi
+8#272 /ordmasculine
+8#300 /Agrave
+8#301 /Aacute
+8#302 /Acircumflex
+8#303 /Atilde
+8#304 /Adieresis
+8#305 /Aring
+8#306 /AE
+8#307 /Ccedilla
+8#310 /Egrave
+8#311 /Eacute
+8#312 /Ecircumflex
+8#313 /Edieresis
+8#314 /Igrave
+8#315 /Iacute
+8#316 /Icircumflex
+8#317 /Idieresis
+8#321 /Ntilde
+8#322 /Ograve
+8#323 /Oacute
+8#324 /Ocircumflex
+8#325 /Otilde
+8#326 /Odieresis
+8#327 /multiply
+8#330 /Oslash
+8#331 /Ugrave
+8#332 /Uacute
+8#333 /Ucircumflex
+8#334 /Udieresis
+8#337 /germandbls
+8#340 /agrave
+8#341 /aacute
+8#342 /acircumflex
+8#343 /atilde
+8#344 /adieresis
+8#345 /aring
+8#346 /ae
+8#347 /ccedilla
+8#350 /egrave
+8#351 /eacute
+8#352 /ecircumflex
+8#353 /edieresis
+8#354 /igrave
+8#355 /iacute
+8#356 /icircumflex
+8#357 /idieresis
+8#361 /ntilde
+8#362 /ograve
+8#363 /oacute
+8#364 /ocircumflex
+8#365 /otilde
+8#366 /odieresis
+8#367 /divide
+8#370 /oslash
+8#371 /ugrave
+8#372 /uacute
+8#373 /ucircumflex
+8#374 /udieresis
+8#377 /ydieresis
+] def
+/SF {findfont exch scalefont setfont}bind def
+/FS {rmoveto} bind def
+/GS {gsave} bind def
+/GR {grestore} bind def
+/SH {show} bind def
+/TR {translate rotate} bind def
+/reencsmalldict 12 dict def
+/ReEncode
+{reencsmalldict begin
+ /newcodesandnames exch def
+ /newfontname exch def
+ /basefontname exch def
+ /basefontdict basefontname findfont def
+ /newfont basefontdict maxlength dict def
+ basefontdict
+ { exch dup /FID ne { dup /Encoding eq
+   { exch dup length array copy
+    newfont 3 1 roll put }
+   { exch newfont 3 1 roll put }ifelse
+  }{ pop pop }ifelse
+ }forall
+ newfont /FontName newfontname put
+ newcodesandnames aload pop
+ newcodesandnames length 2 idiv
+ {newfont /Encoding get 3 1 roll put}repeat
+ newfontname newfont definefont pop
+ end
+}bind def
+/ST { /fontno exch 2 mul def
+ /fontsiz exch def
+ /myname fonts fontno get def
+ /name fonts fontno 1 add get def
+ myname (0) eq { fontsiz name SF }
+ { FontDirectory myname known not
+   { name myname encvec ReEncode }if
+   fontsiz myname SF
+ }ifelse
+}bind def
+%%EndProlog
+0.000 0.000 0.000 setrgbcolor
+ 
+%%Page: 1 1
+%%BeginPageSetup
+/PGPLOT save def
+0.072 0.072 scale
+8149 250 translate 90 rotate
+1 setlinejoin 1 setlinecap 1 SLW 1 SCF
+%%EndPageSetup
+%%PageBoundingBox: (atend)
+0.000 0.000 0.000 setrgbcolor 2 SLW 0 -214 3866 323 L 0 -214 3876 323 L 41 0 3835 323 L 72 0 3835 109 L -31 -10 4019 252 L -20 -21 C
+-10 -30 C 0 -21 C 10 -30 C 20 -21 C 31 -10 C 20 0 C 31 10 C 20 21 C 10 30 C 0 21 C -10 30 C -20 21 C -31 10 C -20 0 C -21 -10 C
+-20 -21 C -10 -30 C 0 -21 C 10 -30 C 20 -21 C 21 -10 C 21 10 4039 109 L 20 21 C 10 30 C 0 21 C -10 30 C -20 21 C -21 10 C
+-21 -10 4213 252 L -10 -10 C -10 -21 C 0 -20 C 10 -21 C 10 -10 C 21 -10 C 20 0 C 20 10 C 11 10 C 10 21 C 0 20 C -10 21 C -11 10 C
+-20 10 C -20 0 C -10 -21 4192 242 L 0 -40 C 10 -21 C 11 21 4253 160 L 0 40 C -11 21 C 10 10 4264 232 L 20 10 C 0 -10 C -20 0 C
+-10 -10 4182 170 L -10 -20 C 0 -10 C 10 -21 C 30 -10 C 51 0 C 31 -10 C 10 -10 C 10 -11 4162 130 L 30 -10 C 51 0 C 31 -10 C 10 -20 C
+0 -11 C -10 -20 C -31 -10 C -61 0 C -30 10 C -11 20 C 0 11 C 11 20 C 30 10 C -20 -20 4437 364 L -21 -31 C -20 -41 C -10 -51 C
+0 -40 C 10 -51 C 20 -41 C 21 -31 C 20 -20 C -21 -41 4417 344 L -10 -31 C -10 -51 C 0 -40 C 10 -51 C 10 -31 C 21 -41 C
+72 -102 4498 323 L -82 -112 C 71 -102 4488 323 L 153 0 4488 323 L 10 -61 C -20 61 C 133 0 4498 119 L 153 0 4488 109 L 10 61 C
+-20 -61 C 0 -147 4720 147 L 46 -137 4728 147 L 49 -147 4720 147 L -49 -147 4827 147 L 0 -147 4827 147 L 0 -147 4835 147 L
+31 0 4697 147 L 31 0 4827 147 L 0 -8 4911 79 L -7 0 C 0 8 C 7 7 C 16 8 C 30 0 C 15 -8 C 8 -7 C 8 -16 C 0 -53 C 5 -10 C
+0 -69 4980 79 L 5 -10 C -8 -7 4980 63 L -45 -8 C -23 -8 C -8 -15 C 0 -15 C 5 -10 C 10 10 4970 0 L -16 -8 4927 48 L -7 -15 C 0 -15 C
+4 -10 C 8 15 5125 79 L 0 -31 C -8 16 C -7 7 C -16 8 C -30 0 C -15 -8 C -8 -7 C 0 -16 C 8 -7 C 15 -8 C 38 -15 C 15 -8 C 8 -8 C
+8 -8 5049 71 L 15 -7 C 38 -16 C 15 -7 C 8 -8 C 0 -23 C -2 -2 C -2 2 5059 0 L -8 15 C 0 -17 C 1 2 5056 0 L 8 15 5255 79 L 0 -31 C
+-8 16 C -7 7 C -15 8 C -31 0 C -15 -8 C -8 -7 C 0 -16 C 8 -7 C 15 -8 C 38 -15 C 15 -8 C 8 -8 C 8 -8 5179 71 L 15 -7 C 38 -16 C
+15 -7 C 8 -8 C 0 -23 C -2 -2 C -2 2 5189 0 L -8 15 C 0 -17 C 1 2 5186 0 L 2 2 5322 0 L 2 -2 C -16 -8 5424 94 L -7 -7 C -8 -16 C
+0 -15 C 8 -15 C 7 -8 C 16 -8 C 15 0 C 15 8 C 8 8 C 8 15 C 0 15 C -8 16 C -8 7 C -15 8 C -15 0 C -7 -15 5408 86 L 0 -31 C 7 -15 C
+8 15 5454 25 L 0 31 C -8 15 C 8 7 5462 79 L 15 8 C 0 -8 C -15 0 C -8 -8 5401 33 L -7 -15 C 0 -8 C 1 -2 C 2 -2 5386 2 L
+0 -8 5546 79 L -8 0 C 0 8 C 8 7 C 15 8 C 31 0 C 15 -8 C 8 -7 C 8 -16 C 0 -53 C 5 -10 C 0 -69 5615 79 L 5 -10 C -8 -7 5615 63 L
+-46 -8 C -23 -8 C -7 -15 C 0 -15 C 5 -10 C 10 10 5605 0 L -15 -8 5561 48 L -8 -15 C 0 -15 C 5 -10 C 8 15 5760 79 L 0 -31 C -8 16 C
+-7 7 C -16 8 C -30 0 C -16 -8 C -7 -7 C 0 -16 C 7 -7 C 16 -8 C 38 -15 C 15 -8 C 8 -8 C 7 -8 5684 71 L 16 -7 C 38 -16 C 15 -7 C
+8 -8 C 0 -23 C -2 -2 C -3 2 5694 0 L -7 15 C 0 -17 C 1 2 5690 0 L -184 -326 5995 364 L 0 -214 6066 323 L 62 -183 6076 323 L
+72 -214 6066 323 L -71 -214 6209 323 L 0 -214 6209 323 L 0 -214 6219 323 L 40 0 6036 323 L 41 0 6209 323 L 61 0 6036 109 L
+72 0 6178 109 L -23 -7 6362 147 L -23 -16 C -15 -22 C -8 -23 C 0 -23 C 8 -23 C 15 -23 C 15 -10 C 15 10 6416 0 L 15 23 C 8 23 C
+0 23 C -8 23 C -15 22 C -23 16 C -23 7 C -23 0 C -8 -8 6370 79 L 0 -8 C 8 -7 C 7 0 C 8 7 C 0 8 C -8 8 C -7 0 C 0 -8 6370 71 L 7 0 C
+0 8 C -7 0 C 0 -214 6691 252 L 0 -214 6701 252 L 21 21 6701 221 L 20 10 C 20 0 C 31 -10 C 20 -21 C 11 -30 C 0 -21 C -11 -30 C
+-20 -21 C -31 -10 C -20 0 C -20 10 C -21 21 C 21 -10 6762 252 L 20 -21 C 10 -30 C 0 -21 C -10 -30 C -20 -21 C -21 -10 C
+41 0 6660 252 L 72 0 6660 38 L -10 -10 7007 221 L 10 -10 C 10 10 C 0 10 C -20 21 C -20 10 C -31 0 C -31 -10 C -20 -21 C -10 -30 C
+0 -21 C 10 -30 C 20 -21 C 31 -10 C 20 0 C 31 10 C 20 21 C -20 -10 6946 252 L -21 -21 C -10 -30 C 0 -21 C 10 -30 C 21 -21 C 20 -10 C
+138 0 7078 341 L 8 -7 7277 402 L -8 -8 C -7 8 C 0 7 C 7 16 C 8 7 C 23 8 C 31 0 C 23 -8 C 7 -7 C 8 -16 C 0 -15 C -8 -15 C -23 -15 C
+-38 -16 C -15 -7 C -16 -16 C -7 -23 C 0 -23 C 15 -8 7339 433 L 8 -7 C 7 -16 C 0 -15 C -7 -15 C -23 -15 C -31 -16 C 7 7 7270 288 L
+16 0 C 38 -15 C 23 0 C 15 8 C 8 7 C 38 -23 7293 295 L 31 0 C 7 8 C 8 15 C 0 16 C 21 -20 7430 364 L 20 -31 C 21 -41 C 10 -51 C
+0 -40 C -10 -51 C -21 -41 C -20 -31 C -21 -20 C 20 -41 7451 344 L 10 -31 C 11 -51 C 0 -40 C -11 -51 C -10 -31 C -20 -41 C
+321 3013 BP
+GS 90 321 3013 TR
+357 1 ST
+(12+log)SH
+(\()SH
+(O/H)SH
+(\))SH
+GR
+0.921 0.968 0.626 setrgbcolor
+/M17 {MB 0 0 4.5 FC ME} bind def                                                
+/MFAC      8.999 def    
+5440 3284 M17
+0.995 0.840 0.513 setrgbcolor 5669 3484 M17
+0.998 0.950 0.665 setrgbcolor 5653 4310 M17
+0.979 0.992 0.716 setrgbcolor 5563 4250 M17
+0.996 0.878 0.545 setrgbcolor 5460 4763 M17
+5287 4220 M17
+0.997 0.902 0.585 setrgbcolor 4868 4125 M17
+0.995 0.840 0.513 setrgbcolor 5200 2847 M17
+5334 3306 M17
+0.997 0.902 0.585 setrgbcolor 5555 3954 M17
+0.994 0.763 0.448 setrgbcolor 5803 3324 M17
+0.995 0.840 0.513 setrgbcolor 5969 3987 M17
+0.996 0.878 0.545 setrgbcolor 5933 4599 M17
+0.998 0.950 0.665 setrgbcolor 5825 4336 M17
+0.996 0.878 0.545 setrgbcolor 5720 4631 M17
+5748 4513 M17
+5584 4210 M17
+5293 3966 M17
+0.999 0.974 0.705 setrgbcolor 4270 3119 M17
+0.996 0.878 0.545 setrgbcolor 5365 3176 M17
+0.995 0.802 0.481 setrgbcolor 5591 3230 M17
+0.994 0.763 0.448 setrgbcolor 5682 4114 M17
+0.995 0.840 0.513 setrgbcolor 5783 4154 M17
+5895 4673 M17
+0.996 0.878 0.545 setrgbcolor 5944 5110 M17
+0.995 0.840 0.513 setrgbcolor 5857 4632 M17
+5733 4610 M17
+0.996 0.878 0.545 setrgbcolor 5623 4678 M17
+5645 4506 M17
+0.995 0.840 0.513 setrgbcolor 5547 4396 M17
+0.996 0.878 0.545 setrgbcolor 5407 4040 M17
+0.995 0.802 0.481 setrgbcolor 5225 4825 M17
+0.993 0.717 0.409 setrgbcolor 5221 3754 M17
+0.998 0.926 0.625 setrgbcolor 4480 3081 M17
+5024 3008 M17
+0.998 0.950 0.665 setrgbcolor 5440 2818 M17
+0.997 0.902 0.585 setrgbcolor 5607 3450 M17
+0.995 0.802 0.481 setrgbcolor 5711 3715 M17
+5740 3979 M17
+0.994 0.763 0.448 setrgbcolor 5823 4454 M17
+0.993 0.717 0.409 setrgbcolor 5865 4374 M17
+0.995 0.802 0.481 setrgbcolor 5717 4981 M17
+0.994 0.763 0.448 setrgbcolor 5591 5290 M17
+5465 4342 M17
+0.995 0.802 0.481 setrgbcolor 5505 4453 M17
+0.995 0.840 0.513 setrgbcolor 3961 2478 M17
+0.999 0.974 0.705 setrgbcolor 4935 3104 M17
+5282 3087 M17
+1.000 0.998 0.745 setrgbcolor 5503 2975 M17
+0.997 0.902 0.585 setrgbcolor 5528 3473 M17
+0.996 0.878 0.545 setrgbcolor 5662 3866 M17
+0.995 0.840 0.513 setrgbcolor 5769 3921 M17
+0.991 0.677 0.378 setrgbcolor 5818 4287 M17
+0.995 0.802 0.481 setrgbcolor 5579 5092 M17
+5529 4650 M17
+0.993 0.717 0.409 setrgbcolor 5492 4473 M17
+0.994 0.763 0.448 setrgbcolor 5622 4625 M17
+5910 3222 M17
+5633 3292 M17
+0.960 0.984 0.686 setrgbcolor 4415 2554 M17
+1.000 0.998 0.745 setrgbcolor 5206 2907 M17
+0.999 0.974 0.705 setrgbcolor 5533 3021 M17
+5590 3077 M17
+0.997 0.902 0.585 setrgbcolor 5533 3667 M17
+0.996 0.878 0.545 setrgbcolor 5657 3805 M17
+0.995 0.840 0.513 setrgbcolor 5847 3850 M17
+0.993 0.717 0.409 setrgbcolor 5855 4317 M17
+0.994 0.763 0.448 setrgbcolor 5669 4472 M17
+0.993 0.717 0.409 setrgbcolor 5587 4276 M17
+5561 4582 M17
+5685 4488 M17
+5589 3762 M17
+0.857 0.942 0.605 setrgbcolor 3452 2493 M17
+0.979 0.992 0.716 setrgbcolor 4328 2813 M17
+5094 3012 M17
+1.000 0.998 0.745 setrgbcolor 5422 3032 M17
+0.998 0.926 0.625 setrgbcolor 5485 3158 M17
+0.995 0.840 0.513 setrgbcolor 5510 3672 M17
+0.995 0.802 0.481 setrgbcolor 5724 3746 M17
+0.993 0.717 0.409 setrgbcolor 5944 3983 M17
+0.979 0.992 0.716 setrgbcolor 4654 2520 M17
+0.999 0.974 0.705 setrgbcolor 4454 2348 M17
+3473 2690 M17
+0.998 0.950 0.665 setrgbcolor 4154 2932 M17
+4833 3282 M17
+5220 3165 M17
+0.996 0.878 0.545 setrgbcolor 5356 3378 M17
+0.994 0.763 0.448 setrgbcolor 5483 3791 M17
+5684 3932 M17
+0.960 0.984 0.686 setrgbcolor 4709 2507 M17
+0.998 0.926 0.625 setrgbcolor 4946 2502 M17
+4843 2738 M17
+3953 2843 M17
+0.997 0.902 0.585 setrgbcolor 3523 3043 M17
+4177 3209 M17
+0.995 0.840 0.513 setrgbcolor 4630 3218 M17
+0.994 0.763 0.448 setrgbcolor 4938 3392 M17
+0.993 0.717 0.409 setrgbcolor 5161 4255 M17
+0.998 0.926 0.625 setrgbcolor 4585 2834 M17
+0.995 0.802 0.481 setrgbcolor 5036 2674 M17
+0.998 0.926 0.625 setrgbcolor 4985 2762 M17
+0.997 0.902 0.585 setrgbcolor 4535 3144 M17
+0.996 0.878 0.545 setrgbcolor 3865 3057 M17
+0.995 0.802 0.481 setrgbcolor 3939 3090 M17
+4134 3536 M17
+0.991 0.677 0.378 setrgbcolor 4285 3934 M17
+0.995 0.802 0.481 setrgbcolor 4666 2935 M17
+0.997 0.902 0.585 setrgbcolor 4831 2835 M17
+0.996 0.878 0.545 setrgbcolor 4618 3234 M17
+4012 3194 M17
+0.995 0.802 0.481 setrgbcolor 3712 3420 M17
+0.991 0.677 0.378 setrgbcolor 3735 3655 M17
+0.994 0.763 0.448 setrgbcolor 4370 3482 M17
+0.995 0.840 0.513 setrgbcolor 4583 3025 M17
+0.996 0.878 0.545 setrgbcolor 4589 3237 M17
+0.995 0.802 0.481 setrgbcolor 3837 3308 M17
+0.993 0.717 0.409 setrgbcolor 3271 3527 M17
+0.996 0.878 0.545 setrgbcolor 2477 2581 M17
+0.993 0.717 0.409 setrgbcolor 3264 2609 M17
+0.997 0.902 0.585 setrgbcolor 4238 3495 M17
+4332 3174 M17
+0.995 0.840 0.513 setrgbcolor 4230 3174 M17
+0.994 0.763 0.448 setrgbcolor 3239 3592 M17
+0.999 0.974 0.705 setrgbcolor 3462 1590 M17
+3462 1858 M17
+0.998 0.926 0.625 setrgbcolor 3970 2711 M17
+0.993 0.717 0.409 setrgbcolor 4323 2771 M17
+0.995 0.840 0.513 setrgbcolor 4671 3258 M17
+0.995 0.802 0.481 setrgbcolor 4272 3163 M17
+0.994 0.763 0.448 setrgbcolor 3891 3378 M17
+0.996 0.878 0.545 setrgbcolor 3899 1691 M17
+0.960 0.984 0.686 setrgbcolor 3899 1509 M17
+0.991 0.677 0.378 setrgbcolor 5256 2905 M17
+0.993 0.717 0.409 setrgbcolor 5251 3467 M17
+4715 3502 M17
+0.996 0.878 0.545 setrgbcolor 3754 1435 M17
+0.991 0.677 0.378 setrgbcolor 5587 2766 M17
+0.993 0.717 0.409 setrgbcolor 5632 3034 M17
+5464 3203 M17
+0.991 0.677 0.378 setrgbcolor 5605 3285 M17
+0.996 0.878 0.545 setrgbcolor 4313 1473 M17
+4313 1914 M17
+0.995 0.802 0.481 setrgbcolor 5709 3218 M17
+0.993 0.717 0.409 setrgbcolor 5741 3239 M17
+0.991 0.677 0.378 setrgbcolor 5915 3005 M17
+0.995 0.802 0.481 setrgbcolor 4081 1818 M17
+0.994 0.763 0.448 setrgbcolor 5077 2551 M17
+5435 2705 M17
+0.995 0.802 0.481 setrgbcolor 5680 3001 M17
+0.994 0.763 0.448 setrgbcolor 5838 3123 M17
+0.993 0.717 0.409 setrgbcolor 5975 2999 M17
+0.995 0.840 0.513 setrgbcolor 4688 2526 M17
+0.995 0.802 0.481 setrgbcolor 5173 2525 M17
+5491 2757 M17
+0.993 0.717 0.409 setrgbcolor 5595 3277 M17
+0.995 0.840 0.513 setrgbcolor 5682 2710 M17
+0.993 0.717 0.409 setrgbcolor 5543 3395 M17
+0.994 0.763 0.448 setrgbcolor 5637 3416 M17
+0.991 0.677 0.378 setrgbcolor 4886 3049 M17
+0.995 0.802 0.481 setrgbcolor 4124 2911 M17
+0.995 0.840 0.513 setrgbcolor 5282 3216 M17
+0.994 0.763 0.448 setrgbcolor 5229 4029 M17
+0.995 0.802 0.481 setrgbcolor 3798 2145 M17
+0.994 0.763 0.448 setrgbcolor 4411 2680 M17
+0.998 0.926 0.625 setrgbcolor 4880 2550 M17
+0.995 0.802 0.481 setrgbcolor 5460 2288 M17
+0.994 0.763 0.448 setrgbcolor 4036 3022 M17
+0.995 0.840 0.513 setrgbcolor 4526 2233 M17
+4866 2483 M17
+0.998 0.950 0.665 setrgbcolor 5044 2396 M17
+1.000 0.998 0.745 setrgbcolor 5005 2210 M17
+0.994 0.763 0.448 setrgbcolor 4210 4033 M17
+0.991 0.677 0.378 setrgbcolor 4037 3306 M17
+0.995 0.840 0.513 setrgbcolor 4493 2884 M17
+0.997 0.902 0.585 setrgbcolor 4862 2730 M17
+0.998 0.950 0.665 setrgbcolor 5083 2372 M17
+0.960 0.984 0.686 setrgbcolor 5042 2439 M17
+0.995 0.802 0.481 setrgbcolor 4641 2993 M17
+0.996 0.878 0.545 setrgbcolor 4774 2753 M17
+0.997 0.902 0.585 setrgbcolor 4817 2706 M17
+0.979 0.992 0.716 setrgbcolor 4818 2070 M17
+0.960 0.984 0.686 setrgbcolor 4612 1919 M17
+0.993 0.717 0.409 setrgbcolor 4123 3225 M17
+0.997 0.902 0.585 setrgbcolor 4405 2844 M17
+0.998 0.950 0.665 setrgbcolor 4447 2905 M17
+0.979 0.992 0.716 setrgbcolor 4324 1552 M17
+0.995 0.802 0.481 setrgbcolor 2783 3212 M17
+0.000 0.000 0.000 setrgbcolor
+1496 6493 BP
+252 1 ST
+(SAMI93674)SH
+8924 0 1050 1170 L 0 5849 C -8924 0 C 0 -5849 C 0 76 1236 1170 L 0 76 1608 1170 L 0 153 1979 1170 L 0 76 2351 1170 L
+0 76 2723 1170 L 0 76 3095 1170 L 0 76 3467 1170 L 0 153 3839 1170 L 0 76 4211 1170 L 0 76 4582 1170 L 0 76 4954 1170 L
+0 76 5326 1170 L 0 153 5698 1170 L 0 76 6070 1170 L 0 76 6442 1170 L 0 76 6813 1170 L 0 76 7185 1170 L 0 153 7557 1170 L
+0 76 7929 1170 L 0 76 8301 1170 L 0 76 8673 1170 L 0 76 9044 1170 L 0 153 9416 1170 L 0 76 9788 1170 L 0 76 1236 6943 L
+0 76 1608 6943 L 0 153 1979 6866 L 0 76 2351 6943 L 0 76 2723 6943 L 0 76 3095 6943 L 0 76 3467 6943 L 0 153 3839 6866 L
+0 76 4211 6943 L 0 76 4582 6943 L 0 76 4954 6943 L 0 76 5326 6943 L 0 153 5698 6866 L 0 76 6070 6943 L 0 76 6442 6943 L
+0 76 6813 6943 L 0 76 7185 6943 L 0 153 7557 6866 L 0 76 7929 6943 L 0 76 8301 6943 L 0 76 8673 6943 L 0 76 9044 6943 L
+0 153 9416 6866 L 0 76 9788 6943 L
+1745 772 BP
+357 1 ST
+(-1)SH
+3737 772 BP
+357 1 ST
+(0)SH
+5596 772 BP
+357 1 ST
+(1)SH
+7455 772 BP
+357 1 ST
+(2)SH
+9314 772 BP
+357 1 ST
+(3)SH
+153 0 1050 1170 L 76 0 1050 2005 L 153 0 1050 2841 L 76 0 1050 3677 L 153 0 1050 4512 L 76 0 1050 5348 L 153 0 1050 6184 L
+153 0 9821 1170 L 76 0 9898 2005 L 153 0 9821 2841 L 76 0 9898 3677 L 153 0 9821 4512 L 76 0 9898 5348 L 153 0 9821 6184 L
+818 915 BP
+GS 90 818 915 TR
+357 1 ST
+(8.2)SH
+GR
+818 2586 BP
+GS 90 818 2586 TR
+357 1 ST
+(8.4)SH
+GR
+818 4257 BP
+GS 90 818 4257 TR
+357 1 ST
+(8.6)SH
+GR
+818 5929 BP
+GS 90 818 5929 TR
+357 1 ST
+(8.8)SH
+GR
+3 SLW
+/M16 {MB -4 -4 moveto 0 8 rlineto 8 0 rlineto 0 -8                              
+rlineto closepath fill ME} bind def                                             
+/MFAC     10.199 def    
+3978 2675 M16 4257 2884 M16 4536 2834 M16 4815 2874 M16 5094 3043 M16 5373 3459 M16 5651 3905 M16 5930 4016 M16
+1 SLW
+gsave newpath
+9974 1169 moveto 524 0 rlineto 0 5849 rlineto
+-524 0 rlineto closepath clip
+/picstr 1 string def
+1 100 8 [
+ 3.562E-04 -0.000E+00 -0.000E+00  1.693E-02 -3.152E+00 -1.930E+01 ]
+{currentfile picstr readhexstring pop} false 3 colorimage
+FFFFFFA90D45A90D45B41947B41947BE254ABE254AC9314CC9314CD43D4FD43D4FDA464DDA464DE1504BE1504BE75948E75948EE6445EE6445F46D43
+F46D43F67A49F67A49F8864FF8864FF99355F99355FBA05BFBA05BFDAD60FDAD60FDB768FDB768FDC372FDC372FECC7BFECC7BFED683FED683FEE08B
+FEE08BFEE695FEE695FEEC9FFEEC9FFFF2AAFFF2AAFFF8B4FFF8B4FFFEBEFFFEBEFAFDB7FAFDB7F5FBAFF5FBAFF0F9A7F0F9A7EBF7A0EBF7A0E6F598
+E6F598DAF09ADAF09ACFEC9DCFEC9DC3E79FC3E79FB5E1A2B5E1A2AADCA4AADCA49CD7A49CD7A48FD2A48FD2A481CDA581CDA574C7A574C7A566C2A5
+66C2A55CB7AA5CB7AA50A9AF50A9AF459EB4459EB43B92B93B92B93387BC3387BC3B7CB73B7CB74471B24471B24D65AD4D65AD555AA7555AA75B53A4
+grestore
+525 0 9974 1170 L -525 0 10499 7019 L 0 -5849 C 122 0 C 61 0 9974 1404 L 61 0 9974 1638 L 61 0 9974 1872 L 61 0 9974 2106 L
+122 0 9974 2340 L 61 0 9974 2574 L 61 0 9974 2808 L 61 0 9974 3042 L 61 0 9974 3276 L 122 0 9974 3510 L 61 0 9974 3744 L
+61 0 9974 3977 L 61 0 9974 4211 L 61 0 9974 4445 L 122 0 9974 4679 L 61 0 9974 4913 L 61 0 9974 5147 L 61 0 9974 5381 L
+61 0 9974 5615 L 122 0 9974 5849 L 61 0 9974 6083 L 61 0 9974 6317 L 61 0 9974 6551 L 61 0 9974 6785 L 122 0 9974 7019 L
+85 0 10414 1170 L 24 0 10475 1404 L 24 0 10475 1638 L 24 0 10475 1872 L 24 0 10475 2106 L 85 0 10414 2340 L 24 0 10475 2574 L
+24 0 10475 2808 L 24 0 10475 3042 L 24 0 10475 3276 L 85 0 10414 3510 L 24 0 10475 3744 L 24 0 10475 3977 L 24 0 10475 4211 L
+24 0 10475 4445 L 85 0 10414 4679 L 24 0 10475 4913 L 24 0 10475 5147 L 24 0 10475 5381 L 24 0 10475 5615 L 85 0 10414 5849 L
+24 0 10475 6083 L 24 0 10475 6317 L 24 0 10475 6551 L 24 0 10475 6785 L 85 0 10414 7019 L
+10851 1089 BP
+GS 90 10851 1089 TR
+283 1 ST
+(0)SH
+GR
+10851 2137 BP
+GS 90 10851 2137 TR
+283 1 ST
+(0.5)SH
+GR
+10851 3429 BP
+GS 90 10851 3429 TR
+283 1 ST
+(1)SH
+GR
+10851 4477 BP
+GS 90 10851 4477 TR
+283 1 ST
+(1.5)SH
+GR
+10851 5768 BP
+GS 90 10851 5768 TR
+283 1 ST
+(2)SH
+GR
+10851 6817 BP
+GS 90 10851 6817 TR
+283 1 ST
+(2.5)SH
+GR
+11115 5059 BP
+GS 90 11115 5059 TR
+283 1 ST
+(log10 |EW)SH
+(\()SH
+(H)SH
+275 0 ST
+(a)SH
+283 1 ST
+(\))SH
+(|)SH
+GR
+PGPLOT restore showpage
+%%PageTrailer
+%%PageBoundingBox: 51 12 588 841
+ 
+%%Trailer
+%%BoundingBox: 51 12 588 841
+%%DocumentFonts: Symbol Times-Roman
+%%Pages: 1
+%%EOF
