@@ -1,0 +1,207 @@
+# AUTHOR: S.F. Sanchez & the IA-UNAM Team
+# SOURCE: Pipe3D MaNGA analysis QC
+# DATE: 2018-01-28
+# VERSION: 2.3.1
+# COLAPRV:  S.F.Sanchez
+# PUBAPRV:
+# COLUMN1: manganame, string,  , MaNGA name of the cube
+# COLUMN2: QCFLAG, int,   , 0 is ok 2 is bad 3 is warning
+# COLUMN3: FLAG 
+# COLUMN4: Comment
+# 1 => Error in redshift TBR
+# 2 => No gas detected TBR
+# 3 => Bright field star or compact companion in projection
+# 4 => Large masked area
+# 5 => Galaxy at the edge of the FoV
+# 6 => Very low SN in the continuum
+# 7 => Possible CR residual
+# 8 => Just the very center of much larger galaxy
+# 9 => Weird gas reported
+# 10 => Additional problems
+# COLUMN4: COMMENT
+#manga-7443-3703,2,1
+#manga-7815-1902,3,2
+#manga-7957-3702,3,2
+manga-7957-12701,3,3
+#manga-7960-9102,3,2
+#manga-7972-9102,3,2
+manga-7972-12701,2,3
+manga-7972-12702,2,3
+#manga-7991-3703,3,2
+#manga-7992-3704,3,2
+#manga-8082-9101,3,10
+#manga-8084-1901,3,2
+#manga-8084-3704,2,2
+manga-8086-6102,2,3
+manga-8134-3701,3,4, Galaxy pair
+#manga-8140-1901,3,2
+#manga-8144-1902,3,2
+#manga-8145-6102,3,2
+manga-8149-3704,3,4
+manga-8155-12702,2,3
+manga-8239-3701,2,5
+manga-8243-12702,3,6
+manga-8244-12701,3,3
+manga-8317-1902,2,6
+manga-8332-1902,3,8
+#manga-8442-6104,3,2
+manga-8446-6102,3,7
+manga-8462-1902,2,3
+#manga-8479-3703,3,2
+#manga-8480-3701,3,2
+#manga-8548-1901,3,9
+#manga-8551-3704,2,2
+manga-8551-6101,2,9
+manga-8553-1901,3,10, Strong type-I AGN
+#manga-8554-3704,3,2
+manga-8566-1901,2,9
+#manga-8588-12703,2,2
+manga-8601-12704,3,5, Galaxy group
+#manga-8603-12703,3,2
+manga-8612-1901,2,1
+#manga-8624-12703,2,2
+#manga-8625-12703,2,2
+#manga-8626-12703,2,2
+manga-8626-12705,3,3
+#manga-8655-6103,3,2
+#manga-8711-12703,2,2
+#manga-8712-9102,3,3
+manga-8714-1901,2,3
+manga-8721-12703,3,3, galaxy group?
+#manga-8725-12703,3,3
+manga-8726-12704,3,10, Galaxy pair
+#manga-8727-12702,2,2
+#manga-8728-6101,3,2
+#manga-8931-3701,3,2
+#manga-8931-3704,3,2
+#manga-8931-9102,3,2
+#manga-8931-12703,3,2
+#manga-8932-3702,3,2
+#manga-8932-6102,3,2
+#manga-8932-12705,3,2
+#manga-8933-3702,3,2
+#manga-8934-3702,3,2
+#manga-8934-9101,3,2
+#manga-8934-9102,3,2
+#manga-8935-1901,3,2
+#manga-8935-3701,3,2
+#manga-8935-3704,3,2
+#manga-8935-6101,3,2
+#manga-8935-12701,3,2
+#manga-8935-12702,3,2
+#manga-8935-12705,3,2
+#manga-8936-1901,3,2
+#manga-8936-12702,3,2
+#manga-8938-12702,2,2
+#manga-8948-6102,3,2
+#manga-8949-12705,3,2
+#manga-8950-3701,3,2
+#manga-8950-3704,3,2
+#manga-8950-12702,3,2
+#manga-8953-3702,3,2
+#manga-8977-12703,3,2
+manga-8979-9102,3,7
+#manga-8979-12703,2,2
+manga-8982-12703,3,6
+#manga-8989-12703,3,2
+#manga-8990-1901,3,2
+#manga-8991-3704,2,2
+#manga-8996-12702,2,2
+#manga-8997-12703,2,2
+#manga-8999-3704,2,2
+manga-9000-1901,3,9, Type-I AGN
+#manga-9002-3704,3,2
+#manga-9025-12702,3,2
+#manga-9027-12702,2,2
+#manga-9031-6103,2,2
+#manga-9033-6101,2,2
+#manga-9033-12703,2,2
+#manga-9034-3704,2,2
+#manga-9035-1902,3,3
+#manga-9035-6101,2,2
+#manga-9037-6102,3,2
+#manga-9037-12703,2,2
+#manga-9039-1901,2,9
+#manga-9039-12701,2,9
+manga-9043-12705,3,10, Galaxy pair
+#manga-9044-12703,3,2
+#manga-9045-6102,3,2, Spectrum is wrong
+#manga-9047-6103,3,2, Spectrum is wrong
+#manga-9048-3701,2,9
+#manga-9048-6101,2,2
+#manga-9049-6101,2,2
+#manga-9049-6103,2,2
+#manga-9088-12703,3,2
+#manga-9095-12703,2,2, Spectrum is wrong
+#manga-9181-3704,3,2, Spec is wrong
+#manga-9182-6101,2,2, Spec is wrong
+#manga-9182-12703,2,2
+manga-9182-12704,3,3
+#manga-9183-1901,3,2
+#manga-9183-12703,2,2, Spec is wrong
+#manga-9184-6101,3,2
+manga-9185-12702,3,10, Galaxy group
+#manga-9194-3702,3,10
+manga-9486-9101,3,3
+#manga-9488-6102,2,2
+#manga-9490-9102,3,7
+#manga-9491-9101,2,2
+#manga-9492-3704,3,2
+#manga-9497-6101,3,2, Spec is wrong
+#manga-9497-6104,3,2, Spec is wrong
+manga-9497-12705,2,1, Strong type-i AGN
+manga-9500-1901,2,1, Strong type-i AGN
+manga-9501-3704,2,10, Galaxy pair
+#manga-9501-6103,3,2
+#manga-9501-12703,3,2
+#manga-9502-1902,3,2
+#manga-9502-3704,3,2
+manga-9505-3704,3,7
+#manga-9506-6103,3,2
+#manga-9508-6101,2,2
+manga-9509-3703,3,3
+manga-9509-12705,3,10, Galaxy pair
+#manga-9863-3701,3,2
+#manga-9863-3702,2,10
+#manga-9868-6104,3,2,Spec is wrong
+#manga-9869-12704,3,2
+#manga-9872-6102,2,2
+manga-9872-12703,3,10
+#manga-9876-3704,3,2
+#manga-9876-12701,3,2
+#manga-9876-12703,3,2
+#manga-9876-12704,3,2
+#manga-9881-6101,2,2
+#manga-9888-12703,3,2
+manga-7972-12701,2,3
+manga-7972-12702,2,3
+manga-7991-1901,2,1, Strong type-I AGN
+manga-8131-12705,3,3
+manga-8154-6101,3,3
+#manga-8258-6101,1,0, Seems to be ok
+#manga-8258-6102,1,0, Seems to be ok
+#manga-8318-3704,1,0, Seems to be ok
+manga-8329-9102,2,3 
+#manga-8454-1902,1,0, Seems to be ok
+manga-8462-1902,2,3, star in the field
+manga-8481-1901,2,3, star in the field
+manga-8483-12704,3,3
+manga-8550-6104,3,3
+#manga-8601-12703,1,0, Seems to be ok
+manga-8612-1901,2,1
+#manga-8613-12701,3,3
+manga-8623-12703,2,10
+#manga-8626-12703,2,2
+#manga-8717-3704,1,0, Seems to be ok
+#manga-8727-1901,1,0, Seems to be ok
+#manga-8987-9102,1,0, Seems to be ok
+#manga-8990-3704,1,0, Seems to be ok
+#manga-8999-12703,1,0, Seems to be ok
+manga-8999-3702,2,1
+#manga-9000-12703,3,2
+#manga-9024-6102,1,0, Seems to be ok
+manga-9181-12703,3,10, Galaxy pair
+manga-9491-12703,2,3 
+#manga-9493-6103,1,0, Seems to be ok
+manga-9500-1901,3,10, Strong type-I AGN
+#manga-9510-3704,1,0, Seems to be ok
