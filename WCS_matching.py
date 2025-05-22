@@ -312,9 +312,12 @@ for row in tab_KG:
             # Open the Pipe3D datacube
             cube_hdu = fits.open(cube_file)
             ssp_data = cube_hdu['SSP'].data[0]  # Use the 1st slice of the SSP extension
+            over=0
             if (target_name.find('SAMI')>-1):
                 cube_hdu[0].header['CD1_1'] = -0.000138889
                 cube_hdu[0].header['CD2_2'] = 0.000138889
+                if (over==1):
+                    cube_hdu.writeto(cube_file, overwrite=True)
             cube_wcs = WCS(cube_hdu[0].header)
             
             # Normalize the g-band image for better visualization
@@ -350,7 +353,7 @@ for row in tab_KG:
             # Calculate the barycenter in pixel coordinates 
             mask_cube = np.where(np.isfinite(ssp_data) & ~np.isnan(ssp_data) & \
                                  (ssp_data > 3*np.nanstd(ssp_data)) & distance_mask, 1, 0)
-            bc_cube = center_of_mass(ssp_data**4*mask_cube)
+            bc_cube = np.array(center_of_mass(ssp_data**4*mask_cube))-0.5
             # Convert the pixel coordinates to physical coordinates using WCS
             bc_cube_p = plane_wcs.pixel_to_world(bc_cube[1], bc_cube[0])
             bc_cube_img = g_band_wcs.world_to_pixel(bc_cube_p)
@@ -366,7 +369,7 @@ for row in tab_KG:
                                  (g_band_data > 3 * np.nanstd(g_band_data)) & distance_mask), 1, 0)
             # Mask the wrong values in the g-band data
             g_band_data = np.where((g_band_data > 0) & np.isfinite(g_band_data), g_band_data, 0)
-            bc_img = center_of_mass((g_band_data**4) * mask_img)
+            bc_img = np.array(center_of_mass((g_band_data**4) * mask_img)) - 0.5
             # Convert the pixel coordinates to physical coordinates using WCS
             bc_img_p = g_band_wcs.pixel_to_world(bc_img[1], bc_img[0])
 
