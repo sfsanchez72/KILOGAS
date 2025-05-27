@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+
+$n=0;
+open(FH,"<WFI_filters.txt");
+while($line=<FH>) {
+    chop($line);
+    $lines[$n]=$line;
+    $n++;
+}
+close(FH);
+
+$nf=0;
+$count=0;
+for ($i=0;$i<$n;$i++) {
+    @data=split(" ",$lines[$i]);
+    if (($data[0]==1)&&($count==0)); {
+	$namef[$nf]=$lines[$n-1];
+	$namef[$nf] =~ s/\+//;
+	$namef[$nf] =~ s/ /_/;
+	$start[$nf]=$i;
+	$count=1;
+	$ni[$nf]=0;
+	print "$nf $namef[$nf] ";
+	$nf++;
+    }
+    if ($count==1) {
+	if ($data[0]!=1) {
+	    $ni[$nf]=$ni[$nf]+1;
+	} else {
+	    $ni[$nf]=$ni[$nf]-2;
+	    $i=$i-2;
+	    $count=0;
+	    print "$start[$nf] $ni[$nf]\n";
+	}
+    }
+}
+
+
+exit;
