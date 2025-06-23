@@ -1,74 +1,119 @@
-DESC35 | OH_Cur20_O3N2 
-DESC6 | e_OH_T04 
-DESC52 | e_U_Mor16_O23_fs 
-DESC31 | OH_Cur20_N2 
-DESC54 | e_U_Mor16_O23_ts 
-DESC56 | e_NH_Pil16_R 
-DESC64 | e_Ne_Oster_S 
-DESC29 | OH_Cur20_R2 
-DESC62 | e_NO_Pil16_N2_R2 
-DESC5 | OH_T04   
-DESC59 | NO_Pil16_Ho_R 
-DESC7 | OH_Pet04_N2_lin 
-DESC26 | e_OH_Cur20_O3O2 
-DESC43 | OH_Pil16_S 
-DESC18 | e_OH_Pil10_ON 
-NAXIS3 | 64 
-DESC2 | e_OH_Mar13_N2 
-DESC22 | e_OH_Cur20_RS32 
-DESC13 | OH_Kew02_N2O2 
-DESC48 | e_U_Dors_O32 
-DESC24 | e_OH_Cur20_R3 
-DESC25 | OH_Cur20_O3O2 
-DESC40 | e_OH_KK04 
-DESC21 | OH_Cur20_RS32 
-EXTEND | T 
-COMMENT | HASH(0x5634a24e8f90) 
-DESC10 | e_OH_Pet04_N2_poly 
-DESC39 | OH_KK04  
-DESC61 | NO_Pil16_N2_R2 
-DESC36 | e_OH_Cur20_O3N2 
+UNITS_4 |  10^-16 erg/s/cm^2 
+UNITS_6 |  yr      
+FILE_15 | map.CS.manga-11759-3701_disp_ssp.fits.gz 
+ID_4 | 5 
+UNITS_2 |  none    
+ID_0 | 1 
+FILE_5 | map.CS.manga-11759-3701_log_age_yr_ssp.fits.gz 
+UNITS_7 |  yr      
+GCOUNT | 1 
+FILE_10 | map.CS.manga-11759-3701_e_met_ZH_ssp.fits.gz 
+ID_11 | 12 
+FILE_1 | cont_seg.manga-11759-3701.fits.gz 
+DESC_14 |  error in the velocity of the stellar population 
+DESC_16 |  error in velocity dispersion of the stellar population 
 END |  
-DESC47 | U_Dors_O32 
-DESC3 | OH_Mar13_O3N2 
-DESC55 | NH_Pil16_R 
-DESC32 | e_OH_Cur20_N2 
-DESC17 | OH_Pil10_ON 
-DESC51 | U_Mor16_O23_fs 
-DESC34 | e_OH_Cur20_R23 
-DESC58 | e_NO_Pil16_R 
-DESC63 | Ne_Oster_S 
-DESC30 | e_OH_Cur20_R2 
-DESC19 | OH_Pil11_NS 
-BITPIX | -64 
-DESC49 | U_Dors_S 
-DESC53 | U_Mor16_O23_ts 
-DESC4 | e_OH_Mar13_O3N2 
-DESC14 | e_OH_Kew02_N2O2 
-DESC37 | OH_Cur20_O3S2 
-DESC8 | e_OH_Pet04_N2_lin 
-DESC23 | OH_Cur20_R3 
-DESC46 | e_OH_Ho  
-NAXIS | 3 
-DESC12 | e_OH_Pet04_O3N2 
-DESC44 | e_OH_Pil16_S 
-DESC1 | OH_Mar13_N2 
-DESC28 | e_OH_Cur20_S2 
-NAXIS2 | 44 
-SIMPLE | T 
-DESC16 | e_OH_Pil10_ONS 
-DESC42 | e_OH_Pil16_R 
-DESC41 | OH_Pil16_R 
-DESC9 | OH_Pet04_N2_poly 
-DESC20 | e_OH_Pil11_NS 
-DESC45 | OH_Ho    
+ID_10 | 11 
+ID_13 | 14 
 NAXIS1 | 44 
-DESC57 | NO_Pil16_R 
-DESC11 | OH_Pet04_O3N2 
-DESC15 | OH_Pil10_ONS 
-DESC60 | e_NO_Pil16_Ho_R 
-DESC27 | OH_Cur20_S2 
-DESC33 | OH_Cur20_R23 
-HIERARCH |  
-DESC38 | e_OH_Cur20_O3S2 
-DESC50 | e_U_Dors_S 
+DESC_17 |  average mass-to-light ratio of the stellar population 
+UNITS_10 |  Solar metallicity 
+FILE_11 | map.CS.manga-11759-3701_Av_ssp.fits.gz 
+DESC_12 |  error of the average dust attnuation of the stellar population 
+NAXIS3 | 21 
+TYPE_14 |  velocity 
+ID_5 | 6 
+TYPE_16 |  velocity 
+FILE_3 | map.CS.manga-11759-3701_flux_ssp.fits.gz 
+TYPE_12 |  mag     
+TYPE_17 |  log10   
+FILE_19 | map.CS.manga-11759-3701_Mass_dust_cor_ssp.fits.gz 
+UNITS_19 |  m_Sun/spaxels^2 
+ID_18 | 19 
+FILE_13 | map.CS.manga-11759-3701_vel_ssp.fits.gz 
+UNITS_16 |  km/s    
+UNITS_11 |  magnitudes 
+FILE_8 | map.CS.manga-11759-3701_met_ZH_ssp.fits.gz 
+UNITS_5 |  yr      
+DESC_1 |  continuum segmentation file 
+BITPIX | -64 
+ID_17 | 18 
+NAXIS | 3 
+FILE_16 | map.CS.manga-11759-3701_e_disp_ssp.fits.gz 
+ID_8 | 9 
+FILE_14 | map.CS.manga-11759-3701_e_vel_ssp.fits.gz 
+ID_6 | 7 
+TYPE_3 |  flux    
+UNITS_0 |  10^-16 erg/s/cm^2 
+FILE_12 | map.CS.manga-11759-3701_e_Av_ssp.fits.gz 
+UNITS_20 |  m_Sun/spaxels^2 
+COMMENT |  
+FILE_17 | map.CS.manga-11759-3701_ML_ssp.fits.gz 
+DESC_11 |  average dust attnuation of the stellar population 
+TYPE_19 |  log10   
+ID_20 | 21 
+DESC_15 |  velocity dispersion of the stellar population 
+TYPE_13 |  velocity 
+ID_3 | 4 
+UNITS_1 |  none    
+EXTNAME | SSP      
+DESC_5 |  luminosity weighted age of the stellar population 
+TYPE_8 |  log10   
+DESC_10 |  error metallicity of the stellar population 
+DESC_19 |   stellar mass density dust corrected 
+UNITS_14 |  km/s    
+TYPE_15 |  velocity 
+UNIXTIME | 1608056966 
+DESC_13 |  velocity of the stellar population 
+ID_9 | 10 
+TYPE_5 |  log10   
+DESC_8 |  luminosity weighted metallicity of the stellar population 
+TYPE_10 |  log10   
+TYPE_1 |  id      
+OBJECT | manga-11759-3701 
+UNITS_9 |  Solar metallicity 
+DESC_3 |  median intensity flux within the wavelength range 
+UNITS_3 |  10^-16 erg/s/cm^2 
+TYPE_11 |  mag     
+UNITS_15 |  km/s    
+DESC_6 |  mass weighted age of the stellar population 
+DESC_20 |   error in the stellar mass density 
+PIPELINE | pyFIT3D v0.2.0 
+ID_2 | 3 
+FILE_9 | map.CS.manga-11759-3701_met_ZH_mass_ssp.fits.gz 
+DESC_2 |  continuum dezonification file 
+ID_14 | 15 
+TYPE_7 |  log10   
+ID_19 | 20 
+UNITS_18 |  m_Sun/spaxels^2 
+TYPE_2 |  flux    
+FILE_4 | map.CS.manga-11759-3701_e_flux_ssp.fits.gz 
+DESC_7 |  error of the age of the stellar population 
+TYPE_6 |  log10   
+ID_7 | 8 
+TYPE_20 |  log10   
+FILE_18 | map.CS.manga-11759-3701_Mass_ssp.fits.gz 
+ID_15 | 16 
+FILE_0 | manga-11759-3701.V.fits.gz 
+DESC_9 |  mass weighted metallicity of the stellar population 
+PCOUNT | 0 
+NAXIS2 | 44 
+ID_1 | 2 
+TYPE_4 |  flux    
+FILE_2 | scale.seg.manga-11759-3701.fits.gz 
+FILE_20 | map.CS.manga-11759-3701_eMass_ssp.fits.gz 
+FILE_6 | map.CS.manga-11759-3701_log_age_yr_mass_ssp.fits.gz 
+UNITS_17 |  Solar mass to solar luminosity 
+TYPE_18 |  log10   
+TYPE_0 |  flux    
+ID_12 | 13 
+DESC_18 |  stellar mass density 
+UNITS_12 |  magnitudes 
+DESC_0 | pseudo V-band map 
+UNITS_8 |  Solar metallicity 
+TYPE_9 |  log10   
+UNITS_13 |  km/s    
+DESC_4 |  StdDev median intensity flux within the wavelength range 
+FILE_7 | map.CS.manga-11759-3701_e_log_age_yr_ssp.fits.gz 
+XTENSION | IMAGE    
+ID_16 | 17 
